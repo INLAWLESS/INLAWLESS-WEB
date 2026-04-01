@@ -5,21 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I N L A W L E S S</title>
     <style>
-        body { background-color: #121212; color: white; font-family: sans-serif; text-align: center; }
-        .logo { letter-spacing: 0.3em; font-weight: bold; font-size: 2rem; margin-top: 50px; }
-        .hero { margin: 100px 20px; }
-        .hero h1 { font-size: 3rem; text-transform: uppercase; }
-        .hero h1 span { color: #43D39E; } /* Your Mint Green */
-        .btn { background: #43D39E; color: black; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; box-shadow: 0 0 20px rgba(67, 211, 158, 0.4); }
+        :root { --mint: #43D39E; --dark: #121212; --card: #1e1e1e; }
+        body { background-color: var(--dark); color: white; font-family: 'Inter', sans-serif; margin: 0; text-align: center; }
+        
+        /* Premium Logo Styling */
+        .logo { letter-spacing: 0.5em; font-weight: 900; font-size: 1.8rem; padding: 40px 0; text-transform: uppercase; }
+        
+        .hero { padding: 80px 20px; }
+        .hero h1 { font-size: 3.5rem; text-transform: uppercase; margin-bottom: 10px; }
+        .hero h1 span { color: var(--mint); }
+        
+        /* Glowing Sign Up Button */
+        .btn-glow { 
+            background: var(--mint); color: black; padding: 18px 40px; border-radius: 50px; 
+            text-decoration: none; font-weight: bold; display: inline-block;
+            box-shadow: 0 0 20px rgba(67, 211, 158, 0.4); transition: 0.3s;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(67, 211, 158, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(67, 211, 158, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(67, 211, 158, 0); }
+        }
+
+        /* Profile Grid Section */
+        .section-title { color: var(--mint); text-transform: uppercase; letter-spacing: 0.2em; margin-top: 100px; }
+        .profile-grid { display: flex; justify-content: center; gap: 20px; padding: 40px; flex-wrap: wrap; }
+        .profile-card { background: var(--card); border: 1px solid #333; border-radius: 15px; width: 280px; padding: 20px; text-align: left; }
+        .profile-pic { width: 100%; height: 200px; background: #333; border-radius: 10px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555; }
+        .badge { background: rgba(67, 211, 158, 0.2); color: var(--mint); padding: 5px 10px; border-radius: 5px; font-size: 0.7rem; font-weight: bold; }
+        
+        /* Wall of Shame Section */
+        .wall-of-shame { background: #000; padding: 60px 20px; margin-top: 50px; border-top: 2px solid #333; }
+        .shame-post { font-style: italic; color: #aaa; max-width: 600px; margin: 20px auto; padding: 20px; border-left: 3px solid #ff4b2b; background: #111; }
     </style>
 </head>
 <body>
+
     <div class="logo">I N L A W L E S S</div>
-    <div class="hero">
-        <h1>The Family You <span>Actually Want.</span></h1>
-        <p>Baggage-free dating for those who value boundaries.</p>
+
+    <section class="hero">
+        <h1>THE FAMILY YOU <span>ACTUALLY WANT.</span></h1>
+        <p style="color: #888; font-size: 1.2rem;">Baggage-free dating for those who value boundaries.</p>
         <br><br>
-        <a href="#" class="btn">SIGN UP</a>
+        <a href="#" class="btn-glow">SIGN UP NOW</a>
+    </section>
+
+    <h2 class="section-title">Vetted Matches</h2>
+    <div class="profile-grid">
+        <div class="profile-card">
+            <div class="profile-pic">MARCUS T., 34</div>
+            <div class="badge">VETTED INDEPENDENCE</div>
+            <h3 style="margin: 10px 0 5px 0;">Marcus T.</h3>
+            <p style="font-size: 0.8rem; color: #888;">"Fluent in setting limits and ignoring guilt trips."</p>
+            <div style="height: 4px; background: #333; width: 100%; margin-top: 10px;"><div style="width: 88%; height: 100%; background: var(--mint);"></div></div>
+            <p style="font-size: 0.6rem; color: var(--mint); margin-top: 5px;">BOUNDARY SCORE: 88/100</p>
+        </div>
+
+        <div class="profile-card">
+            <div class="profile-pic">SARAH J., 30</div>
+            <div class="badge">NO PARENTAL BAGGAGE</div>
+            <h3 style="margin: 10px 0 5px 0;">Sarah J.</h3>
+            <p style="font-size: 0.8rem; color: #888;">"My peace is non-negotiable. Ready for a real adult connection."</p>
+            <div style="height: 4px; background: #333; width: 100%; margin-top: 10px;"><div style="width: 94%; height: 100%; background: var(--mint);"></div></div>
+            <p style="font-size: 0.6rem; color: var(--mint); margin-top: 5px;">BOUNDARY SCORE: 94/100</p>
+        </div>
     </div>
+
+    <section class="wall-of-shame">
+        <h2 class="section-title" style="color: #ff4b2b;">Wall of Shame</h2>
+        <p style="color: #666;">The reason why we built this. Real anonymous submissions.</p>
+        <div class="shame-post">"My ex's mom had a key to our apartment and walked in while I was in the shower. He told me I was 'being dramatic' for being upset."</div>
+        <div class="shame-post">"My mother-in-law announced her pregnancy at my wedding. I'm not kidding."</div>
+    </section>
+
+    <div style="padding: 100px 20px; color: #444; font-size: 0.8rem;">
+        &copy; 2026 I N L A W L E S S. Premium Boundaries Guaranteed.
+    </div>
+
 </body>
 </html>
