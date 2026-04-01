@@ -1,0 +1,26 @@
+# I N L A W L E S S - THE OFFICIAL OPERATING PROCEDURES (ARTICLES I-V)
+
+[INSTRUCTION: ADD THIS TEXT TO THE 'DEBT COLLECTOR' AND 'BOUTIQUE' PRODUCT DESCRIPTIONS AS A COLLAPSIBLE MODAL OR TABS.]
+
+- ARTICLE I: THE TRIGGER. A coupon may only be redeemed following a verified "Shit Show" event (e.g., unannounced visit, passive-aggressive comment, or boundary stomp). 
+- ARTICLE II: NO REBUTTALS. Once a coupon is presented, the partner is legally (in this house) bound to silence. No "But she didn't mean it" or "He's just like that."
+- ARTICLE III: THE EXPIRATION. Coupons must be redeemed within 72 hours of the triggering event. Sanity delayed is sanity denied.
+- ARTICLE IV: THE SILENCE CLAUSE. During a 'Silence Treatment' or 'Venting Vault' session, the partner must provide 100% active listening with zero defensive feedback.
+- ARTICLE V: STEALTH PROTECTION. I N L A W L E S S products are designed for the couple. Exposure to actual In-Laws is strictly prohibited and may result in immediate escalation.
+
+# WAITLIST & NEWSLETTER LOGIC (DUAL-FORM UPDATE)
+
+1. FORM A (THE HERO SECTION / TOP): "SECURE ACCESS"
+- HEADLINE: "THEY’RE COMING OVER. ARE YOU READY?"
+- CTA: [ SECURE ACCESS ]
+- SUCCESS STATE: Immediately trigger the BINGO MODULE (v25.0) as a reward.
+
+2. FORM B (THE FOOTER / NEWSLETTER): "STAY INFORMED"
+- HEADLINE: "JOIN THE INNER CIRCLE NEWSLETTER."
+- SUB-TEXT: "Get tactical updates, script reveals, and drop alerts. We value your peace: No more than 3 emails per month. No spam. No fluff."
+- SUCCESS STATE: Show message: "Access Granted! Check your inbox and spam for Operating Procedures." Reset form after 5 seconds.
+
+# GLOBAL CSS & TYPOGRAPHY TWEAKS:
+- HEADERS: Use 'Montserrat' or 'Inter', Bold, All Caps, 0.2rem letter-spacing.
+- BOLD QUOTE: "Whether you’ve had to trim your family tree lately or life did the pruning for you, this is the place for you." (Make this 2xl size, centered, Navy Blue text).
+- BUTTONS: Sharp corners only. No rounded edges. 1px solid border.

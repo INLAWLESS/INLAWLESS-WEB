@@ -1,0 +1,69 @@
+# Project Name: I N L A W L E S S
+# Brand Aesthetic: Edgy Premium Luxury, High-Contrast, Dark Humor.
+# Color Palette: 
+- Background: Solid Black or Deep Navy.
+- Text: Pure White.
+- Accents: Mint Teal (Used ONLY for borders, thin lines, circular avatars, and subtle button outlines).
+
+# Navigation Bar:
+- Logo: I N L A W L E S S (All caps, slightly spaced out letters, centered for a premium logo feel).
+- Links: Wall of Shame, Connect & Date, Media Room, Boutique.
+
+# Hero Section:
+- Headline: "WELCOME TO THE FAMILY YOU ACTUALLY WANT."
+- Sub-headline: "The premium social ecosystem for boundary masters. Vent, connect, and date without the drama."
+- CTA Button: [JOIN THE REBELLION] - Mint Teal border, white text, no fill.
+
+# Section 1: THE WALL OF SHAME (Social Feed)
+# Card Design: Deep Navy background, 1px Mint Teal border, White text.
+# Global Card Rules:
+- Top Left: Circular Profile Picture (Avatar) with a Mint Teal border.
+- Top Right: Tag (e.g., Mother-in-Law Story) in Mint Teal.
+- Interaction Bar: Icons: Heart, Thumbs Up, Thumbs Down, 🖕 (Middle Finger Emoji).
+- Stats: Display "Comment Count" next to icons.
+- Input: "Add a comment..." text box with a Mint Teal border.
+
+[FEED ITEM 1] @done_with_drama | “She texted my boss to say I was ‘not fit to work’ because I missed Sunday dinner.”
+[FEED ITEM 2] @boundary_set | “Showed up at our apartment with a key he’d secretly copied. Changed the locks.”
+[FEED ITEM 3] @finally_free | “Made a fake Instagram to screenshot my posts for the family group chat.”
+[FEED ITEM 4] @NotTheBioButTheBoss | "My partner's mother thinks SHE is the co-parent. Ridiculous. 🙄"
+[FEED ITEM 5] @NoDramaSarah | "MIL showed up at 7 AM with a 'bag of clothes she thought I'd look better in.'"
+[FEED ITEM 6] @SoloNavigator88 | "Found out my MIL was tracking my car via an AirTag 'to make sure I was safe.'"
+
+# Section 2: CONNECT & DATE (Discovery Profiles)
+# Card Design: Mobile-First "Discovery Card" with 2px Mint Teal Border.
+- Top: Large High-Res Profile Photo.
+- Stats Box: Background Black, Mint Teal outline.
+    - [MY BOUNDARY SCORE]: 94/100 (Animated progress bar).
+    - [CULTURAL SYNC]: High-Conflict Specialist.
+    - [IN-LAW STATUS]: Non-Negotiable NC (No Contact).
+- Bio: "Looking for a partner who prioritizes our peace over Sunday dinner demands. 🥂"
+- Actions: [Message Icon], [Secure Call Icon], [🖕 Report Toxic Behavior].
+
+# Section 3: THE MEDIA ROOM (Videos & Podcasts)
+# Layout: Horizontal scroll or Grid of high-end thumbnails.
+- Category: THERAPIST ADVICE & SCRIPTS
+    - Item: "Setting Boundaries for the Holidays" (Video).
+    - Item: "Effective Scripts for High-Conflict Conversations" (Resource).
+- Category: IN-LAWLESS UNFILTERED (Podcast)
+    - Item: "Ep 1: The Suegra Tóxica & The Art of the No."
+    - Item: "Ep 2: Why 'Family First' is a Trap."
+
+# Section 4: THE BOUTIQUE (Commerce)
+# Layout: Minimalist Grid.
+- Item 1: THE IN-LAW SURVIVAL KIT ($110) - Gold & Marble accents.
+- Item 2: PETTY & PROUD LUXURY MUG ($35) - Matte Black with Mint Teal logo and interior.
+- Item 3: PETTY & PROUD INSULATED TUMBLR ($45) - Matte Black, Mint Teal accents, with straw.
+- Item 4: MY DOG > YOUR MOM T-SHIRT ($35) - Premium White Cotton. 
+    - Design Detail: Illustration of an outlined dog on a mint teal outlined couch.
+
+# Footer:
+- Text: "I N L A W L E S S — Boundaries. Redefined."
+- Features: "Quick Exit" button (Stealth Mode) for private browsing.
+
+# Implementation & UI Tips for Developer:
+1. Reaction Icons: All icons should be Mint Teal on hover. The 🖕 (Middle Finger Emoji) should have a subtle glow effect when clicked.
+2. Logo Formatting: Keep wide tracking (letter-spacing) on the logo I N L A W L E S S across all devices.
+3. Mobile First: The Wall of Shame should feel like a native phone app layout.
+4. Interactive Cards: Implement a slight border-glow or thickness increase when a user hovers over any card.
+5. Privacy: Ensure the "Quick Exit" button immediately redirects to a neutral site like Google or Weather.com.

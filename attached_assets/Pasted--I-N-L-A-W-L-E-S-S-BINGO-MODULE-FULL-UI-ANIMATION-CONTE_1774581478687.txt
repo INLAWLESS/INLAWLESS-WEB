@@ -1,0 +1,65 @@
+# I N L A W L E S S - BINGO MODULE: FULL UI, ANIMATION, & CONTENT SPECIFICATIONS
+
+1. PLACEMENT & ROUTING:
+- CREATE a dedicated page route: /survival-bingo.
+- EMBED a "Mini-Bingo" interactive preview on the Waitlist Success Page (immediately after a user submits their email).
+- HOOK: "Waiting for the launch? Play a round for a Victory Discount."
+
+2. VISUAL STYLING & ADAPTIVE UI:
+- GRID: 5x5 responsive grid. White background, 1px Navy Blue borders for every square.
+- THE "HER" EDITION (THE AUDIT): 
+  - UI Accents: Mint Teal (#00F5D4).
+  - ACTIVE STATE: On click, square turns Solid Mint Teal with a Black 🖕 icon.
+- THE "HIM" EDITION (THE TACTICAL): 
+  - UI Accents: Gunmetal Grey (#4A4A4A).
+  - ACTIVE STATE: On click, square turns Solid Gunmetal Grey with a White 🖕 icon.
+- TYPOGRAPHY: All caps, Bold, centered. High-contrast Black text on White squares.
+
+3. ANIMATION & INTERACTION LOGIC:
+- HAPTIC FEEDBACK: Every square click must trigger a 1.1x scale-up "pop" animation.
+- THE WIN STATE (5 IN A ROW): 
+  - TRIGGER: A full-screen Mint Teal neon pulse animation that radiates from the center.
+  - OVERLAY: Slide up a Navy Blue modal with White text: "BINGO. YOU'VE EARNED A 20-MINUTE TECH BLACKOUT."
+  - CTA BUTTON: [ CLAIM VICTORY DISCOUNT ] -> Redirects to Boutique with [LAWLESS20] applied.
+
+4. FULL CONTENT DATA (DO NOT TRIM OR SUMMARIZE):
+
+[DATA SET: THE AUDIT EDITION - FOR HER]
+1. "Are you sure you're wearing that?"
+2. "I never had that problem with [His Name]."
+3. THE DEEP SIGH (Loud sigh while looking at your decor).
+4. "She’s just being sensitive today."
+5. Unsolicited cooking/parenting "tips."
+6. "In my house, we ALWAYS..."
+7. Rearranging your furniture/kitchen without asking.
+8. THE BACKHANDED COMPLIMENT (e.g., "I love your confidence!").
+9. "When are we getting another grandchild?"
+10. THE VICTIM ACT (Crying the second you set a boundary).
+11. "He used to love my [Dish Name] more."
+12. "I'm just trying to be HELPFUL."
+13. Comparing you to an Ex-Girlfriend.
+14. Bringing up your past "mistakes" at dinner.
+15. The "White Glove" dust check on your shelves.
+(Randomize remaining 10 squares with variations of the above).
+
+[DATA SET: THE TACTICAL EDITION - FOR HIM]
+1. "That’s not how I’d fix it."
+2. "Back in my day, we worked for it."
+3. "You’re letting her run the show."
+4. THE 10-SECOND FIRM HANDSHAKE.
+5. Unsolicited Lawn/Grill/Car critique.
+6. FIL tells the "War Story" where he’s the hero (again).
+7. "When are you getting a REAL house/job?"
+8. The Silent Treatment over a political difference.
+9. "She [Spouse] has always been stubborn."
+10. THE "I'M JUST JOKING" INSULT.
+11. "How much did THAT cost you?"
+12. Taking over the grill without asking.
+13. "Your father never did it that way."
+14. The "Check the Oil" surprise inspection.
+15. Asking for a "favor" that takes 6 hours of your weekend.
+(Randomize remaining 10 squares with variations of the above).
+
+5. DYNAMIC LOGIC:
+- Ensure the 15 specific squares provided are always prioritized in the 5x5 grid generation.
+- Randomize the grid layout on every page refresh to keep it "game-like."
