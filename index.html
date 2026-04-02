@@ -8,9 +8,10 @@
     
     <style>
         :root { 
-            --mint: #43D39E; 
+            /* THE TRUE MINT TEAL */
+            --mint: #55D5C0; 
             --charcoal: #1a1a1a; 
-            --grey: #f4f4f4; 
+            --grey: #f9f9f9; 
         }
 
         body { 
@@ -20,11 +21,9 @@
             margin: 0; 
             padding: 0; 
             overflow-x: hidden; 
-            -webkit-font-smoothing: antialiased; 
             text-align: center;
         }
 
-        /* Premium Logo - All Caps & Spaced */
         .logo { 
             letter-spacing: 0.8em; 
             font-weight: 900; 
@@ -33,14 +32,13 @@
             text-transform: uppercase; 
         }
 
-        /* Hero Styling */
         .hero { padding: 60px 20px; max-width: 900px; margin: 0 auto; }
         
         .intro-text { 
             letter-spacing: 0.3em; 
             font-size: 0.75rem; 
             font-weight: 700; 
-            color: #888; 
+            color: #aaa; 
             text-transform: uppercase; 
             margin-bottom: 10px; 
         }
@@ -57,6 +55,7 @@
         .hero h1 span { 
             font-family: 'Inter', sans-serif; 
             color: var(--mint); 
+            font-weight: 900;
         }
 
         .subheading {
@@ -70,22 +69,22 @@
             color: var(--charcoal);
         }
 
-        /* Input & Buttons */
         #signup-container { margin-bottom: 40px; }
         
         .email-input {
-            padding: 18px; 
-            border-radius: 0; /* Square minimalist look */
-            border: 1px solid #ddd; 
-            width: 280px; 
+            padding: 20px; 
+            border-radius: 0; 
+            border: 1px solid #eee; 
+            width: 300px; 
             text-align: center; 
             outline: none; 
-            font-size: 0.8rem; 
+            font-size: 0.85rem; 
             letter-spacing: 2px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             display: block;
             margin-left: auto;
             margin-right: auto;
+            text-transform: uppercase;
         }
 
         .button-group { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
@@ -93,39 +92,35 @@
         .btn-mint { 
             background: var(--mint); 
             color: white; 
-            padding: 18px 40px; 
-            text-decoration: none; 
+            padding: 20px 50px; 
             font-weight: 900; 
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             letter-spacing: 2px; 
             text-transform: uppercase; 
             border: none; 
             cursor: pointer;
-            transition: 0.3s;
         }
 
         .btn-outline { 
             background: transparent; 
             color: var(--charcoal); 
-            padding: 18px 40px; 
+            padding: 20px 50px; 
             font-weight: 900; 
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             letter-spacing: 2px; 
             text-transform: uppercase; 
             border: 1px solid #ddd; 
             cursor: pointer;
         }
 
-        /* Wall of Shame */
         .shame-gallery { background: var(--grey); padding: 80px 20px; border-radius: 50px 50px 0 0; margin-top: 50px; }
-        .shame-title { text-transform: uppercase; letter-spacing: 0.4em; font-size: 0.8rem; color: #aaa; margin-bottom: 40px; }
+        .shame-title { text-transform: uppercase; letter-spacing: 0.4em; font-size: 0.8rem; color: #bbb; margin-bottom: 40px; }
         .shame-card { background: white; padding: 30px; border-radius: 20px; margin: 0 auto 20px auto; max-width: 600px; border-left: 6px solid var(--mint); text-align: left; }
 
-        /* Boutique */
         .boutique-section { padding: 80px 20px; }
         .product-grid { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; }
         .product-card { width: 280px; text-align: left; }
-        .product-img { width: 100%; height: 350px; background: #f9f9f9; border-radius: 10px; border: 1px solid #eee; }
+        .product-img { width: 100%; height: 350px; background: #fdfdfd; border-radius: 10px; border: 1px solid #eee; }
 
     </style>
 </head>
@@ -165,13 +160,13 @@
         <div class="product-grid">
             <div class="product-card">
                 <div class="product-img"></div>
-                <h3 style="text-transform: uppercase; font-size: 0.8rem; margin: 15px 0 5px 0;">The Holiday Survival Kit</h3>
-                <p style="font-weight: bold;">$45.00</p>
+                <h3 style="text-transform: uppercase; font-size: 0.8rem; margin: 15px 0 5px 0; letter-spacing: 1px;">The Holiday Survival Kit</h3>
+                <p style="font-weight: bold; color: var(--charcoal);">$45.00</p>
             </div>
             <div class="product-card">
                 <div class="product-img"></div>
-                <h3 style="text-transform: uppercase; font-size: 0.8rem; margin: 15px 0 5px 0;">The Wedding Day Shield</h3>
-                <p style="font-weight: bold;">$60.00</p>
+                <h3 style="text-transform: uppercase; font-size: 0.8rem; margin: 15px 0 5px 0; letter-spacing: 1px;">The Wedding Day Shield</h3>
+                <p style="font-weight: bold; color: var(--charcoal);">$60.00</p>
             </div>
         </div>
     </section>
@@ -194,9 +189,9 @@
             })
             .then(() => {
                 document.getElementById('signup-container').innerHTML = 
-                    "<div style='animation: fadeIn 1s; padding: 30px; border: 1px solid var(--mint); color: var(--mint); font-weight: 900; text-transform: uppercase; letter-spacing: 2px;'>" +
+                    "<div style='animation: fadeIn 1s; padding: 40px; border: 2px solid var(--mint); color: var(--mint); font-weight: 900; text-transform: uppercase; letter-spacing: 2px;'>" +
                     "Welcome to the family you actually wanted.<br>" +
-                    "<span style='color: #888; font-size: 0.7rem; font-weight: 400;'>Your Boundary Score is being calculated...</span></div>";
+                    "<span style='color: #888; font-size: 0.75rem; font-weight: 400; letter-spacing: 1px;'>Your Boundary Score is being calculated...</span></div>";
             })
             .catch(() => alert("Error connecting. Try again."));
         }
