@@ -10,63 +10,45 @@
         :root { --mint: #55D5C0; --navy: #050a26; --charcoal: #1a1a1a; --grey: #f9f9f9; }
         body { background: #ffffff; color: var(--charcoal); font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; text-align: center; scroll-behavior: smooth; }
 
-        /* --- HEADER & NAV --- */
+        /* --- STICKY NAV --- */
         .header { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 25px 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); display: flex; justify-content: space-around; align-items: center; border-bottom: 0.5px solid rgba(0,0,0,0.05); }
         .nav-status { color: var(--mint); font-weight: 900; font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; }
         .menu-btn { font-size: 0.7rem; cursor: pointer; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; }
-        .nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #ffffff; z-index: 2000; display: none; flex-direction: column; justify-content: center; align-items: center; gap: 25px; }
-        .nav-overlay a { text-decoration: none; color: var(--charcoal); font-weight: 900; font-size: 1rem; letter-spacing: 4px; text-transform: uppercase; }
 
-        /* --- HERO --- */
+        /* --- LOGO & HERO --- */
         .logo-container { padding: 140px 20px 10px 20px; }
         .logo { letter-spacing: 0.6em; font-weight: 900; font-size: 1rem; text-transform: uppercase; }
-        .hero { padding: 40px 20px 60px 20px; }
+        .hero { padding: 40px 20px 80px 20px; }
         .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; line-height: 1.1; margin-bottom: 30px; text-transform: uppercase; }
         .hero h1 span { color: var(--mint); text-shadow: 0 0 15px rgba(85, 213, 192, 0.3); }
+
         .input-box { width: 100%; max-width: 300px; padding: 22px; border: 1px solid #eee; margin-bottom: 15px; outline: none; font-size: 0.8rem; letter-spacing: 1px; box-sizing: border-box; }
         .btn-mint { width: 100%; max-width: 300px; background: var(--mint); color: white; padding: 22px; font-weight: 900; text-transform: uppercase; border: none; letter-spacing: 2px; }
 
-        /* --- ROADMAP SECTION (NAVY) --- */
-        .roadmap { background: var(--navy); color: white; padding: 100px 30px; text-align: left; }
+        /* --- ROADMAP SECTIONS (NAVY BASE) --- */
+        .roadmap-container { background: var(--navy); color: white; padding: 80px 30px; text-align: left; }
         .section-tag { color: var(--mint); font-size: 0.6rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 25px; display: block; font-weight: 900; }
-        .feature-item { margin-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px; }
-        .feature-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; display: block; margin-bottom: 10px; color: #fff; }
-        .feature-desc { font-size: 0.8rem; line-height: 1.8; color: #b0b5cc; }
+        
+        .feature-block { margin-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 30px; }
+        .feature-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #fff; margin-bottom: 15px; line-height: 1.1; }
+        .feature-desc { font-size: 0.9rem; line-height: 1.8; color: #b0b5cc; margin: 0; }
 
-        /* --- RESOURCES SECTION (CLEAN GRID) --- */
-        .resources { background: #ffffff; padding: 100px 20px; text-align: center; border-bottom: 1px solid #eee; }
-        .resource-grid { display: flex; flex-direction: column; gap: 20px; max-width: 500px; margin: 0 auto; }
-        .resource-card { padding: 25px; border: 1px solid #eee; text-align: left; position: relative; overflow: hidden; }
-        .resource-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin: 0 0 10px 0; }
-        .resource-card p { font-size: 0.8rem; color: #888; line-height: 1.6; margin: 0; }
-        .resource-card::after { content: '→'; position: absolute; bottom: 20px; right: 20px; color: var(--mint); font-weight: 900; }
-
-        /* --- MEDIA / STUDIO SECTION (DARK MODE) --- */
-        .studio { background: var(--charcoal); color: white; padding: 100px 30px; text-align: left; }
-        .media-player { width: 100%; height: 200px; background: #222; border-radius: 10px; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-        .media-player span { color: var(--mint); font-size: 0.6rem; letter-spacing: 3px; font-weight: 900; }
-        .media-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: white; margin-bottom: 15px; display: block; }
-        .media-desc { font-size: 0.8rem; color: #666; line-height: 1.8; }
+        /* --- ALTERNATING WHITE SECTION --- */
+        .white-section { background: #ffffff; color: var(--charcoal); padding: 80px 30px; text-align: left; border-bottom: 1px solid #eee; }
+        .white-section .feature-title { color: var(--charcoal); }
+        .white-section .feature-desc { color: #888; }
 
         /* --- BOUTIQUE CARDS --- */
-        .boutique-section { padding: 80px 20px; background: var(--grey); }
-        .product-card { background: white; width: 100%; max-width: 320px; border-radius: 20px; margin: 0 auto 30px auto; padding: 25px; text-align: left; border: 1px solid #eee; }
+        .boutique-section { padding: 80px 20px; background: var(--grey); text-align: center; }
+        .product-card { background: white; width: 100%; max-width: 320px; border-radius: 20px; margin: 0 auto 30px auto; padding: 30px; text-align: left; border: 1px solid #eee; }
 
     </style>
 </head>
 <body>
 
-    <div id="navOverlay" class="nav-overlay">
-        <div style="position: absolute; top: 30px; right: 30px; font-weight: 900; cursor: pointer; letter-spacing: 2px; font-size: 0.7rem;" onclick="toggleMenu()">CLOSE</div>
-        <a href="#about" onclick="toggleMenu()">ROADMAP</a>
-        <a href="#resources" onclick="toggleMenu()">RESOURCES</a>
-        <a href="#studio" onclick="toggleMenu()">STUDIO</a>
-        <a href="#boutique" onclick="toggleMenu()">BOUTIQUE</a>
-    </div>
-
     <header class="header">
         <div class="nav-status">COMING SOON</div>
-        <div class="menu-btn" onclick="toggleMenu()">MENU</div>
+        <div class="menu-btn">MENU</div>
     </header>
 
     <div class="logo-container">
@@ -81,45 +63,56 @@
         </div>
     </section>
 
-    <section id="about" class="roadmap">
+    <section class="roadmap-container">
         <span class="section-tag">APP ROADMAP</span>
-        <div class="feature-item">
-            <span class="feature-title">Connect & Date</span>
-            <p class="feature-desc">Personalized profiles with music and "Top 8" lists. Dating with boundaries that are actually respected.</p>
-        </div>
-        <div class="feature-item">
-            <span class="feature-title">The Wall of Shame</span>
-            <p class="feature-desc">Vent, laugh, and exchange in-law horror stories in a private, moderated community.</p>
-        </div>
-    </section>
 
-    <section id="resources" class="resources">
-        <span class="section-tag" style="color: #bbb;">RESOURCE VAULT</span>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; text-transform: uppercase; margin-bottom: 40px;">Protect Your <br>Peace</h2>
-        <div class="resource-grid">
-            <div class="resource-card">
-                <h3>Boundary Blueprints</h3>
-                <p>Expert-vetted frameworks for setting limits without the guilt.</p>
-            </div>
-            <div class="resource-card">
-                <h3>The Holiday Exit Script</h3>
-                <p>Word-for-word responses for intrusive questions and unsolicited advice.</p>
-            </div>
+        <div class="feature-block">
+            <h2 class="feature-title">Connect with Community</h2>
+            <p class="feature-desc">Personalized profiles to connect and share daily posts. Showcase your "Top 8" Found Family and build a life free from uninvited drama.</p>
+        </div>
+
+        <div class="feature-block">
+            <h2 class="feature-title">Date Your Way</h2>
+            <p class="feature-desc">No parents = No In-Laws. Dating with boundaries that are actually expected and respected from the very first message.</p>
+        </div>
+
+        <div class="feature-block">
+            <h2 class="feature-title">Wall of Shame</h2>
+            <p class="feature-desc">The ultimate space to vent, laugh, give and get advice, and share those unbelievable in-law horror stories with people who get it.</p>
         </div>
     </section>
 
-    <section id="studio" class="studio">
-        <span class="section-tag">THE STUDIO</span>
-        <div class="media-player"><span>PREVIEWING PODCAST EP. 04</span></div>
-        <span class="media-title">I N L A W L E S S: The Podcast</span>
-        <p class="media-desc">Exclusive audio and video content. Weekly deep-dives into family dynamics with a heavy dose of dark humor.</p>
+    <section class="white-section">
+        <span class="section-tag">MEDIA & KNOWLEDGE</span>
+
+        <div class="feature-block">
+            <h2 class="feature-title">Podcast & Content</h2>
+            <p class="feature-desc">Exclusive audio and video deep-dives into family dynamics, boundary architecting, and a heavy dose of dark humor to protect your peace.</p>
+        </div>
+
+        <div class="feature-block">
+            <h2 class="feature-title">Resources</h2>
+            <p class="feature-desc">Access expert-vetted 'Boundary Blueprints' and 'Exit Scripts' designed to handle high-stress gatherings without the guilt.</p>
+        </div>
     </section>
 
-    <section id="boutique" class="boutique-section">
-        <span class="section-tag" style="color: #bbb;">THE BOUTIQUE</span>
+    <section class="roadmap-container">
+        <span class="section-tag">PREMIUM EXPERIENCE</span>
+
+        <div class="feature-block">
+            <h2 class="feature-title">Additional Features</h2>
+            <p class="feature-desc">
+                • <strong>AI Inlawless Avatar:</strong> Your personal mentor for dating advice, icebreakers, and profile personalization.<br><br>
+                • <strong>Gifting System:</strong> Buy for others from their boutique wishlists. Receive a gift, pay it forward. ❤️
+            </p>
+        </div>
+    </section>
+
+    <section class="boutique-section">
+        <span class="section-tag">THE BOUTIQUE</span>
         <div class="product-card">
-            <h3 style="text-transform: uppercase; font-size: 0.8rem; margin-bottom: 10px;">The Survival Kit</h3>
-            <p style="font-weight: bold; margin-bottom: 20px;">$45.00</p>
+            <h2 class="feature-title" style="font-size: 1.2rem;">The Survival Kit</h2>
+            <p style="font-weight: bold; margin: 10px 0 20px 0;">$45.00</p>
             <button class="btn-mint" style="padding: 15px;">VIEW DETAILS</button>
         </div>
     </section>
@@ -129,14 +122,10 @@
     </form>
 
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('navOverlay');
-            menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
-        }
         function submitToWaitlist() {
             const email = document.getElementById('user-email').value;
             if(!email.includes('@')) return alert("Enter a valid email.");
-            document.getElementById('signup-container').innerHTML = "<div style='color: var(--mint); font-weight: 900; padding: 20px; border: 1px solid var(--mint);'>WELCOME TO THE FAMILY.</div>";
+            document.getElementById('signup-container').innerHTML = "<div style='color: var(--mint); font-weight: 900; padding: 20px; border: 2px solid var(--mint);'>WELCOME TO THE FAMILY.</div>";
         }
     </script>
 </body>
