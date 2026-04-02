@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>I N L A W L E S S</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
@@ -11,7 +11,7 @@
             --mint: #55D5C0; 
             --neon-core: #33ffcc;
             --charcoal: #1a1a1a; 
-            --grey: #f9f9f9; 
+            --light-grey: #f4f4f4; 
         }
 
         body { 
@@ -22,200 +22,171 @@
             padding: 0; 
             overflow-x: hidden; 
             text-align: center;
-            scroll-behavior: smooth;
         }
 
-        /* --- STICKY NAVIGATION --- */
-        .navbar {
+        /* --- NEW NAVIGATION (MOBILE FRIENDLY) --- */
+        .header {
             position: sticky;
             top: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: white;
             z-index: 1000;
-            border-bottom: 1px solid #f0f0f0;
-            padding: 15px 0;
+            padding: 15px 20px;
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
         }
-
-        .nav-item {
-            text-decoration: none;
-            color: #888;
-            font-size: 0.65rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .nav-item:hover { color: var(--mint); }
 
         .nav-timer {
             color: var(--mint);
+            font-weight: 900;
+            font-size: 0.65rem;
+            letter-spacing: 1px;
             border: 1px solid var(--mint);
-            padding: 4px 10px;
+            padding: 5px 10px;
             border-radius: 20px;
-            font-size: 0.6rem;
+            text-transform: uppercase;
         }
 
-        /* --- LOGO & HERO --- */
+        /* The Burger Menu Icon */
+        .menu-icon {
+            font-size: 1.2rem;
+            cursor: pointer;
+            font-weight: 900;
+            letter-spacing: -2px;
+        }
+
+        /* --- LOGO FIX (NO LEAKING) --- */
+        .logo-container { padding: 40px 20px 20px 20px; }
         .logo { 
-            letter-spacing: 0.8em; 
+            letter-spacing: 0.5em; /* Reduced for mobile */
             font-weight: 900; 
-            font-size: 1.2rem; 
-            padding: 40px 0 20px 0; 
-            text-transform: uppercase; 
+            font-size: 1.1rem; 
+            text-transform: uppercase;
+            display: inline-block;
+            white-space: nowrap;
         }
 
-        .hero { padding: 40px 20px 80px 20px; max-width: 900px; margin: 0 auto; }
+        /* --- HERO AREA --- */
+        .hero { padding: 40px 20px 60px 20px; max-width: 100%; box-sizing: border-box; }
         
         .intro-text { 
-            letter-spacing: 0.3em; 
-            font-size: 0.75rem; 
-            font-weight: 700; 
-            color: #aaa; 
+            letter-spacing: 0.2em; 
+            font-size: 0.7rem; 
+            color: #999; 
             text-transform: uppercase; 
-            margin-bottom: 15px; 
+            margin-bottom: 10px; 
         }
 
         .hero h1 { 
             font-family: 'Playfair Display', serif; 
-            font-size: clamp(2.5rem, 8vw, 4.2rem); 
-            line-height: 1.1; 
-            margin: 0 auto 30px auto; 
-            font-weight: 900;
+            font-size: 2.8rem; /* Scaled for mobile */
+            line-height: 1; 
+            margin: 0 auto 25px auto; 
             text-transform: uppercase;
         }
 
         .hero h1 span { 
             font-family: 'Inter', sans-serif; 
             color: var(--mint); 
-            font-weight: 900;
-            text-shadow: 0 0 10px rgba(85, 213, 192, 0.6);
+            text-shadow: 0 0 10px rgba(85, 213, 192, 0.4);
         }
 
         .subheading {
-            max-width: 750px;
-            margin: 0 auto 45px auto;
-            font-size: 0.85rem;
-            line-height: 1.8;
-            letter-spacing: 1.5px;
+            font-size: 0.75rem;
+            line-height: 1.6;
+            letter-spacing: 1px;
             text-transform: uppercase;
             font-weight: 700;
-            color: var(--charcoal);
+            margin-bottom: 40px;
+            padding: 0 10px;
         }
 
-        /* --- SIGN UP SECTION --- */
-        #signup-container { margin-bottom: 50px; }
-        .email-input {
-            padding: 20px; border-radius: 0; border: 1px solid #eee; width: 300px; 
-            text-align: center; outline: none; font-size: 0.85rem; letter-spacing: 2px;
-            margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto; text-transform: uppercase;
+        /* --- INPUTS & BUTTONS --- */
+        .input-box {
+            width: 100%;
+            max-width: 300px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            box-sizing: border-box;
         }
 
         .btn-mint { 
-            background: var(--mint); color: white; padding: 20px 50px; font-weight: 900; 
-            font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; border: none; 
-            cursor: pointer; box-shadow: 0 0 15px rgba(85, 213, 192, 0.7); animation: neonPulse 2.5s infinite;
+            width: 100%;
+            max-width: 300px;
+            background: var(--mint); 
+            color: white; 
+            padding: 20px; 
+            font-weight: 900; 
+            font-size: 0.8rem;
+            letter-spacing: 2px; 
+            text-transform: uppercase; 
+            border: none;
+            box-shadow: 0 10px 20px rgba(85, 213, 192, 0.3);
         }
 
-        @keyframes neonPulse {
-            0% { box-shadow: 0 0 15px rgba(85, 213, 192, 0.6); transform: scale(1); }
-            50% { box-shadow: 0 0 25px rgba(85, 213, 192, 0.9), 0 0 10px var(--neon-core); transform: scale(1.02); }
-            100% { box-shadow: 0 0 15px rgba(85, 213, 192, 0.6); transform: scale(1); }
-        }
-
-        /* --- WALL OF SHAME & BOUTIQUE --- */
-        .shame-gallery { background: var(--grey); padding: 80px 20px; border-radius: 50px 50px 0 0; margin-top: 50px; }
-        .shame-title { text-transform: uppercase; letter-spacing: 0.4em; font-size: 0.8rem; color: #bbb; margin-bottom: 40px; }
-        .shame-card { background: white; padding: 35px; border-radius: 20px; margin: 0 auto 20px auto; max-width: 600px; border-left: 6px solid var(--mint); text-align: left; }
-        
-        .boutique-section { padding: 80px 20px; }
-        .product-grid { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; }
-        .product-card { width: 280px; text-align: left; }
-        .product-img { width: 100%; height: 350px; background: #fdfdfd; border-radius: 15px; border: 1px solid #eee; }
+        /* --- SECTIONS --- */
+        .shame-gallery { background: var(--light-grey); padding: 60px 20px; }
+        .shame-card { background: white; padding: 25px; border-radius: 15px; margin-bottom: 15px; text-align: left; border-left: 5px solid var(--mint); font-size: 0.9rem; }
 
     </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <span class="nav-item nav-timer">COMING SOON: <span id="timer">00:00:00</span></span>
-        <a href="#" class="nav-item">ABOUT US</a>
-        <a href="#" class="nav-item">CONNECT</a>
-        <a href="#" class="nav-item">DATE</a>
-        <a href="#shame" class="nav-item">WALL OF SHAME</a>
-        <a href="#boutique" class="nav-item">BOUTIQUE</a>
-        <a href="#contact" class="nav-item">CONTACT US</a>
-    </nav>
+    <header class="header">
+        <div class="nav-timer">COMING SOON: <span id="timer">00:00:00</span></div>
+        <div class="menu-icon">MENU</div>
+    </header>
 
-    <div class="logo">I N L A W L E S S</div>
+    <div class="logo-container">
+        <div class="logo">I N L A W L E S S</div>
+    </div>
 
     <section class="hero">
         <div class="intro-text">WELCOME TO</div>
         <h1>THE FAMILY YOU <br>ACTUALLY <span>WANT.</span></h1>
-        <p class="subheading">JOIN OUR I N L A W L E S S INNER CIRCLE FOR UPDATES AND FIRST ACCESS TO OUR 'IN-LAW SURVIVAL KITS'.</p>
+        <p class="subheading">JOIN OUR INNER CIRCLE FOR UPDATES AND FIRST ACCESS TO OUR 'IN-LAW SURVIVAL KITS'.</p>
 
         <div id="signup-container">
-            <input type="email" id="user-email" class="email-input" placeholder="YOUR EMAIL ADDRESS">
+            <input type="email" id="user-email" class="input-box" placeholder="YOUR EMAIL ADDRESS">
             <button class="btn-mint" onclick="submitToWaitlist()">SIGN UP</button>
         </div>
     </section>
 
-    <section id="shame" class="shame-gallery">
-        <div class="shame-title">The Wall of Shame</div>
-        <div class="shame-card"><p>"My Mother-in-Law announced her pregnancy at my wedding."</p></div>
-        <div class="shame-card"><p>"His sister has a key to our bedroom. He thinks I'm dramatic."</p></div>
+    <section class="shame-gallery">
+        <div style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.7rem; color: #bbb; margin-bottom: 30px;">The Wall of Shame</div>
+        <div class="shame-card">"My Mother-in-Law announced her pregnancy at my wedding."</div>
+        <div class="shame-card">"His sister has a key to our bedroom. He thinks I'm dramatic."</div>
     </section>
 
-    <section id="boutique" class="boutique-section">
-        <h2 class="shame-title">The In-Law Survival Boutique</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="product-img"></div>
-                <h3 style="text-transform: uppercase; font-size: 0.8rem; margin: 15px 0 5px 0; letter-spacing: 1px;">The Holiday Survival Kit</h3>
-                <p style="font-weight: bold;">$45.00</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" style="padding: 60px 20px; background: #1a1a1a; color: white;">
-        <div class="logo" style="padding: 0; margin-bottom: 20px;">I N L A W L E S S</div>
-        <p style="font-size: 0.7rem; letter-spacing: 2px; color: #666;">SUPPORT@INLAWLESS.COM</p>
-    </section>
+    <form name="waitlist" method="POST" data-netlify="true" hidden>
+        <input type="email" name="email">
+    </form>
 
     <script>
-        // COUNTDOWN TIMER LOGIC
+        // Timer Logic
         function startTimer(duration, display) {
             var timer = duration, hours, minutes, seconds;
             setInterval(function () {
-                hours = parseInt(timer / 3600, 10);
-                minutes = parseInt((timer % 3600) / 60, 10);
-                seconds = parseInt(timer % 60, 10);
-
-                hours = hours < 10 ? "0" + hours : hours;
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
-
-                display.textContent = hours + ":" + minutes + ":" + seconds;
-
-                if (--timer < 0) { timer = duration; }
+                hours = Math.floor(timer / 3600);
+                minutes = Math.floor((timer % 3600) / 60);
+                seconds = Math.floor(timer % 60);
+                display.textContent = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
+                if (--timer < 0) timer = duration;
             }, 1000);
         }
         window.onload = function () {
-            var fiveHours = 60 * 60 * 5;
-            display = document.querySelector('#timer');
-            startTimer(fiveHours, display);
+            startTimer(60 * 60 * 5, document.querySelector('#timer'));
         };
 
-        // Submit Logic (Stayed the same)
         function submitToWaitlist() {
             const email = document.getElementById('user-email').value;
-            if(!email || !email.includes('@')) return alert("Please enter a valid email.");
-            document.getElementById('signup-container').innerHTML = "<div style='color: var(--mint); font-weight: 900;'>WELCOME TO THE FAMILY.</div>";
+            if(!email.includes('@')) return alert("Enter a valid email.");
+            document.getElementById('signup-container').innerHTML = "<div style='color: var(--mint); font-weight: 900; padding: 20px; border: 1px solid var(--mint);'>WELCOME TO THE FAMILY.</div>";
         }
     </script>
 </body>
