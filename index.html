@@ -42,29 +42,37 @@
         .shame-title { text-transform: uppercase; letter-spacing: 0.4em; font-size: 0.9rem; color: #aaa; margin-bottom: 40px; }
         .shame-card { background: white; padding: 30px; border-radius: 25px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); border-left: 6px solid var(--mint); text-align: left; max-width: 600px; margin-left: auto; margin-right: auto; }
         .shame-card p { font-style: italic; color: #555; line-height: 1.6; margin: 0; }
+
+    
+    
+    
     </style>
 </head>
 <body>
 
     <div class="logo">I N L A W L E S S</div>
-
+<form name="waitlist" method="POST" data-netlify="true" hidden>
+  <input type="email" name="email">
+</form>
     <div class="main-content">
         <section class="hero">
     <h1>THE FAMILY YOU <br><span>ACTUALLY WANT.</span></h1>
-    <p>Baggage-free dating for those who value their peace. Premium boundaries, no guilt trips.</p>
+    <p>Baggage-free dating for those who value their peace.</p>
     
     <div id="signup-container" style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
         <input type="email" id="user-email" placeholder="YOUR EMAIL ADDRESS" 
                style="padding: 20px; border-radius: 50px; border: 1px solid #eee; width: 280px; text-align: center; outline: none; font-size: 0.9rem; letter-spacing: 1px;">
         
         <button class="btn-glow" onclick="submitToWaitlist()">SIGN UP NOW</button>
-    </div>
 
+        
     <form name="waitlist" method="POST" data-netlify="true" hidden>
       <input type="email" name="email">
     </form>
-</section>
+        
     </div>
+</section>
+
 
     <section class="shame-gallery">
         <div class="shame-title">The Wall of Shame</div>
