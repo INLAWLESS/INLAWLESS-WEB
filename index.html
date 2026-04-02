@@ -50,10 +50,20 @@
 
     <div class="main-content">
         <section class="hero">
-            <h1>THE FAMILY YOU <br><span>ACTUALLY WANT.</span></h1>
-            <p>Baggage-free dating for those who value their peace. Premium boundaries, no guilt trips.</p>
-            <button class="btn-glow" onclick="location.href='mailto:waitlist@inlawless.com'">SIGN UP NOW</button>
-        </section>
+    <h1>THE FAMILY YOU <br><span>ACTUALLY WANT.</span></h1>
+    <p>Baggage-free dating for those who value their peace. Premium boundaries, no guilt trips.</p>
+    
+    <div id="signup-container" style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
+        <input type="email" id="user-email" placeholder="YOUR EMAIL ADDRESS" 
+               style="padding: 20px; border-radius: 50px; border: 1px solid #eee; width: 280px; text-align: center; outline: none; font-size: 0.9rem; letter-spacing: 1px;">
+        
+        <button class="btn-glow" onclick="submitToWaitlist()">SIGN UP NOW</button>
+    </div>
+
+    <form name="waitlist" method="POST" data-netlify="true" hidden>
+      <input type="email" name="email">
+    </form>
+</section>
     </div>
 
     <section class="shame-gallery">
@@ -67,6 +77,28 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === "Escape") { window.location.replace("https://www.google.com"); }
         });
+
+function submitToWaitlist() {
+    const email = document.getElementById('user-email').value;
+    if(!email || !email.includes('@')) return alert("Please enter a valid email to join the family.");
+
+    // This sends the data to your Netlify "Database"
+    fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ "form-name": "waitlist", "email": email }).toString(),
+    })
+    .then(() => {
+        // The Wow Factor: Hiding the form and showing the sassy welcome
+        document.getElementById('signup-container').innerHTML = 
+            "<div style='animation: fadeIn 1s; padding: 20px; border: 1px solid var(--mint); border-radius: 20px; text-align: center;'>" +
+            "<span style='font-weight: 900; color: var(--mint); letter-spacing: 2px; text-transform: uppercase;'>Welcome to the family you actually wanted.</span><br><br>" +
+            "<span style='color: #888; font-size: 0.85rem;'>YOUR BOUNDARY SCORE IS BEING CALCULATED...</span></div>";
+    })
+    .catch((error) => alert("Something went wrong. Please try again."));
+}
+
+        
     </script>
 
 </body>
