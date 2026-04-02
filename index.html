@@ -7,66 +7,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
     <style>
-        :root { 
-            --mint: #55D5C0; 
-            --navy: #050a26; 
-            --charcoal: #1a1a1a; 
-        }
+        :root { --mint: #55D5C0; --navy: #050a26; --charcoal: #1a1a1a; --grey: #f9f9f9; }
         body { background: #ffffff; color: var(--charcoal); font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; text-align: center; scroll-behavior: smooth; }
 
-        /* --- NAVIGATION --- */
-        .header { position: sticky; top: 0; background: white; z-index: 1000; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
-        .nav-timer { color: var(--mint); font-weight: 900; font-size: 0.6rem; letter-spacing: 1px; border: 1px solid var(--mint); padding: 5px 10px; border-radius: 20px; text-transform: uppercase; }
-        .menu-btn { font-size: 1rem; cursor: pointer; font-weight: 900; letter-spacing: -1px; text-transform: uppercase; }
-
-        .nav-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.98); z-index: 2000; display: none; 
-            flex-direction: column; justify-content: center; align-items: center; gap: 30px;
-        }
-        .nav-overlay a { text-decoration: none; color: var(--charcoal); font-weight: 900; font-size: 1.2rem; letter-spacing: 5px; text-transform: uppercase; }
+        /* --- HEADER & NAV --- */
+        .header { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 25px 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); display: flex; justify-content: space-around; align-items: center; border-bottom: 0.5px solid rgba(0,0,0,0.05); }
+        .nav-status { color: var(--mint); font-weight: 900; font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; }
+        .menu-btn { font-size: 0.7rem; cursor: pointer; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; }
+        .nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #ffffff; z-index: 2000; display: none; flex-direction: column; justify-content: center; align-items: center; gap: 25px; }
+        .nav-overlay a { text-decoration: none; color: var(--charcoal); font-weight: 900; font-size: 1rem; letter-spacing: 4px; text-transform: uppercase; }
 
         /* --- HERO --- */
-        .logo-container { padding: 40px 20px 10px 20px; }
-        .logo { letter-spacing: 0.5em; font-weight: 900; font-size: 1.1rem; text-transform: uppercase; }
+        .logo-container { padding: 140px 20px 10px 20px; }
+        .logo { letter-spacing: 0.6em; font-weight: 900; font-size: 1rem; text-transform: uppercase; }
         .hero { padding: 40px 20px 60px 20px; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; line-height: 1; margin: 0 auto 25px auto; text-transform: uppercase; }
-        .hero h1 span { color: var(--mint); text-shadow: 0 0 10px rgba(85, 213, 192, 0.4); }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; line-height: 1.1; margin-bottom: 30px; text-transform: uppercase; }
+        .hero h1 span { color: var(--mint); text-shadow: 0 0 15px rgba(85, 213, 192, 0.3); }
+        .input-box { width: 100%; max-width: 300px; padding: 22px; border: 1px solid #eee; margin-bottom: 15px; outline: none; font-size: 0.8rem; letter-spacing: 1px; box-sizing: border-box; }
+        .btn-mint { width: 100%; max-width: 300px; background: var(--mint); color: white; padding: 22px; font-weight: 900; text-transform: uppercase; border: none; letter-spacing: 2px; }
 
-        /* --- BUTTONS --- */
-        .input-box { width: 100%; max-width: 300px; padding: 20px; border: 1px solid #ddd; margin-bottom: 15px; text-align: center; }
-        .btn-mint { width: 100%; max-width: 300px; background: var(--mint); color: white; padding: 20px; font-weight: 900; text-transform: uppercase; border: none; }
+        /* --- ROADMAP SECTION (NAVY) --- */
+        .roadmap { background: var(--navy); color: white; padding: 100px 30px; text-align: left; }
+        .section-tag { color: var(--mint); font-size: 0.6rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 25px; display: block; font-weight: 900; }
+        .feature-item { margin-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px; }
+        .feature-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; display: block; margin-bottom: 10px; color: #fff; }
+        .feature-desc { font-size: 0.8rem; line-height: 1.8; color: #b0b5cc; }
 
-        /* --- NEW ABOUT US (NAVY SECTION) --- */
-        .about-navy { background: var(--navy); color: white; padding: 80px 30px; text-align: left; }
-        .section-tag { color: var(--mint); font-size: 0.6rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; display: block; font-weight: 900; }
-        .about-navy h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase; line-height: 1.1; }
-        .about-navy p { font-size: 0.95rem; line-height: 1.8; color: #b0b5cc; max-width: 500px; margin-bottom: 30px; letter-spacing: 0.5px; }
+        /* --- RESOURCES SECTION (CLEAN GRID) --- */
+        .resources { background: #ffffff; padding: 100px 20px; text-align: center; border-bottom: 1px solid #eee; }
+        .resource-grid { display: flex; flex-direction: column; gap: 20px; max-width: 500px; margin: 0 auto; }
+        .resource-card { padding: 25px; border: 1px solid #eee; text-align: left; position: relative; overflow: hidden; }
+        .resource-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin: 0 0 10px 0; }
+        .resource-card p { font-size: 0.8rem; color: #888; line-height: 1.6; margin: 0; }
+        .resource-card::after { content: '→'; position: absolute; bottom: 20px; right: 20px; color: var(--mint); font-weight: 900; }
 
-        /* --- QUOTE SECTION (PURE WHITE) --- */
-        .quote-section { background: #ffffff; padding: 100px 30px; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
-        .quote-accent { width: 40px; height: 3px; background: var(--mint); margin: 0 auto 30px auto; }
-        .quote-text { font-family: 'Playfair Display', serif; font-size: 1.8rem; line-height: 1.4; max-width: 600px; margin: 0 auto; color: var(--charcoal); font-weight: 900; }
+        /* --- MEDIA / STUDIO SECTION (DARK MODE) --- */
+        .studio { background: var(--charcoal); color: white; padding: 100px 30px; text-align: left; }
+        .media-player { width: 100%; height: 200px; background: #222; border-radius: 10px; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .media-player span { color: var(--mint); font-size: 0.6rem; letter-spacing: 3px; font-weight: 900; }
+        .media-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: white; margin-bottom: 15px; display: block; }
+        .media-desc { font-size: 0.8rem; color: #666; line-height: 1.8; }
 
-        /* --- ECOSYSTEM SECTION --- */
-        .ecosystem { background: var(--navy); color: white; padding: 80px 30px; text-align: left; }
-        .ecosystem p { font-size: 0.95rem; line-height: 1.8; color: #b0b5cc; max-width: 500px; }
-        .highlight-quote { border-left: 3px solid var(--mint); padding-left: 20px; margin-top: 40px; font-style: italic; font-size: 1.2rem; font-weight: 700; }
+        /* --- BOUTIQUE CARDS --- */
+        .boutique-section { padding: 80px 20px; background: var(--grey); }
+        .product-card { background: white; width: 100%; max-width: 320px; border-radius: 20px; margin: 0 auto 30px auto; padding: 25px; text-align: left; border: 1px solid #eee; }
 
     </style>
 </head>
 <body>
 
     <div id="navOverlay" class="nav-overlay">
-        <div style="position: absolute; top: 20px; right: 25px; font-weight: 900; cursor: pointer;" onclick="toggleMenu()">CLOSE</div>
-        <a href="#about" onclick="toggleMenu()">ABOUT US</a>
-        <a href="#shame" onclick="toggleMenu()">WALL OF SHAME</a>
+        <div style="position: absolute; top: 30px; right: 30px; font-weight: 900; cursor: pointer; letter-spacing: 2px; font-size: 0.7rem;" onclick="toggleMenu()">CLOSE</div>
+        <a href="#about" onclick="toggleMenu()">ROADMAP</a>
+        <a href="#resources" onclick="toggleMenu()">RESOURCES</a>
+        <a href="#studio" onclick="toggleMenu()">STUDIO</a>
         <a href="#boutique" onclick="toggleMenu()">BOUTIQUE</a>
-        <a href="#contact" onclick="toggleMenu()">CONTACT US</a>
     </div>
 
     <header class="header">
-        <div class="nav-timer">COMING SOON: <span id="timer">00:00:00</span></div>
+        <div class="nav-status">COMING SOON</div>
         <div class="menu-btn" onclick="toggleMenu()">MENU</div>
     </header>
 
@@ -77,26 +76,52 @@
     <section class="hero">
         <h1>THE FAMILY YOU <br>ACTUALLY <span>WANT.</span></h1>
         <div id="signup-container">
-            <input type="email" id="user-email" class="input-box" placeholder="YOUR EMAIL ADDRESS">
-            <button class="btn-mint" onclick="submitToWaitlist()">SIGN UP</button>
+            <input type="email" id="user-email" class="input-box" placeholder="ENTER EMAIL ADDRESS">
+            <button class="btn-mint" onclick="submitToWaitlist()">JOIN THE FAMILY</button>
         </div>
     </section>
 
-    <section id="about" class="about-navy">
-        <span class="section-tag">ABOUT US</span>
-        <h2>ABOUT <br>I N L A W L E S S</h2>
-        <p>I N L A W L E S S is a premium space for adults navigating life independently—without the unsolicited opinions of parents or the uninvited drama of in-laws.</p>
+    <section id="about" class="roadmap">
+        <span class="section-tag">APP ROADMAP</span>
+        <div class="feature-item">
+            <span class="feature-title">Connect & Date</span>
+            <p class="feature-desc">Personalized profiles with music and "Top 8" lists. Dating with boundaries that are actually respected.</p>
+        </div>
+        <div class="feature-item">
+            <span class="feature-title">The Wall of Shame</span>
+            <p class="feature-desc">Vent, laugh, and exchange in-law horror stories in a private, moderated community.</p>
+        </div>
     </section>
 
-    <section class="quote-section">
-        <div class="quote-accent"></div>
-        <div class="quote-text">"Whether you've had to trim your family tree lately or life did the pruning for you, this is the place for you."</div>
-        <div class="quote-accent" style="margin-top: 30px;"></div>
+    <section id="resources" class="resources">
+        <span class="section-tag" style="color: #bbb;">RESOURCE VAULT</span>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; text-transform: uppercase; margin-bottom: 40px;">Protect Your <br>Peace</h2>
+        <div class="resource-grid">
+            <div class="resource-card">
+                <h3>Boundary Blueprints</h3>
+                <p>Expert-vetted frameworks for setting limits without the guilt.</p>
+            </div>
+            <div class="resource-card">
+                <h3>The Holiday Exit Script</h3>
+                <p>Word-for-word responses for intrusive questions and unsolicited advice.</p>
+            </div>
+        </div>
     </section>
 
-    <section class="ecosystem">
-        <p>We've built an ecosystem rooted in dark humor, excessive venting, and the kind of laughs that only come from people who actually get it.</p>
-        <div class="highlight-quote">Finally, people that get it.</div>
+    <section id="studio" class="studio">
+        <span class="section-tag">THE STUDIO</span>
+        <div class="media-player"><span>PREVIEWING PODCAST EP. 04</span></div>
+        <span class="media-title">I N L A W L E S S: The Podcast</span>
+        <p class="media-desc">Exclusive audio and video content. Weekly deep-dives into family dynamics with a heavy dose of dark humor.</p>
+    </section>
+
+    <section id="boutique" class="boutique-section">
+        <span class="section-tag" style="color: #bbb;">THE BOUTIQUE</span>
+        <div class="product-card">
+            <h3 style="text-transform: uppercase; font-size: 0.8rem; margin-bottom: 10px;">The Survival Kit</h3>
+            <p style="font-weight: bold; margin-bottom: 20px;">$45.00</p>
+            <button class="btn-mint" style="padding: 15px;">VIEW DETAILS</button>
+        </div>
     </section>
 
     <form name="waitlist" method="POST" data-netlify="true" hidden>
@@ -108,15 +133,11 @@
             const menu = document.getElementById('navOverlay');
             menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
         }
-        function startTimer(duration, display) {
-            var timer = duration, hours, minutes, seconds;
-            setInterval(function () {
-                hours = Math.floor(timer / 3600); minutes = Math.floor((timer % 3600) / 60); seconds = Math.floor(timer % 60);
-                display.textContent = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
-                if (--timer < 0) timer = duration;
-            }, 1000);
+        function submitToWaitlist() {
+            const email = document.getElementById('user-email').value;
+            if(!email.includes('@')) return alert("Enter a valid email.");
+            document.getElementById('signup-container').innerHTML = "<div style='color: var(--mint); font-weight: 900; padding: 20px; border: 1px solid var(--mint);'>WELCOME TO THE FAMILY.</div>";
         }
-        window.onload = function () { startTimer(60 * 60 * 5, document.querySelector('#timer')); };
     </script>
 </body>
 </html>
