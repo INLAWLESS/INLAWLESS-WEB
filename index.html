@@ -8,8 +8,8 @@
     
     <style>
         :root { 
-            /* THE TRUE MINT TEAL */
             --mint: #55D5C0; 
+            --neon-core: #33ffcc;
             --charcoal: #1a1a1a; 
             --grey: #f9f9f9; 
         }
@@ -24,6 +24,7 @@
             text-align: center;
         }
 
+        /* Premium Logo */
         .logo { 
             letter-spacing: 0.8em; 
             font-weight: 900; 
@@ -32,6 +33,7 @@
             text-transform: uppercase; 
         }
 
+        /* Hero Section */
         .hero { padding: 60px 20px; max-width: 900px; margin: 0 auto; }
         
         .intro-text { 
@@ -40,7 +42,7 @@
             font-weight: 700; 
             color: #aaa; 
             text-transform: uppercase; 
-            margin-bottom: 10px; 
+            margin-bottom: 15px; 
         }
 
         .hero h1 { 
@@ -52,24 +54,28 @@
             text-transform: uppercase;
         }
 
+        /* THE NEON GLOW WORD */
         .hero h1 span { 
             font-family: 'Inter', sans-serif; 
             color: var(--mint); 
             font-weight: 900;
+            text-shadow: 0 0 10px rgba(85, 213, 192, 0.6), 
+                         0 0 20px rgba(85, 213, 192, 0.4);
         }
 
         .subheading {
             max-width: 750px;
-            margin: 0 auto 40px auto;
+            margin: 0 auto 45px auto;
             font-size: 0.85rem;
             line-height: 1.8;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
             font-weight: 700;
             color: var(--charcoal);
         }
 
-        #signup-container { margin-bottom: 40px; }
+        /* Sign Up Area */
+        #signup-container { margin-bottom: 50px; }
         
         .email-input {
             padding: 20px; 
@@ -87,8 +93,9 @@
             text-transform: uppercase;
         }
 
-        .button-group { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .button-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
+        /* NEON PULSE BUTTON */
         .btn-mint { 
             background: var(--mint); 
             color: white; 
@@ -99,6 +106,14 @@
             text-transform: uppercase; 
             border: none; 
             cursor: pointer;
+            box-shadow: 0 0 15px rgba(85, 213, 192, 0.7);
+            animation: neonPulse 2.5s infinite;
+        }
+
+        @keyframes neonPulse {
+            0% { box-shadow: 0 0 15px rgba(85, 213, 192, 0.6); transform: scale(1); }
+            50% { box-shadow: 0 0 25px rgba(85, 213, 192, 0.9), 0 0 10px var(--neon-core); transform: scale(1.02); }
+            100% { box-shadow: 0 0 15px rgba(85, 213, 192, 0.6); transform: scale(1); }
         }
 
         .btn-outline { 
@@ -113,14 +128,16 @@
             cursor: pointer;
         }
 
+        /* Wall of Shame */
         .shame-gallery { background: var(--grey); padding: 80px 20px; border-radius: 50px 50px 0 0; margin-top: 50px; }
         .shame-title { text-transform: uppercase; letter-spacing: 0.4em; font-size: 0.8rem; color: #bbb; margin-bottom: 40px; }
-        .shame-card { background: white; padding: 30px; border-radius: 20px; margin: 0 auto 20px auto; max-width: 600px; border-left: 6px solid var(--mint); text-align: left; }
+        .shame-card { background: white; padding: 35px; border-radius: 20px; margin: 0 auto 20px auto; max-width: 600px; border-left: 6px solid var(--mint); text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
 
+        /* Boutique */
         .boutique-section { padding: 80px 20px; }
         .product-grid { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; }
         .product-card { width: 280px; text-align: left; }
-        .product-img { width: 100%; height: 350px; background: #fdfdfd; border-radius: 10px; border: 1px solid #eee; }
+        .product-img { width: 100%; height: 350px; background: #fdfdfd; border-radius: 15px; border: 1px solid #eee; }
 
     </style>
 </head>
@@ -128,73 +145,4 @@
 
     <div class="logo">I N L A W L E S S</div>
 
-    <form name="waitlist" method="POST" data-netlify="true" hidden>
-        <input type="email" name="email">
-    </form>
-
-    <section class="hero">
-        <div class="intro-text">WELCOME TO</div>
-        <h1>THE FAMILY YOU <br>ACTUALLY <span>WANT.</span></h1>
-        
-        <p class="subheading">
-            JOIN OUR I N L A W L E S S INNER CIRCLE FOR UPDATES AND FIRST ACCESS TO OUR 'IN-LAW SURVIVAL KITS'—AND YES, WE HAVE THEM FOR BOTH MEN & WOMEN BECAUSE IN-LAW MADNESS DOES NOT DISCRIMINATE.
-        </p>
-
-        <div id="signup-container">
-            <input type="email" id="user-email" class="email-input" placeholder="YOUR EMAIL ADDRESS">
-            <div class="button-group">
-                <button class="btn-mint" onclick="submitToWaitlist()">SIGN UP</button>
-                <button class="btn-outline">SHOP THE BOUTIQUE</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="shame-gallery">
-        <div class="shame-title">The Wall of Shame</div>
-        <div class="shame-card"><p>"My Mother-in-Law announced her pregnancy at my wedding."</p></div>
-        <div class="shame-card"><p>"His sister has a key to our bedroom. He thinks I'm dramatic."</p></div>
-    </section>
-
-    <section class="boutique-section">
-        <h2 class="shame-title">The In-Law Survival Boutique</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="product-img"></div>
-                <h3 style="text-transform: uppercase; font-size: 0.8rem; margin: 15px 0 5px 0; letter-spacing: 1px;">The Holiday Survival Kit</h3>
-                <p style="font-weight: bold; color: var(--charcoal);">$45.00</p>
-            </div>
-            <div class="product-card">
-                <div class="product-img"></div>
-                <h3 style="text-transform: uppercase; font-size: 0.8rem; margin: 15px 0 5px 0; letter-spacing: 1px;">The Wedding Day Shield</h3>
-                <p style="font-weight: bold; color: var(--charcoal);">$60.00</p>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        // Stealth Mode
-        document.addEventListener('keydown', function(e) {
-            if (e.key === "Escape") { window.location.replace("https://www.google.com"); }
-        });
-
-        // Database Submission
-        function submitToWaitlist() {
-            const email = document.getElementById('user-email').value;
-            if(!email || !email.includes('@')) return alert("Please enter a valid email.");
-
-            fetch("/", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams({ "form-name": "waitlist", "email": email }).toString(),
-            })
-            .then(() => {
-                document.getElementById('signup-container').innerHTML = 
-                    "<div style='animation: fadeIn 1s; padding: 40px; border: 2px solid var(--mint); color: var(--mint); font-weight: 900; text-transform: uppercase; letter-spacing: 2px;'>" +
-                    "Welcome to the family you actually wanted.<br>" +
-                    "<span style='color: #888; font-size: 0.75rem; font-weight: 400; letter-spacing: 1px;'>Your Boundary Score is being calculated...</span></div>";
-            })
-            .catch(() => alert("Error connecting. Try again."));
-        }
-    </script>
-</body>
-</html>
+    <form name="waitlist" method="POST" data-netlify="
