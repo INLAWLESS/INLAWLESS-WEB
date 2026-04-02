@@ -145,4 +145,73 @@
 
     <div class="logo">I N L A W L E S S</div>
 
-    <form name="waitlist" method="POST" data-netlify="
+    <form name="waitlist" method="POST" data-netlify="true" hidden>
+        <input type="email" name="email">
+    </form>
+
+    <section class="hero">
+        <div class="intro-text">WELCOME TO</div>
+        <h1>THE FAMILY YOU <br>ACTUALLY <span>WANT.</span></h1>
+        
+        <p class="subheading">
+            JOIN OUR I N L A W L E S S INNER CIRCLE FOR UPDATES AND FIRST ACCESS TO OUR 'IN-LAW SURVIVAL KITS'—AND YES, WE HAVE THEM FOR BOTH MEN & WOMEN BECAUSE IN-LAW MADNESS DOES NOT DISCRIMINATE.
+        </p>
+
+        <div id="signup-container">
+            <input type="email" id="user-email" class="email-input" placeholder="YOUR EMAIL ADDRESS">
+            <div class="button-group">
+                <button class="btn-mint" onclick="submitToWaitlist()">SIGN UP</button>
+                <button class="btn-outline">SHOP THE BOUTIQUE</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="shame-gallery">
+        <div class="shame-title">The Wall of Shame</div>
+        <div class="shame-card"><p>"My Mother-in-Law announced her pregnancy at my wedding."</p></div>
+        <div class="shame-card"><p>"His sister has a key to our bedroom. He thinks I'm dramatic."</p></div>
+    </section>
+
+    <section class="boutique-section">
+        <h2 class="shame-title">The In-Law Survival Boutique</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img"></div>
+                <h3 style="text-transform: uppercase; font-size: 0.8rem; margin: 15px 0 5px 0; letter-spacing: 1px;">The Holiday Survival Kit</h3>
+                <p style="font-weight: bold; color: var(--charcoal);">$45.00</p>
+            </div>
+            <div class="product-card">
+                <div class="product-img"></div>
+                <h3 style="text-transform: uppercase; font-size: 0.8rem; margin: 15px 0 5px 0; letter-spacing: 1px;">The Wedding Day Shield</h3>
+                <p style="font-weight: bold; color: var(--charcoal);">$60.00</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Stealth Mode (Esc Key)
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") { window.location.replace("https://www.google.com"); }
+        });
+
+        // Database Submission Logic
+        function submitToWaitlist() {
+            const email = document.getElementById('user-email').value;
+            if(!email || !email.includes('@')) return alert("Please enter a valid email.");
+
+            fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams({ "form-name": "waitlist", "email": email }).toString(),
+            })
+            .then(() => {
+                document.getElementById('signup-container').innerHTML = 
+                    "<div style='animation: fadeIn 1s; padding: 40px; border: 2px solid var(--mint); color: var(--mint); font-weight: 900; text-transform: uppercase; letter-spacing: 2px;'>" +
+                    "Welcome to the family you actually wanted.<br>" +
+                    "<span style='color: #888; font-size: 0.75rem; font-weight: 400; letter-spacing: 1px;'>Your Boundary Score is being calculated...</span></div>";
+            })
+            .catch(() => alert("Error connecting. Try again."));
+        }
+    </script>
+</body>
+</html>
