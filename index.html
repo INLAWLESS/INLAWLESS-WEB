@@ -7,52 +7,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
     <style>
-        :root { --mint: #55D5C0; --charcoal: #1a1a1a; }
+        :root { 
+            --mint: #55D5C0; 
+            --navy: #050a26; 
+            --charcoal: #1a1a1a; 
+        }
         body { background: #ffffff; color: var(--charcoal); font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; text-align: center; scroll-behavior: smooth; }
 
-        /* --- HEADER --- */
+        /* --- NAVIGATION --- */
         .header { position: sticky; top: 0; background: white; z-index: 1000; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
         .nav-timer { color: var(--mint); font-weight: 900; font-size: 0.6rem; letter-spacing: 1px; border: 1px solid var(--mint); padding: 5px 10px; border-radius: 20px; text-transform: uppercase; }
         .menu-btn { font-size: 1rem; cursor: pointer; font-weight: 900; letter-spacing: -1px; text-transform: uppercase; }
 
-        /* --- FULL SCREEN OVERLAY MENU --- */
         .nav-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            z-index: 2000; display: none; flex-direction: column;
-            justify-content: center; align-items: center; gap: 30px;
+            background: rgba(255, 255, 255, 0.98); z-index: 2000; display: none; 
+            flex-direction: column; justify-content: center; align-items: center; gap: 30px;
         }
-        .nav-overlay a {
-            text-decoration: none; color: var(--charcoal); font-weight: 900;
-            font-size: 1.2rem; letter-spacing: 5px; text-transform: uppercase; transition: 0.3s;
-        }
-        .nav-overlay a:hover { color: var(--mint); }
-        .close-menu { position: absolute; top: 20px; right: 25px; font-weight: 900; font-size: 1rem; cursor: pointer; }
+        .nav-overlay a { text-decoration: none; color: var(--charcoal); font-weight: 900; font-size: 1.2rem; letter-spacing: 5px; text-transform: uppercase; }
 
-        /* --- LOGO & HERO --- */
+        /* --- HERO --- */
         .logo-container { padding: 40px 20px 10px 20px; }
         .logo { letter-spacing: 0.5em; font-weight: 900; font-size: 1.1rem; text-transform: uppercase; }
         .hero { padding: 40px 20px 60px 20px; }
         .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; line-height: 1; margin: 0 auto 25px auto; text-transform: uppercase; }
         .hero h1 span { color: var(--mint); text-shadow: 0 0 10px rgba(85, 213, 192, 0.4); }
-        .subheading { font-size: 0.75rem; line-height: 1.6; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; margin-bottom: 40px; }
 
-        /* --- INPUTS & BUTTONS --- */
-        .input-box { width: 100%; max-width: 300px; padding: 20px; border: 1px solid #ddd; margin-bottom: 15px; text-align: center; font-size: 0.8rem; letter-spacing: 2px; box-sizing: border-box; }
-        .btn-mint { width: 100%; max-width: 300px; background: var(--mint); color: white; padding: 20px; font-weight: 900; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; border: none; box-shadow: 0 10px 20px rgba(85, 213, 192, 0.3); }
+        /* --- BUTTONS --- */
+        .input-box { width: 100%; max-width: 300px; padding: 20px; border: 1px solid #ddd; margin-bottom: 15px; text-align: center; }
+        .btn-mint { width: 100%; max-width: 300px; background: var(--mint); color: white; padding: 20px; font-weight: 900; text-transform: uppercase; border: none; }
 
-        /* --- SECTIONS --- */
-        .shame-gallery { background: #f9f9f9; padding: 60px 20px; }
-        .shame-card { background: white; padding: 25px; border-radius: 15px; margin-bottom: 15px; text-align: left; border-left: 5px solid var(--mint); }
+        /* --- NEW ABOUT US (NAVY SECTION) --- */
+        .about-navy { background: var(--navy); color: white; padding: 80px 30px; text-align: left; }
+        .section-tag { color: var(--mint); font-size: 0.6rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; display: block; font-weight: 900; }
+        .about-navy h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase; line-height: 1.1; }
+        .about-navy p { font-size: 0.95rem; line-height: 1.8; color: #b0b5cc; max-width: 500px; margin-bottom: 30px; letter-spacing: 0.5px; }
+
+        /* --- QUOTE SECTION (PURE WHITE) --- */
+        .quote-section { background: #ffffff; padding: 100px 30px; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+        .quote-accent { width: 40px; height: 3px; background: var(--mint); margin: 0 auto 30px auto; }
+        .quote-text { font-family: 'Playfair Display', serif; font-size: 1.8rem; line-height: 1.4; max-width: 600px; margin: 0 auto; color: var(--charcoal); font-weight: 900; }
+
+        /* --- ECOSYSTEM SECTION --- */
+        .ecosystem { background: var(--navy); color: white; padding: 80px 30px; text-align: left; }
+        .ecosystem p { font-size: 0.95rem; line-height: 1.8; color: #b0b5cc; max-width: 500px; }
+        .highlight-quote { border-left: 3px solid var(--mint); padding-left: 20px; margin-top: 40px; font-style: italic; font-size: 1.2rem; font-weight: 700; }
+
     </style>
 </head>
 <body>
 
     <div id="navOverlay" class="nav-overlay">
-        <div class="close-menu" onclick="toggleMenu()">CLOSE</div>
-        <a href="#" onclick="toggleMenu()">ABOUT US</a>
-        <a href="#" onclick="toggleMenu()">CONNECT</a>
-        <a href="#" onclick="toggleMenu()">DATE</a>
+        <div style="position: absolute; top: 20px; right: 25px; font-weight: 900; cursor: pointer;" onclick="toggleMenu()">CLOSE</div>
+        <a href="#about" onclick="toggleMenu()">ABOUT US</a>
         <a href="#shame" onclick="toggleMenu()">WALL OF SHAME</a>
         <a href="#boutique" onclick="toggleMenu()">BOUTIQUE</a>
         <a href="#contact" onclick="toggleMenu()">CONTACT US</a>
@@ -68,25 +75,28 @@
     </div>
 
     <section class="hero">
-        <div style="font-size: 0.7rem; color: #999; letter-spacing: 2px; margin-bottom: 10px;">WELCOME TO</div>
         <h1>THE FAMILY YOU <br>ACTUALLY <span>WANT.</span></h1>
-        <p class="subheading">JOIN OUR INNER CIRCLE FOR UPDATES AND FIRST ACCESS TO OUR 'IN-LAW SURVIVAL KITS'.</p>
-
         <div id="signup-container">
             <input type="email" id="user-email" class="input-box" placeholder="YOUR EMAIL ADDRESS">
             <button class="btn-mint" onclick="submitToWaitlist()">SIGN UP</button>
         </div>
     </section>
 
-    <section id="shame" class="shame-gallery">
-        <div style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.7rem; color: #bbb; margin-bottom: 30px;">The Wall of Shame</div>
-        <div class="shame-card">"My Mother-in-Law announced her pregnancy at my wedding."</div>
-        <div class="shame-card">"His sister has a key to our bedroom. He thinks I'm dramatic."</div>
+    <section id="about" class="about-navy">
+        <span class="section-tag">ABOUT US</span>
+        <h2>ABOUT <br>I N L A W L E S S</h2>
+        <p>I N L A W L E S S is a premium space for adults navigating life independently—without the unsolicited opinions of parents or the uninvited drama of in-laws.</p>
     </section>
 
-    <section id="boutique" style="padding: 60px 20px;">
-        <div style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.7rem; color: #bbb; margin-bottom: 30px;">The Boutique</div>
-        <div style="width: 100%; height: 300px; background: #f4f4f4; border-radius: 15px; display: flex; align-items: center; justify-content: center; color: #ccc;">[Survival Kit Photo]</div>
+    <section class="quote-section">
+        <div class="quote-accent"></div>
+        <div class="quote-text">"Whether you've had to trim your family tree lately or life did the pruning for you, this is the place for you."</div>
+        <div class="quote-accent" style="margin-top: 30px;"></div>
+    </section>
+
+    <section class="ecosystem">
+        <p>We've built an ecosystem rooted in dark humor, excessive venting, and the kind of laughs that only come from people who actually get it.</p>
+        <div class="highlight-quote">Finally, people that get it.</div>
     </section>
 
     <form name="waitlist" method="POST" data-netlify="true" hidden>
@@ -94,30 +104,19 @@
     </form>
 
     <script>
-        // TOGGLE MENU FUNCTION
         function toggleMenu() {
             const menu = document.getElementById('navOverlay');
             menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
         }
-
-        // Timer
         function startTimer(duration, display) {
             var timer = duration, hours, minutes, seconds;
             setInterval(function () {
-                hours = Math.floor(timer / 3600);
-                minutes = Math.floor((timer % 3600) / 60);
-                seconds = Math.floor(timer % 60);
+                hours = Math.floor(timer / 3600); minutes = Math.floor((timer % 3600) / 60); seconds = Math.floor(timer % 60);
                 display.textContent = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
                 if (--timer < 0) timer = duration;
             }, 1000);
         }
         window.onload = function () { startTimer(60 * 60 * 5, document.querySelector('#timer')); };
-
-        function submitToWaitlist() {
-            const email = document.getElementById('user-email').value;
-            if(!email.includes('@')) return alert("Enter a valid email.");
-            document.getElementById('signup-container').innerHTML = "<div style='color: var(--mint); font-weight: 900; padding: 20px; border: 1px solid var(--mint);'>WELCOME TO THE FAMILY.</div>";
-        }
     </script>
 </body>
 </html>
