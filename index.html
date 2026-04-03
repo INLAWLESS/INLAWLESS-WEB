@@ -10,45 +10,73 @@
         :root { --mint: #55D5C0; --navy: #050a26; --charcoal: #1a1a1a; --grey: #f9f9f9; }
         body { background: #ffffff; color: var(--charcoal); font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; text-align: center; scroll-behavior: smooth; }
 
-        /* --- STICKY NAV --- */
-        .header { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 25px 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); display: flex; justify-content: space-around; align-items: center; border-bottom: 0.5px solid rgba(0,0,0,0.05); }
-        .nav-status { color: var(--mint); font-weight: 900; font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; }
-        .menu-btn { font-size: 0.7rem; cursor: pointer; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; }
+        /* --- DESKTOP NAVIGATION (REPLIT STYLE) --- */
+        .header { 
+            position: fixed; top: 0; width: 100%; z-index: 1000; 
+            padding: 20px 0; background: rgba(255, 255, 255, 0.98);
+            display: flex; justify-content: center; align-items: center;
+            border-bottom: 0.5px solid rgba(0,0,0,0.05);
+        }
 
-        /* --- LOGO & HERO --- */
+        .nav-links { display: flex; gap: 30px; }
+        .nav-item {
+            text-decoration: none; color: #888; font-weight: 900; font-size: 0.65rem;
+            letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* The Mint Teal Glow on Hover */
+        .nav-item:hover { 
+            color: var(--mint); 
+            text-shadow: 0 0 8px rgba(85, 213, 192, 0.6);
+        }
+
+        /* --- HERO --- */
         .logo-container { padding: 140px 20px 10px 20px; }
         .logo { letter-spacing: 0.6em; font-weight: 900; font-size: 1rem; text-transform: uppercase; }
         .hero { padding: 40px 20px 80px 20px; }
         .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; line-height: 1.1; margin-bottom: 30px; text-transform: uppercase; }
         .hero h1 span { color: var(--mint); text-shadow: 0 0 15px rgba(85, 213, 192, 0.3); }
 
+        /* --- GLOWING BUTTON --- */
         .input-box { width: 100%; max-width: 300px; padding: 22px; border: 1px solid #eee; margin-bottom: 15px; outline: none; font-size: 0.8rem; letter-spacing: 1px; box-sizing: border-box; }
-        .btn-mint { width: 100%; max-width: 300px; background: var(--mint); color: white; padding: 22px; font-weight: 900; text-transform: uppercase; border: none; letter-spacing: 2px; }
-
-        /* --- ROADMAP SECTIONS (NAVY BASE) --- */
-        .roadmap-container { background: var(--navy); color: white; padding: 80px 30px; text-align: left; }
-        .section-tag { color: var(--mint); font-size: 0.6rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 25px; display: block; font-weight: 900; }
         
+        .btn-mint { 
+            width: 100%; max-width: 300px; background: var(--mint); color: white; 
+            padding: 22px; font-weight: 900; text-transform: uppercase; border: none; 
+            letter-spacing: 2px; cursor: pointer; transition: all 0.3s ease;
+        }
+
+        /* Semi-Glow Effect on Hover from Video */
+        .btn-mint:hover {
+            box-shadow: 0 0 20px rgba(85, 213, 192, 0.8);
+            transform: translateY(-2px);
+        }
+
+        /* --- ROADMAP SECTIONS --- */
+        .roadmap-container { background: var(--navy); color: white; padding: 100px 30px; text-align: left; }
+        .section-tag { color: var(--mint); font-size: 0.6rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 25px; display: block; font-weight: 900; }
         .feature-block { margin-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 30px; }
         .feature-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #fff; margin-bottom: 15px; line-height: 1.1; }
-        .feature-desc { font-size: 0.9rem; line-height: 1.8; color: #b0b5cc; margin: 0; }
+        .feature-desc { font-size: 0.9rem; line-height: 1.8; color: #b0b5cc; }
 
-        /* --- ALTERNATING WHITE SECTION --- */
-        .white-section { background: #ffffff; color: var(--charcoal); padding: 80px 30px; text-align: left; border-bottom: 1px solid #eee; }
-        .white-section .feature-title { color: var(--charcoal); }
-        .white-section .feature-desc { color: #888; }
-
-        /* --- BOUTIQUE CARDS --- */
-        .boutique-section { padding: 80px 20px; background: var(--grey); text-align: center; }
-        .product-card { background: white; width: 100%; max-width: 320px; border-radius: 20px; margin: 0 auto 30px auto; padding: 30px; text-align: left; border: 1px solid #eee; }
-
+        @media (max-width: 768px) {
+            .nav-links { gap: 15px; padding: 0 10px; flex-wrap: wrap; justify-content: center; }
+            .nav-item { font-size: 0.55rem; letter-spacing: 1px; }
+        }
     </style>
 </head>
 <body>
 
     <header class="header">
-        <div class="nav-status">COMING SOON</div>
-        <div class="menu-btn">MENU</div>
+        <nav class="nav-links">
+            <a href="#about" class="nav-item">ABOUT US</a>
+            <a href="#roadmap" class="nav-item">CONNECT</a>
+            <a href="#roadmap" class="nav-item">DATE</a>
+            <a href="#roadmap" class="nav-item">CONTENT</a>
+            <a href="#roadmap" class="nav-item">RESOURCES</a>
+            <a href="#roadmap" class="nav-item">ADDITIONAL FEATURES</a>
+        </nav>
     </header>
 
     <div class="logo-container">
@@ -59,12 +87,12 @@
         <h1>THE FAMILY YOU <br>ACTUALLY <span>WANT.</span></h1>
         <div id="signup-container">
             <input type="email" id="user-email" class="input-box" placeholder="ENTER EMAIL ADDRESS">
-            <button class="btn-mint" onclick="submitToWaitlist()">JOIN THE FAMILY</button>
+            <button class="btn-mint" onclick="submitToWaitlist()">SIGN UP</button>
         </div>
     </section>
 
-    <section class="roadmap-container">
-        <span class="section-tag">APP ROADMAP</span>
+    <section id="roadmap" class="roadmap-container">
+        <span class="section-tag" id="about">APP ROADMAP</span>
 
         <div class="feature-block">
             <h2 class="feature-title">Connect with Community</h2>
@@ -80,40 +108,23 @@
             <h2 class="feature-title">Wall of Shame</h2>
             <p class="feature-desc">The ultimate space to vent, laugh, give and get advice, and share those unbelievable in-law horror stories with people who get it.</p>
         </div>
-    </section>
-
-    <section class="white-section">
-        <span class="section-tag">MEDIA & KNOWLEDGE</span>
 
         <div class="feature-block">
             <h2 class="feature-title">Podcast & Content</h2>
-            <p class="feature-desc">Exclusive audio and video deep-dives into family dynamics, boundary architecting, and a heavy dose of dark humor to protect your peace.</p>
+            <p class="feature-desc">Exclusive audio and video deep-dives into family dynamics, boundary architecting, and a heavy dose of dark humor.</p>
         </div>
 
         <div class="feature-block">
             <h2 class="feature-title">Resources</h2>
             <p class="feature-desc">Access expert-vetted 'Boundary Blueprints' and 'Exit Scripts' designed to handle high-stress gatherings without the guilt.</p>
         </div>
-    </section>
 
-    <section class="roadmap-container">
-        <span class="section-tag">PREMIUM EXPERIENCE</span>
-
-        <div class="feature-block">
+        <div class="feature-block" style="border: none;">
             <h2 class="feature-title">Additional Features</h2>
             <p class="feature-desc">
-                • <strong>AI Inlawless Avatar:</strong> Your personal mentor for dating advice, icebreakers, and profile personalization.<br><br>
-                • <strong>Gifting System:</strong> Buy for others from their boutique wishlists. Receive a gift, pay it forward. ❤️
+                • <strong>AI Inlawless Avatar:</strong> Personal mentor for advice and icebreakers.<br><br>
+                • <strong>Gifting System:</strong> Premium members can buy for others from boutique wishlists. Receive a gift, pay it forward. ❤️
             </p>
-        </div>
-    </section>
-
-    <section class="boutique-section">
-        <span class="section-tag">THE BOUTIQUE</span>
-        <div class="product-card">
-            <h2 class="feature-title" style="font-size: 1.2rem;">The Survival Kit</h2>
-            <p style="font-weight: bold; margin: 10px 0 20px 0;">$45.00</p>
-            <button class="btn-mint" style="padding: 15px;">VIEW DETAILS</button>
         </div>
     </section>
 
@@ -125,7 +136,8 @@
         function submitToWaitlist() {
             const email = document.getElementById('user-email').value;
             if(!email.includes('@')) return alert("Enter a valid email.");
-            document.getElementById('signup-container').innerHTML = "<div style='color: var(--mint); font-weight: 900; padding: 20px; border: 2px solid var(--mint);'>WELCOME TO THE FAMILY.</div>";
+            document.getElementById('signup-container').innerHTML = 
+                "<div style='padding: 20px; border: 2px solid var(--mint); color: var(--mint); font-weight: 900;'>WELCOME TO THE FAMILY.</div>";
         }
     </script>
 </body>
