@@ -10,26 +10,12 @@
         :root { --mint: #55D5C0; --navy: #050a26; --charcoal: #1a1a1a; --grey: #f9f9f9; }
         body { background: #ffffff; color: var(--charcoal); font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; text-align: center; scroll-behavior: smooth; }
 
-        /* --- DESKTOP NAVIGATION (REPLIT STYLE) --- */
-        .header { 
-            position: fixed; top: 0; width: 100%; z-index: 1000; 
-            padding: 20px 0; background: rgba(255, 255, 255, 0.98);
-            display: flex; justify-content: center; align-items: center;
-            border-bottom: 0.5px solid rgba(0,0,0,0.05);
-        }
-
-        .nav-links { display: flex; gap: 30px; }
-        .nav-item {
-            text-decoration: none; color: #888; font-weight: 900; font-size: 0.65rem;
-            letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        /* The Mint Teal Glow on Hover */
-        .nav-item:hover { 
-            color: var(--mint); 
-            text-shadow: 0 0 8px rgba(85, 213, 192, 0.6);
-        }
+        /* --- STICKY NAV (REPLIT HOVER) --- */
+        .header { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 25px 0; background: rgba(255, 255, 255, 0.98); display: flex; justify-content: center; align-items: center; border-bottom: 0.5px solid rgba(0,0,0,0.05); }
+        .nav-status { color: var(--mint); font-weight: 900; font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; }
+        .menu-btn { font-size: 0.7rem; cursor: pointer; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; }
+        .nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #ffffff; z-index: 2000; display: none; flex-direction: column; justify-content: center; align-items: center; gap: 25px; }
+        .nav-overlay a { text-decoration: none; color: var(--charcoal); font-weight: 900; font-size: 1rem; letter-spacing: 4px; text-transform: uppercase; }
 
         /* --- HERO --- */
         .logo-container { padding: 140px 20px 10px 20px; }
@@ -38,45 +24,51 @@
         .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; line-height: 1.1; margin-bottom: 30px; text-transform: uppercase; }
         .hero h1 span { color: var(--mint); text-shadow: 0 0 15px rgba(85, 213, 192, 0.3); }
 
-        /* --- GLOWING BUTTON --- */
         .input-box { width: 100%; max-width: 300px; padding: 22px; border: 1px solid #eee; margin-bottom: 15px; outline: none; font-size: 0.8rem; letter-spacing: 1px; box-sizing: border-box; }
-        
-        .btn-mint { 
-            width: 100%; max-width: 300px; background: var(--mint); color: white; 
-            padding: 22px; font-weight: 900; text-transform: uppercase; border: none; 
-            letter-spacing: 2px; cursor: pointer; transition: all 0.3s ease;
-        }
+        .btn-mint { width: 100%; max-width: 300px; background: var(--mint); color: white; padding: 22px; font-weight: 900; text-transform: uppercase; border: none; letter-spacing: 2px; transition: 0.3s; cursor: pointer; }
+        .btn-mint:hover { box-shadow: 0 0 20px rgba(85, 213, 192, 0.6); }
 
-        /* Semi-Glow Effect on Hover from Video */
-        .btn-mint:hover {
-            box-shadow: 0 0 20px rgba(85, 213, 192, 0.8);
-            transform: translateY(-2px);
+        /* --- THE MOCKUP FRAME (GLOWING) --- */
+        .mockup-frame {
+            width: 100%; height: 400px; /* Standardizing for clean scroll */
+            border: 1px solid var(--mint);
+            box-shadow: 0 0 15px rgba(85, 213, 192, 0.3);
+            border-radius: 20px;
+            margin-bottom: 50px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--mint); font-weight: 900; font-size: 0.7rem; letter-spacing: 2px;
+            overflow: hidden; /* For when you add the image */
         }
+        .mockup-frame img { width: 100%; height: auto; object-fit: cover; } /* Image auto-fits */
 
         /* --- ROADMAP SECTIONS --- */
         .roadmap-container { background: var(--navy); color: white; padding: 100px 30px; text-align: left; }
         .section-tag { color: var(--mint); font-size: 0.6rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 25px; display: block; font-weight: 900; }
-        .feature-block { margin-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 30px; }
-        .feature-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #fff; margin-bottom: 15px; line-height: 1.1; }
-        .feature-desc { font-size: 0.9rem; line-height: 1.8; color: #b0b5cc; }
+        
+        .feature-block { margin-bottom: 80px; }
+        .feature-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #fff; margin-bottom: 15px; line-height: 1.1; text-transform: uppercase; }
+        .feature-desc { font-size: 0.9rem; line-height: 1.8; color: #b0b5cc; margin-bottom: 40px; }
 
-        @media (max-width: 768px) {
-            .nav-links { gap: 15px; padding: 0 10px; flex-wrap: wrap; justify-content: center; }
-            .nav-item { font-size: 0.55rem; letter-spacing: 1px; }
-        }
+        /* --- RESOURCES & MEDIA (WHITE CONTRAST) --- */
+        .white-section { background: #ffffff; color: var(--charcoal); padding: 100px 30px; text-align: left; border-bottom: 1px solid #eee; }
+        .white-section .feature-title { color: var(--charcoal); }
+        .white-section .feature-desc { color: #888; }
+        .white-section .mockup-frame { border: 1px solid #eee; box-shadow: none; } /* Subtler for white */
+
     </style>
 </head>
 <body>
 
+    <div id="navOverlay" class="nav-overlay">
+        <div style="position: absolute; top: 30px; right: 30px; font-weight: 900; cursor: pointer;" onclick="toggleMenu()">CLOSE</div>
+        <a href="#about" onclick="toggleMenu()">ABOUT</a>
+        <a href="#resources" onclick="toggleMenu()">RESOURCES</a>
+        <a href="#boutique" onclick="toggleMenu()">BOUTIQUE</a>
+    </div>
+
     <header class="header">
-        <nav class="nav-links">
-            <a href="#about" class="nav-item">ABOUT US</a>
-            <a href="#roadmap" class="nav-item">CONNECT</a>
-            <a href="#roadmap" class="nav-item">DATE</a>
-            <a href="#roadmap" class="nav-item">CONTENT</a>
-            <a href="#roadmap" class="nav-item">RESOURCES</a>
-            <a href="#roadmap" class="nav-item">ADDITIONAL FEATURES</a>
-        </nav>
+        <div class="nav-status">COMING SOON</div>
+        <div class="menu-btn" onclick="toggleMenu()">MENU</div>
     </header>
 
     <div class="logo-container">
@@ -91,40 +83,39 @@
         </div>
     </section>
 
-    <section id="roadmap" class="roadmap-container">
-        <span class="section-tag" id="about">APP ROADMAP</span>
-
+    <section id="about" class="roadmap-container">
+        <span class="section-tag">CONNECT</span>
         <div class="feature-block">
-            <h2 class="feature-title">Connect with Community</h2>
-            <p class="feature-desc">Personalized profiles to connect and share daily posts. Showcase your "Top 8" Found Family and build a life free from uninvited drama.</p>
+            <h2 class="feature-title">Found Family <br>Profiles</h2>
+            <p class="feature-desc">MySpace-style personalization for the modern era. Personalized profiles with daily soundtracking and a customizable "Top 8" list of your actual chosen family.</p>
+            
+            <div class="mockup-frame">
+                [ APP MOCKUP: CUSTOM PROFILES ]
+            </div>
         </div>
+    </section>
 
+    <section class="white-section">
+        <span class="section-tag" style="color: #bbb;">DATE YOUR WAY</span>
         <div class="feature-block">
-            <h2 class="feature-title">Date Your Way</h2>
-            <p class="feature-desc">No parents = No In-Laws. Dating with boundaries that are actually expected and respected from the very first message.</p>
+            <h2 class="feature-title">Vetted <br>Boundaries</h2>
+            <p class="feature-desc">Dating with a 'Boundary Blueprint'. Profiles feature a neon-teal status of 'Boundaries Vetted' via our Family Tree-mmer vetting tool.</p>
+            
+            <div class="mockup-frame">
+                [ APP MOCKUP: CHAT INTERFACE ]
+            </div>
         </div>
+    </section>
 
+    <section class="roadmap-container">
+        <span class="section-tag">PREMIUM ACCESS</span>
         <div class="feature-block">
-            <h2 class="feature-title">Wall of Shame</h2>
-            <p class="feature-desc">The ultimate space to vent, laugh, give and get advice, and share those unbelievable in-law horror stories with people who get it.</p>
-        </div>
-
-        <div class="feature-block">
-            <h2 class="feature-title">Podcast & Content</h2>
-            <p class="feature-desc">Exclusive audio and video deep-dives into family dynamics, boundary architecting, and a heavy dose of dark humor.</p>
-        </div>
-
-        <div class="feature-block">
-            <h2 class="feature-title">Resources</h2>
-            <p class="feature-desc">Access expert-vetted 'Boundary Blueprints' and 'Exit Scripts' designed to handle high-stress gatherings without the guilt.</p>
-        </div>
-
-        <div class="feature-block" style="border: none;">
-            <h2 class="feature-title">Additional Features</h2>
-            <p class="feature-desc">
-                • <strong>AI Inlawless Avatar:</strong> Personal mentor for advice and icebreakers.<br><br>
-                • <strong>Gifting System:</strong> Premium members can buy for others from boutique wishlists. Receive a gift, pay it forward. ❤️
-            </p>
+            <h2 class="feature-title">AI Avatar <br>Architect</h2>
+            <p class="feature-desc">Your personal I N L A W L E S S mentor. Get word-for-word scripts for holiday gatherings, boundary blueprints, or let AI customize your profile bio.</p>
+            
+            <div class="mockup-frame">
+                [ APP MOCKUP: AI AVATAR CHAT ]
+            </div>
         </div>
     </section>
 
@@ -133,11 +124,14 @@
     </form>
 
     <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navOverlay');
+            menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+        }
         function submitToWaitlist() {
             const email = document.getElementById('user-email').value;
             if(!email.includes('@')) return alert("Enter a valid email.");
-            document.getElementById('signup-container').innerHTML = 
-                "<div style='padding: 20px; border: 2px solid var(--mint); color: var(--mint); font-weight: 900;'>WELCOME TO THE FAMILY.</div>";
+            document.getElementById('signup-container').innerHTML = "<div style='color: var(--mint); font-weight: 900; padding: 20px; border: 2px solid var(--mint);'>WELCOME TO THE FAMILY.</div>";
         }
     </script>
 </body>
