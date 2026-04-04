@@ -2,156 +2,232 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>I N L A W L E S S</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INLAWLESS | The Family You Actually Want</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
-        :root { --mint: #55D5C0; --navy: #050a26; --charcoal: #1a1a1a; --grey: #f9f9f9; }
-        body { background: #ffffff; color: var(--charcoal); font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; text-align: center; scroll-behavior: smooth; }
+        :root {
+            --bg-navy: #010816;
+            --teal-accent: #5EEAD4;
+            --text-white: #FFFFFF;
+            --nav-bg: rgba(1, 8, 22, 0.95);
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-navy);
+            color: var(--text-white);
+            scroll-behavior: smooth;
+        }
 
         /* --- STICKY NAVIGATION --- */
-        .header { 
-            position: fixed; top: 0; width: 100%; z-index: 1000; 
-            padding: 15px 0; background: rgba(255, 255, 255, 0.98);
-            display: flex; justify-content: center; align-items: center;
-            border-bottom: 0.5px solid rgba(0,0,0,0.05);
-        }
-        .nav-links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; padding: 0 10px; }
-        .nav-item {
-            text-decoration: none; color: #888; font-weight: 900; font-size: 0.52rem;
-            letter-spacing: 1.2px; text-transform: uppercase; transition: all 0.3s ease;
-        }
-        .nav-item:hover { color: var(--mint); text-shadow: 0 0 10px rgba(85, 213, 192, 0.8); }
-
-        /* --- HERO --- */
-        .logo-container { padding: 160px 20px 10px 20px; }
-        .logo { letter-spacing: 0.6em; font-weight: 900; font-size: 1rem; text-transform: uppercase; }
-        .hero { padding: 40px 20px 80px 20px; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; line-height: 1.1; margin-bottom: 30px; text-transform: uppercase; }
-        .hero h1 span { color: var(--mint); text-shadow: 0 0 15px rgba(85, 213, 192, 0.4); }
-
-        .btn-mint { 
-            width: 100%; max-width: 300px; background: var(--mint); color: white; 
-            padding: 22px; font-weight: 900; text-transform: uppercase; border: none; 
-            letter-spacing: 2px; cursor: pointer; transition: 0.3s;
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* --- THE ROADMAP --- */
-        .roadmap-container { background: var(--navy); color: white; padding: 100px 30px; text-align: left; }
-        .section-tag { color: var(--mint); font-size: 0.6rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 25px; display: block; font-weight: 900; }
-        .feature-block { margin-bottom: 80px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 40px; }
-        .feature-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #fff; margin-bottom: 15px; line-height: 1.1; }
-        .feature-desc { font-size: 0.9rem; line-height: 1.8; color: #b0b5cc; }
-
-        /* --- MOCKUP FRAMES --- */
-        .mockup-frame {
-            width: 100%; border: 2px solid var(--mint); border-radius: 25px;
-            margin-top: 30px; overflow: hidden;
-            box-shadow: 0 0 20px rgba(85, 213, 192, 0.5);
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 15px 0;
+            flex-wrap: wrap;
         }
-        .mockup-frame img { width: 100%; height: auto; display: block; }
 
-        /* --- BOUTIQUE --- */
-        .boutique-section { background: #ffffff; padding: 100px 30px; text-align: center; }
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--teal-accent);
+        }
+
+        /* --- PREMIUM LOGO --- */
+        .brand-logo {
+            text-align: center;
+            font-size: 32px;
+            letter-spacing: 0.6em; 
+            font-weight: 900;
+            text-transform: uppercase;
+            padding: 120px 0 40px 0;
+            margin: 0;
+        }
+
+        /* --- SECTION STYLING --- */
+        section {
+            padding: 100px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .category-label {
+            color: var(--teal-accent);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        h2.headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            margin: 0 0 20px 0;
+            line-height: 1.1;
+        }
+
+        .tagline-bold {
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        p.description {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 750px;
+            margin: 0 auto 50px auto;
+            line-height: 1.6;
+        }
+
+        /* --- MOCKUP CONTAINER --- */
+        .mockup-container {
+            width: 100%;
+            border: 2px solid rgba(94, 234, 212, 0.4);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(94, 234, 212, 0.15);
+        }
+
+        .mockup-container img {
+            width: 100%;
+            display: block;
+        }
+
+        /* --- BUTTONS & INPUTS --- */
+        .cta-btn {
+            background-color: var(--teal-accent);
+            color: #000;
+            padding: 18px 45px;
+            font-weight: 800;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .email-input {
+            width: 100%;
+            padding: 18px;
+            margin-bottom: 12px;
+            border: none;
+            font-weight: bold;
+            text-align: center;
+            box-sizing: border-box;
+        }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <nav class="nav-links">
-            <a href="#about" class="nav-item">ABOUT US</a>
-            <a href="#connect" class="nav-item">CONNECT</a>
-            <a href="#date" class="nav-item">DATE</a>
-            <a href="#shame" class="nav-item">WALL OF SHAME</a>
-            <a href="#content" class="nav-item">CONTENT</a>
-            <a href="#resources" class="nav-item">RESOURCES</a>
-            <a href="#additional" class="nav-item">ADDITIONAL FEATURES</a>
-            <a href="#boutique" class="nav-item">BOUTIQUE</a>
-        </nav>
-    </header>
+    <nav>
+        <div class="nav-links">
+            <a href="#about">About Us</a>
+            <a href="#community">Connect</a>
+            <a href="#date">Date</a>
+            <a href="#wall">Wall of Shame</a>
+            <a href="#content">Content</a>
+            <a href="#resources">Resources</a>
+            <a href="#features">Additional Features</a>
+            <a href="#boutique">Boutique</a>
+        </div>
+    </nav>
 
-    <div class="logo-container">
-        <div class="logo">I N L A W L E S S</div>
-    </div>
+    <h1 class="brand-logo">I N L A W L E S S</h1>
 
-    <section class="hero">
-        <h1>THE FAMILY YOU <br>ACTUALLY <span>WANT.</span></h1>
-        <div id="signup-container">
-            <input type="email" id="user-email" style="width: 100%; max-width: 300px; padding: 22px; border: 1px solid #eee; margin-bottom: 15px; outline: none; font-size: 0.8rem; box-sizing: border-box;" placeholder="ENTER EMAIL ADDRESS">
-            <button class="btn-mint" onclick="submitToWaitlist()">SIGN UP</button>
+    <section id="about">
+        <span class="category-label">THE MISSION</span>
+        <h2 class="headline">THE FAMILY YOU<br>ACTUALLY WANT.</h2>
+        <p class="description">I N L A W L E S S is a premium space for adults navigating life independently—without the drama.</p>
+        <div style="max-width: 450px; margin: 0 auto;">
+            <input type="email" class="email-input" placeholder="ENTER EMAIL ADDRESS">
+            <button class="cta-btn">SIGN UP</button>
         </div>
     </section>
 
-    <section class="roadmap-container">
-        
-        <div class="feature-block" id="about">
-            <span class="section-tag">THE MISSION</span>
-            <h2 class="feature-title">About Us</h2>
-            <p class="feature-desc">I N L A W L E S S is a premium space for adults navigating life independently—without the drama.</p>
-        </div>
-
-        <div class="feature-block" id="connect">
-            <span class="section-tag">COMMUNITY</span>
-            <h2 class="feature-title">The Inner Circle</h2>
-            <p class="feature-desc">Personalized profiles with daily soundtracks and your "My Inner Circle" (Top 6) list.</p>
-        </div>
-
-        <div class="feature-block" id="date">
-            <span class="section-tag">DATING</span>
-            <h2 class="feature-title">Finally. Choose better.</h2>
-            <p class="feature-desc">Everyone has family. Not everyone lets them run their life.</p>
-            <div class="mockup-frame">
-                <img src="1775310185798.png" alt="Dating Mockup">
-            </div>
-        </div>
-
-        <div class="feature-block" id="shame">
-            <span class="section-tag">WALL OF SHAME</span>
-            <h2 class="feature-title">Real People | Real Stories</h2>
-            <p class="feature-desc">
-                <strong style="color: white; font-weight: 900;">Read it. Relate. Rethink everything.</strong><br>
-                Vent, laugh, and judge the most unbelievable in-law horror stories. Searchable by category so you can find the scripts you need.
-            </p>
-            <div class="mockup-frame">
-                <img src="Screenshot_20260404_091302_Google.jpg" alt="Wall of Shame Mockup">
-            </div>
-        </div>
-
-        <div class="feature-block" id="content">
-            <span class="section-tag">Media</span>
-            <h2 class="feature-title">Podcast & Content</h2>
-            <p class="feature-desc">Exclusive deep-dives and dark humor through our video and audio platform.</p>
-        </div>
-
-        <div class="feature-block" id="resources">
-            <span class="section-tag">Knowledge</span>
-            <h2 class="feature-title">Resources</h2>
-            <p class="feature-desc">Expert-vetted 'Boundary Blueprints' and 'Exit Scripts'.</p>
-        </div>
-
-        <div class="feature-block" id="additional" style="border: none;">
-            <span class="section-tag">Extras</span>
-            <h2 class="feature-title">Additional Features</h2>
-            <p class="feature-desc">• AI Avatar Mentor • Pay-it-forward Gifting System ❤️</p>
-        </div>
-
-    </section>
-
-    <section id="boutique" class="boutique-section">
-        <span class="section-tag" style="color: #bbb; margin-bottom: 40px;">THE BOUTIQUE</span>
-        <div style="background: var(--grey); padding: 40px; border-radius: 25px; border: 1px solid #eee;">
-            <h2 class="feature-title" style="color: var(--charcoal); font-size: 1.4rem; margin-bottom: 10px;">High-End Apparel</h2>
-            <button class="btn-mint" style="padding: 15px; font-size: 0.7rem;">SHOP THE BOUTIQUE</button>
+    <section id="community">
+        <span class="category-label">COMMUNITY</span>
+        <h2 class="headline">Connect with Community</h2>
+        <p class="description">Personalized profiles with daily soundtracks and your "Top 8" Found Family.</p>
+        <div class="mockup-container">
+            <img src="file_00000000517c71fb872c7d6cc73623fd.png" alt="Community Mockup">
         </div>
     </section>
 
-    <script>
-        function submitToWaitlist() {
-            const email = document.getElementById('user-email').value;
-            if(!email.includes('@')) return alert("Enter a valid email.");
-            document.getElementById('signup-container').innerHTML = "<div style='color: var(--mint); font-weight: 900; padding: 20px; border: 1px solid var(--mint);'>WELCOME TO THE FAMILY.</div>";
-        }
-    </script>
+    <section id="date">
+        <span class="category-label">DATING</span>
+        <h2 class="headline">Finally. Choose better.</h2>
+        <p class="description">Boundaries that are actually expected and respected from day one.</p>
+        <div class="mockup-container">
+            <img src="your-date-mockup.png" alt="Dating Mockup">
+        </div>
+    </section>
+
+    <section id="wall">
+        <span class="category-label">WALL OF SHAME</span>
+        <h2 class="headline">Wall of Shame</h2>
+        <span class="tagline-bold">Read it. Relate. Rethink.</span>
+        <p class="description">The place to vent, laugh, and share in-law horror stories with people who get it.</p>
+        <div class="mockup-container">
+            <img src="your-wall-of-shame-mockup.png" alt="Wall of Shame Mockup">
+        </div>
+    </section>
+
+    <section id="content">
+        <span class="category-label">MEDIA</span>
+        <h2 class="headline">Podcast & Content</h2>
+        <span class="tagline-bold">Watch. Listen. Learn.</span>
+        <p class="description">Exclusive audio and video deep-dives into family dynamics.</p>
+        <div class="mockup-container">
+            <img src="your-content-mockup.png" alt="Content Mockup">
+        </div>
+    </section>
+
+    <section id="resources">
+        <span class="category-label">KNOWLEDGE</span>
+        <h2 class="headline">Resources</h2>
+        <p class="description">Expert-vetted 'Boundary Blueprints' and 'Exit Scripts'.</p>
+        <div class="mockup-container">
+             <img src="your-resources-mockup.png" alt="Resources Mockup">
+        </div>
+    </section>
+
+    <section id="boutique">
+        <span class="category-label">THE BOUTIQUE</span>
+        <h2 class="headline">High-End Apparel</h2>
+        <div style="max-width: 450px; margin: 40px auto 0 auto;">
+            <button class="cta-btn">SHOP THE BOUTIQUE</button>
+        </div>
+    </section>
+
+    <footer style="padding: 80px; text-align: center; opacity: 0.4; font-size: 11px; letter-spacing: 3px;">
+        I N L A W L E S S &copy; 2026 | BUILT ON BOUNDARIES
+    </footer>
+
 </body>
 </html>
