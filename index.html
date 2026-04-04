@@ -10,7 +10,7 @@
         :root { --mint: #55D5C0; --navy: #050a26; --charcoal: #1a1a1a; --grey: #f9f9f9; }
         body { background: #ffffff; color: var(--charcoal); font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; text-align: center; scroll-behavior: smooth; }
 
-        /* --- STICKY NAVIGATION BAR --- */
+        /* --- NAVIGATION BAR --- */
         .header { 
             position: fixed; top: 0; width: 100%; z-index: 1000; 
             padding: 15px 0; background: rgba(255, 255, 255, 0.98);
@@ -24,7 +24,7 @@
         }
         .nav-item:hover { color: var(--mint); text-shadow: 0 0 10px rgba(85, 213, 192, 0.8); }
 
-        /* --- HERO & LOGO --- */
+        /* --- HERO --- */
         .logo-container { padding: 160px 20px 10px 20px; }
         .logo { letter-spacing: 0.6em; font-weight: 900; font-size: 1rem; text-transform: uppercase; }
         .hero { padding: 40px 20px 80px 20px; }
@@ -37,7 +37,7 @@
             letter-spacing: 2px; cursor: pointer; transition: 0.3s;
         }
 
-        /* --- THE SOLID NAVY ROADMAP --- */
+        /* --- THE ROADMAP --- */
         .roadmap-container { background: var(--navy); color: white; padding: 100px 30px; text-align: left; }
         .section-tag { color: var(--mint); font-size: 0.6rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 25px; display: block; font-weight: 900; }
         .feature-block { margin-bottom: 80px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 40px; }
@@ -49,12 +49,8 @@
             width: 100%; border: 2px solid var(--mint); border-radius: 25px;
             margin-top: 30px; overflow: hidden;
             box-shadow: 0 0 20px rgba(85, 213, 192, 0.5);
-            background: rgba(255, 255, 255, 0.02);
         }
         .mockup-frame img { width: 100%; height: auto; display: block; }
-
-        /* --- BOUTIQUE SECTION --- */
-        .boutique-section { background: #ffffff; padding: 100px 30px; text-align: center; }
     </style>
 </head>
 <body>
@@ -119,4 +115,40 @@
             </div>
         </div>
 
-        
+        <div class="feature-block" id="content">
+            <span class="section-tag">Media</span>
+            <h2 class="feature-title">Podcast & Content</h2>
+            <p class="feature-desc">Exclusive deep-dives and dark humor through our video and audio platform.</p>
+        </div>
+
+        <div class="feature-block" id="resources">
+            <span class="section-tag">Knowledge</span>
+            <h2 class="feature-title">Resources</h2>
+            <p class="feature-desc">Expert-vetted 'Boundary Blueprints' and 'Exit Scripts'.</p>
+        </div>
+
+        <div class="feature-block" id="additional" style="border: none;">
+            <span class="section-tag">Extras</span>
+            <h2 class="feature-title">Additional Features</h2>
+            <p class="feature-desc">• AI Avatar Mentor • Pay-it-forward Gifting System ❤️</p>
+        </div>
+
+    </section>
+
+    <section id="boutique" class="boutique-section">
+        <span class="section-tag" style="color: #bbb; margin-bottom: 40px;">THE BOUTIQUE</span>
+        <div style="background: var(--grey); padding: 40px; border-radius: 25px; border: 1px solid #eee;">
+            <h2 class="feature-title" style="color: var(--charcoal); font-size: 1.4rem; margin-bottom: 10px;">High-End Apparel</h2>
+            <button class="btn-mint" style="padding: 15px; font-size: 0.7rem;">SHOP THE BOUTIQUE</button>
+        </div>
+    </section>
+
+    <script>
+        function submitToWaitlist() {
+            const email = document.getElementById('user-email').value;
+            if(!email.includes('@')) return alert("Enter a valid email.");
+            document.getElementById('signup-container').innerHTML = "<div style='color: var(--mint); font-weight: 900; padding: 20px; border: 1px solid var(--mint);'>WELCOME TO THE FAMILY.</div>";
+        }
+    </script>
+</body>
+</html>
