@@ -10,75 +10,40 @@
         :root { --mint: #55D5C0; --navy: #050a26; --charcoal: #1a1a1a; --grey: #f9f9f9; }
         body { background: #ffffff; color: var(--charcoal); font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; text-align: center; scroll-behavior: smooth; }
 
-        /* --- NAVIGATION (REPLIT GLOW STYLE) --- */
-        .header { 
-            position: fixed; top: 0; width: 100%; z-index: 1000; 
-            padding: 20px 0; background: rgba(255, 255, 255, 0.98);
-            display: flex; justify-content: center; align-items: center;
-            border-bottom: 0.5px solid rgba(0,0,0,0.05);
-        }
-        .nav-links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; padding: 0 10px; }
-        .nav-item {
-            text-decoration: none; color: #888; font-weight: 900; font-size: 0.5rem;
-            letter-spacing: 1px; text-transform: uppercase; transition: all 0.3s ease;
-        }
-        .nav-item:hover { 
-            color: var(--mint); 
-            text-shadow: 0 0 12px rgba(85, 213, 192, 0.9), 0 0 20px rgba(85, 213, 192, 0.4); 
-        }
+        /* --- STICKY NAV --- */
+        .header { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 25px 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); display: flex; justify-content: space-around; align-items: center; border-bottom: 0.5px solid rgba(0,0,0,0.05); }
+        .nav-status { color: var(--mint); font-weight: 900; font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; }
+        .menu-btn { font-size: 0.7rem; cursor: pointer; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; }
 
-        /* --- HERO --- */
-        .logo-container { padding: 180px 20px 10px 20px; }
+        /* --- LOGO & HERO --- */
+        .logo-container { padding: 140px 20px 10px 20px; }
         .logo { letter-spacing: 0.6em; font-weight: 900; font-size: 1rem; text-transform: uppercase; }
         .hero { padding: 40px 20px 80px 20px; }
         .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; line-height: 1.1; margin-bottom: 30px; text-transform: uppercase; }
-        .hero h1 span { color: var(--mint); text-shadow: 0 0 15px rgba(85, 213, 192, 0.4); }
+        .hero h1 span { color: var(--mint); text-shadow: 0 0 15px rgba(85, 213, 192, 0.3); }
 
-        /* --- GLOWING BUTTON --- */
-        .btn-mint { 
-            width: 100%; max-width: 300px; background: var(--mint); color: white; 
-            padding: 22px; font-weight: 900; text-transform: uppercase; border: none; 
-            letter-spacing: 2px; cursor: pointer; transition: 0.3s;
-        }
-        .btn-mint:hover { box-shadow: 0 0 25px rgba(85, 213, 192, 0.9); transform: translateY(-2px); }
+        .input-box { width: 100%; max-width: 300px; padding: 22px; border: 1px solid #eee; margin-bottom: 15px; outline: none; font-size: 0.8rem; letter-spacing: 1px; box-sizing: border-box; }
+        .btn-mint { width: 100%; max-width: 300px; background: var(--mint); color: white; padding: 22px; font-weight: 900; text-transform: uppercase; border: none; letter-spacing: 2px; }
 
-        /* --- NEON MOCKUP BORDERS --- */
-        .mockup-placeholder {
-            width: 100%; height: 380px; 
-            border: 2px solid var(--mint);
-            background: rgba(85, 213, 192, 0.03);
-            border-radius: 25px; 
-            display: flex; align-items: center; justify-content: center;
-            color: var(--mint); font-weight: 900; font-size: 0.7rem; letter-spacing: 2px;
-            margin-top: 30px;
-            box-shadow: 0 0 25px rgba(85, 213, 192, 0.6), inset 0 0 20px rgba(85, 213, 192, 0.2);
-        }
-
-        /* --- ROADMAP (SOLID NAVY) --- */
+        /* --- ROADMAP SECTIONS (NAVY BASE) --- */
         .roadmap-container { background: var(--navy); color: white; padding: 100px 30px; text-align: left; }
         .section-tag { color: var(--mint); font-size: 0.6rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 25px; display: block; font-weight: 900; }
-        .feature-block { margin-bottom: 80px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 40px; }
+        
+        .feature-block { margin-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 30px; }
         .feature-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #fff; margin-bottom: 15px; line-height: 1.1; }
-        .feature-desc { font-size: 0.9rem; line-height: 1.8; color: #b0b5cc; }
+        .feature-desc { font-size: 0.9rem; line-height: 1.8; color: #b0b5cc; margin: 0; }
 
-        /* --- BOUTIQUE --- */
-        .boutique-section { background: #ffffff; padding: 100px 30px; text-align: center; }
-        .product-card { background: var(--grey); padding: 40px; border-radius: 25px; margin-bottom: 20px; text-align: left; border: 1px solid #eee; }
+        /* The New "Dating" spreading phone visual */
+        .mockup-image-box { margin-top: 40px; border: 2px solid var(--mint); border-radius: 30px; overflow: hidden; box-shadow: 0 0 15px rgba(85, 213, 192, 0.3); position: relative; }
+        .mockup-image-box img { width: 100%; height: auto; object-fit: cover; }
+
     </style>
 </head>
 <body>
 
     <header class="header">
-        <nav class="nav-links">
-            <a href="#about" class="nav-item">ABOUT US</a>
-            <a href="#connect" class="nav-item">CONNECT</a>
-            <a href="#date" class="nav-item">DATE</a>
-            <a href="#shame" class="nav-item">WALL OF SHAME</a>
-            <a href="#content" class="nav-item">CONTENT</a>
-            <a href="#resources" class="nav-item">RESOURCES</a>
-            <a href="#additional" class="nav-item">ADDITIONAL FEATURES</a>
-            <a href="#boutique" class="nav-item">BOUTIQUE</a>
-        </nav>
+        <div class="nav-status">COMING SOON</div>
+        <div class="menu-btn">MENU</div>
     </header>
 
     <div class="logo-container">
@@ -88,73 +53,47 @@
     <section class="hero">
         <h1>THE FAMILY YOU <br>ACTUALLY <span>WANT.</span></h1>
         <div id="signup-container">
-            <input type="email" id="user-email" style="width: 100%; max-width: 300px; padding: 22px; border: 1px solid #eee; margin-bottom: 15px; outline: none; font-size: 0.8rem; letter-spacing: 1px; box-sizing: border-box;" placeholder="ENTER EMAIL ADDRESS">
-            <button class="btn-mint" onclick="submitToWaitlist()">SIGN UP</button>
+            <input type="email" id="user-email" class="input-box" placeholder="ENTER EMAIL ADDRESS">
+            <button class="btn-mint" onclick="submitToWaitlist()">JOIN THE FAMILY</button>
         </div>
     </section>
 
     <section class="roadmap-container">
         
-        <div class="feature-block" id="about">
-            <span class="section-tag">THE MISSION</span>
-            <h2 class="feature-title">About Us</h2>
-            <p class="feature-desc">I N L A W L E S S is a premium space for adults navigating life independently—without the drama.</p>
+        <div class="feature-block">
+            <span class="section-tag">CONNECT with COMMUNITY</span>
+            <h2 class="feature-title">The Inner Circle</h2>
+            <p class="feature-desc">MySpace-style personalization for the modern era. Curate your "Top 8" Found Family and build a life free from unsolicited drama.</p>
         </div>
 
-        <div class="feature-block" id="connect">
-            <span class="section-tag">COMMUNITY</span>
-            <h2 class="feature-title">Connect with Community</h2>
-            <p class="feature-desc">Personalized profiles with daily soundtracks and your "Top 8" Found Family.</p>
-            <div class="mockup-placeholder">[ APP MOCKUP: CONNECT ]</div>
+        <div class="feature-block">
+            <span class="section-tag">DATE YOUR WAY</span>
+            
+            <h2 class="feature-title">Finally. Choose better.</h2>
+            
+            <p class="feature-desc"> Dating with a 'Boundary Blueprint'. Zero Parents = Zero In-Laws, ensuring your partner respects your peace from the very first message.</p>
+
+            <div class="mockup-image-box">
+                <img src="https://i.ibb.co/F4pY9yT/shame-mockup.png" alt="INLAWLESS Dating Mockup">
+            </div>
         </div>
 
-        <div class="feature-block" id="date">
-            <span class="section-tag">Dating</span>
-            <h2 class="feature-title">Date your way no parents = no in laws</h2>
-            <p class="feature-desc">Boundaries that are actually expected and respected from day one.</p>
-            <div class="mockup-placeholder">[ APP MOCKUP: DATE ]</div>
-        </div>
-
-        <div class="feature-block" id="shame">
-            <span class="section-tag">The Vault</span>
+        <div class="feature-block" style="border: none;">
+            <span class="section-tag">THE COMMUNITY VAULT</span>
             <h2 class="feature-title">Wall of Shame</h2>
-            <p class="feature-desc">The place to vent, laugh, and share in-law horror stories with people who get it.</p>
-        </div>
-
-        <div class="feature-block" id="content">
-            <span class="section-tag">Media</span>
-            <h2 class="feature-title">Podcast & Content</h2>
-            <p class="feature-desc">Exclusive audio and video deep-dives into family dynamics.</p>
-        </div>
-
-        <div class="feature-block" id="resources">
-            <span class="section-tag">Knowledge</span>
-            <h2 class="feature-title">Resources</h2>
-            <p class="feature-desc">Expert-vetted 'Boundary Blueprints' and 'Exit Scripts'.</p>
-        </div>
-
-        <div class="feature-block" id="additional" style="border: none;">
-            <span class="section-tag">Extras</span>
-            <h2 class="feature-title">Additional Features</h2>
-            <p class="feature-desc">• AI Avatar Mentor • Pay-it-forward Gifting System ❤️</p>
-            <div class="mockup-placeholder">[ APP MOCKUP: AI AVATAR ]</div>
-        </div>
-
-    </section>
-
-    <section id="boutique" class="boutique-section">
-        <span class="section-tag" style="color: #bbb; margin-bottom: 40px;">THE BOUTIQUE</span>
-        <div class="product-card">
-            <h2 class="feature-title" style="color: var(--charcoal); font-size: 1.4rem; margin-bottom: 10px;">High-End Apparel</h2>
-            <button class="btn-mint" style="padding: 15px; font-size: 0.7rem;">SHOP THE BOUTIQUE</button>
+            <p class="feature-desc">The ultimate space to vent, laugh, get advice, and judge the most unbelievable in-law horror stories with a community that actually gets it.</p>
         </div>
     </section>
+
+    <form name="waitlist" method="POST" data-netlify="true" hidden>
+        <input type="email" name="email">
+    </form>
 
     <script>
         function submitToWaitlist() {
             const email = document.getElementById('user-email').value;
             if(!email.includes('@')) return alert("Enter a valid email.");
-            document.getElementById('signup-container').innerHTML = "<div style='color: var(--mint); font-weight: 900; padding: 20px;'>WELCOME TO THE FAMILY.</div>";
+            document.getElementById('signup-container').innerHTML = "<div style='color: var(--mint); font-weight: 900; padding: 20px; border: 1px solid var(--mint);'>WELCOME TO THE FAMILY.</div>";
         }
     </script>
 </body>
