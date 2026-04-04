@@ -2,206 +2,159 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INLAWLESS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>I N L A W L E S S</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            background-color: #010816;
-            color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            text-align: center;
+        :root { --mint: #55D5C0; --navy: #050a26; --charcoal: #1a1a1a; --grey: #f9f9f9; }
+        body { background: #ffffff; color: var(--charcoal); font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; text-align: center; scroll-behavior: smooth; }
+
+        /* --- STICKY NAVIGATION --- */
+        .header { 
+            position: fixed; top: 0; width: 100%; z-index: 1000; 
+            padding: 15px 0; background: rgba(255, 255, 255, 0.98);
+            display: flex; justify-content: center; align-items: center;
+            border-bottom: 0.5px solid rgba(0,0,0,0.05);
+        }
+        .nav-links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; padding: 0 10px; }
+        .nav-item {
+            text-decoration: none; color: #888; font-weight: 900; font-size: 0.52rem;
+            letter-spacing: 1.2px; text-transform: uppercase; transition: all 0.3s ease;
+        }
+        .nav-item:hover { color: var(--mint); text-shadow: 0 0 10px rgba(85, 213, 192, 0.8); }
+
+        /* --- HERO --- */
+        .logo-container { padding: 160px 20px 10px 20px; }
+        .logo { letter-spacing: 0.6em; font-weight: 900; font-size: 1rem; text-transform: uppercase; }
+        .hero { padding: 40px 20px 80px 20px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; line-height: 1.1; margin-bottom: 30px; text-transform: uppercase; }
+        .hero h1 span { color: var(--mint); text-shadow: 0 0 15px rgba(85, 213, 192, 0.4); }
+
+        .btn-mint { 
+            width: 100%; max-width: 300px; background: var(--mint); color: white; 
+            padding: 22px; font-weight: 900; text-transform: uppercase; border: none; 
+            letter-spacing: 2px; cursor: pointer; transition: 0.3s;
         }
 
-        /* --- STICKY NAV --- */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #010816;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px 0;
-            border-bottom: 1px solid #1a1a1a;
-            z-index: 1000;
-        }
+        /* --- ROADMAP --- */
+        .roadmap-container { background: var(--navy); color: white; padding: 100px 30px; text-align: left; }
+        .section-tag { color: var(--mint); font-size: 0.6rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 25px; display: block; font-weight: 900; }
+        .feature-block { margin-bottom: 80px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 40px; }
+        .feature-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #fff; margin-bottom: 15px; line-height: 1.1; }
+        .feature-desc { font-size: 0.9rem; line-height: 1.8; color: #b0b5cc; }
 
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: bold;
-            text-transform: uppercase;
-            opacity: 0.7;
+        /* --- MOCKUP DISPLAY --- */
+        .mockup-frame {
+            width: 100%; border: 2px solid var(--mint); border-radius: 25px;
+            margin-top: 30px; overflow: hidden;
+            box-shadow: 0 0 20px rgba(85, 213, 192, 0.5);
         }
+        .mockup-frame img { width: 100%; height: auto; display: block; }
 
-        .navbar a.active {
-            background-color: #5EEAD4;
-            color: #010816;
-            padding: 2px 8px;
-            opacity: 1;
-        }
-
-        /* --- LOGO --- */
-        .logo {
-            font-size: 32px;
-            letter-spacing: 0.6em; /* PREMIUM SPACED LOGO */
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-top: 120px;
-            margin-bottom: 60px;
-        }
-
-        /* --- SECTIONS --- */
-        .section-container {
-            padding: 60px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .label {
-            color: #5EEAD4;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 12px;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        h2 {
-            font-size: 48px;
-            margin: 10px 0;
-            line-height: 1.1;
-        }
-
-        .tagline-bold {
-            font-size: 24px;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 18px;
-            opacity: 0.8;
-            margin-bottom: 40px;
-        }
-
-        /* --- MOCKUP BOXES --- */
-        .mockup-box {
-            border: 2px solid #5EEAD4;
-            border-radius: 25px;
-            margin: 20px auto;
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(94, 234, 212, 0.2);
-        }
-
-        .mockup-box img {
-            width: 100%;
-            display: block;
-        }
-
-        /* --- SIGN UP --- */
-        .email-box {
-            width: 100%;
-            max-width: 400px;
-            padding: 15px;
-            margin-bottom: 10px;
-            border: none;
-        }
-
-        .sign-up-btn {
-            width: 100%;
-            max-width: 400px;
-            padding: 15px;
-            background-color: #5EEAD4;
-            border: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-        }
+        /* --- BOUTIQUE --- */
+        .boutique-section { background: #ffffff; padding: 100px 30px; text-align: center; }
     </style>
 </head>
 <body>
 
-    <div class="navbar">
-        <a href="#">ABOUT US</a>
-        <a href="#">CONNECT</a>
-        <a href="#" class="active">DATE</a>
-        <a href="#">WALL OF SHAME</a>
-        <a href="#">CONTENT</a>
-        <a href="#">RESOURCES</a>
-        <a href="#">ADDITIONAL FEATURES</a>
-        <a href="#">BOUTIQUE</a>
+    <header class="header">
+        <nav class="nav-links">
+            <a href="#about" class="nav-item">ABOUT US</a>
+            <a href="#connect" class="nav-item">CONNECT</a>
+            <a href="#date" class="nav-item">DATE</a>
+            <a href="#shame" class="nav-item">WALL OF SHAME</a>
+            <a href="#content" class="nav-item">CONTENT</a>
+            <a href="#resources" class="nav-item">RESOURCES</a>
+            <a href="#additional" class="nav-item">ADDITIONAL FEATURES</a>
+            <a href="#boutique" class="nav-item">BOUTIQUE</a>
+        </nav>
+    </header>
+
+    <div class="logo-container">
+        <div class="logo">I N L A W L E S S</div>
     </div>
 
-    <div class="logo">I N L A W L E S S</div>
-
-    <div class="section-container">
-        <h2>THE FAMILY YOU<br>ACTUALLY WANT.</h2>
-        <input type="email" class="email-box" placeholder="ENTER EMAIL ADDRESS">
-        <button class="sign-up-btn">SIGN UP</button>
-    </div>
-
-    <div class="section-container">
-        <span class="label">THE MISSION</span>
-        <h2>About Us</h2>
-        <p>I N L A W L E S S is a premium space for adults navigating life independently—without the drama.</p>
-    </div>
-
-    <div class="section-container">
-        <span class="label">COMMUNITY</span>
-        <h2>Connect with Community</h2>
-        <p>Personalized profiles with daily soundtracks and your "Top 8" Found Family.</p>
-        <div class="mockup-box">
-            <img src="file_00000000517c71fb872c7d6cc73623fd.png">
+    <section class="hero">
+        <h1>THE FAMILY YOU <br>ACTUALLY <span>WANT.</span></h1>
+        <div id="signup-container">
+            <input type="email" id="user-email" style="width: 100%; max-width: 300px; padding: 22px; border: 1px solid #eee; margin-bottom: 15px; outline: none; font-size: 0.8rem; box-sizing: border-box;" placeholder="ENTER EMAIL ADDRESS">
+            <button class="btn-mint" onclick="submitToWaitlist()">SIGN UP</button>
         </div>
-    </div>
+    </section>
 
-    <div class="section-container">
-        <span class="label">DATING</span>
-        <h2>Finally. Choose better.</h2>
-        <p>Boundaries that are actually expected and respected from day one.</p>
-        <div class="mockup-box">
-            <img src="your-dating-mockup.png">
+    <section class="roadmap-container">
+        
+        <div class="feature-block" id="about">
+            <span class="section-tag">THE MISSION</span>
+            <h2 class="feature-title">About Us</h2>
+            <p class="feature-desc">I N L A W L E S S is a premium space for adults navigating life independently—without the drama.</p>
         </div>
-    </div>
 
-    <div class="section-container">
-        <span class="label">WALL OF SHAME</span>
-        <h2>Wall of Shame</h2>
-        <span class="tagline-bold">Read it. Relate. Rethink.</span>
-        <p>The place to vent, laugh, and share in-law horror stories with people who get it.</p>
-        <div class="mockup-box">
-            <img src="your-wall-of-shame-mockup.png">
+        <div class="feature-block" id="connect">
+            <span class="section-tag">COMMUNITY</span>
+            <h2 class="feature-title">The Inner Circle</h2>
+            <p class="feature-desc">Personalized profiles with daily soundtracks and your "My Inner Circle" (Top 6) list.</p>
+            <div class="mockup-frame">
+                <img src="Screenshot_20260404_091302_Google.jpg" alt="Community Mockup">
+            </div>
         </div>
-    </div>
 
-    <div class="section-container">
-        <span class="label">MEDIA</span>
-        <h2>Podcast & Content</h2>
-        <span class="tagline-bold">Watch. Listen. Learn.</span>
-        <p>Exclusive audio and video deep-dives into family dynamics.</p>
-        <div class="mockup-box">
-            <img src="your-content-mockup.png">
+        <div class="feature-block" id="date">
+            <span class="section-tag">DATING</span>
+            <h2 class="feature-title">Finally. Choose better.</h2>
+            <p class="feature-desc">Everyone has family. Not everyone lets them run their life.</p>
+            <div class="mockup-frame">
+                <img src="1775310185798.png" alt="Dating Mockup">
+            </div>
         </div>
-    </div>
 
-    <div class="section-container">
-        <span class="label">KNOWLEDGE</span>
-        <h2>Resources</h2>
-        <p>Expert-vetted 'Boundary Blueprints' and 'Exit Scripts'.</p>
-        <div class="mockup-box">
-            <img src="your-resources-mockup.png">
+        <div class="feature-block" id="shame">
+            <span class="section-tag">WALL OF SHAME</span>
+            <h2 class="feature-title">Real People | Real Stories</h2>
+            <p class="feature-desc">
+                <strong style="color: white; font-weight: 900;">Read it. Relate. Rethink everything.</strong><br>
+                Vent, laugh, and judge the most unbelievable in-law horror stories. Searchable by category so you can find the scripts you need.
+            </p>
+            <div class="mockup-frame">
+                <img src="Screenshot_20260404_091302_Google.jpg" alt="Wall of Shame Mocklist">
+            </div>
         </div>
-    </div>
 
-    <div class="section-container">
-        <span class="label">THE BOUTIQUE</span>
-        <h2>High-End Apparel</h2>
-        <button class="sign-up-btn">SHOP THE BOUTIQUE</button>
-    </div>
+        <div class="feature-block" id="content">
+            <span class="section-tag">Media</span>
+            <h2 class="feature-title">Podcast & Content</h2>
+            <p class="feature-desc">Exclusive deep-dives and dark humor through our video and audio platform.</p>
+        </div>
 
+        <div class="feature-block" id="resources">
+            <span class="section-tag">Knowledge</span>
+            <h2 class="feature-title">Resources</h2>
+            <p class="feature-desc">Expert-vetted 'Boundary Blueprints' and 'Exit Scripts'.</p>
+        </div>
+
+        <div class="feature-block" id="additional" style="border: none;">
+            <span class="section-tag">Extras</span>
+            <h2 class="feature-title">Additional Features</h2>
+            <p class="feature-desc">• AI Avatar Mentor • Pay-it-forward Gifting System ❤️</p>
+        </div>
+
+    </section>
+
+    <section id="boutique" class="boutique-section">
+        <span class="section-tag" style="color: #bbb; margin-bottom: 40px;">THE BOUTIQUE</span>
+        <div style="background: var(--grey); padding: 40px; border-radius: 25px; border: 1px solid #eee;">
+            <h2 class="feature-title" style="color: var(--charcoal); font-size: 1.4rem; margin-bottom: 10px;">High-End Apparel</h2>
+            <button class="btn-mint" style="padding: 15px; font-size: 0.7rem;">SHOP THE BOUTIQUE</button>
+        </div>
+    </section>
+
+    <script>
+        function submitToWaitlist() {
+            const email = document.getElementById('user-email').value;
+            if(!email.includes('@')) return alert("Enter a valid email.");
+            document.getElementById('signup-container').innerHTML = "<div style='color: var(--mint); font-weight: 900; padding: 20px; border: 1px solid var(--mint);'>WELCOME TO THE FAMILY.</div>";
+        }
+    </script>
 </body>
 </html>
