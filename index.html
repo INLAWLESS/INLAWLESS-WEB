@@ -17,10 +17,10 @@
             display: flex; justify-content: center; align-items: center;
             border-bottom: 0.5px solid rgba(0,0,0,0.05);
         }
-        .nav-links { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; padding: 0 10px; }
+        .nav-links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; padding: 0 10px; }
         .nav-item {
-            text-decoration: none; color: #888; font-weight: 900; font-size: 0.55rem;
-            letter-spacing: 1.5px; text-transform: uppercase; transition: all 0.3s ease;
+            text-decoration: none; color: #888; font-weight: 900; font-size: 0.52rem;
+            letter-spacing: 1.2px; text-transform: uppercase; transition: all 0.3s ease;
         }
         .nav-item:hover { color: var(--mint); text-shadow: 0 0 10px rgba(85, 213, 192, 0.8); }
 
@@ -97,7 +97,7 @@
             <span class="section-tag">COMMUNITY</span>
             <h2 class="feature-title">The Inner Circle</h2>
             <p class="feature-desc">Personalized profiles with daily soundtracks and your "My Inner Circle" (Top 6) list.</p>
-            <div class="mockup-frame" style="height: 200px; display: flex; align-items: center; justify-content: center; color: var(--mint); font-size: 0.6rem; letter-spacing: 2px;">[ MOCKUP: INNER CIRCLE ]</div>
+            <div class="mockup-frame" style="height: 200px; display: flex; align-items: center; justify-content: center; color: var(--mint); font-size: 0.6rem; letter-spacing: 2px; background: rgba(85, 213, 192, 0.05);">[ MOCKUP: INNER CIRCLE ]</div>
         </div>
 
         <div class="feature-block" id="date">
@@ -106,7 +106,7 @@
             <p class="feature-desc">Dating with a 'Boundary Blueprint'. Zero Parents = Zero In-Laws, ensuring your partner respects your peace from day one.</p>
             
             <div class="mockup-frame">
-                <img src="dating-mockup.png" alt="Dating Mockup" onerror="this.parentElement.innerHTML='<div style=\'padding:40px; color:#55D5C0; font-size:0.7rem; text-align:center;\'>UPLOAD DATING-MOCKUP.PNG TO GITHUB TO SEE PHOTO</div>'">
+                <img src="1775310185798.png" alt="Dating Mockup">
             </div>
         </div>
 
@@ -114,6 +114,7 @@
             <span class="section-tag">The Vault</span>
             <h2 class="feature-title">Wall of Shame</h2>
             <p class="feature-desc">The place to vent, laugh, and share in-law horror stories with people who get it.</p>
+            <div class="mockup-frame" style="height: 200px; display: flex; align-items: center; justify-content: center; color: var(--mint); font-size: 0.6rem; letter-spacing: 2px; background: rgba(85, 213, 192, 0.05);">[ MOCKUP: WALL OF SHAME ]</div>
         </div>
 
         <div class="feature-block" id="content">
@@ -148,7 +149,7 @@
         function submitToWaitlist() {
             const email = document.getElementById('user-email').value;
             if(!email.includes('@')) return alert("Enter a valid email.");
-            document.getElementById('signup-container').innerHTML = "<div style='color: var(--mint); font-weight: 900; padding: 20px;'>WELCOME TO THE FAMILY.</div>";
+            document.getElementById('signup-container').innerHTML = "<div style='color: var(--mint); font-weight: 900; padding: 20px; border: 1px solid var(--mint);'>WELCOME TO THE FAMILY.</div>";
         }
     </script>
 </body>
