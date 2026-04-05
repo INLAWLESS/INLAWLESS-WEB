@@ -10,7 +10,7 @@
         :root { --mint: #55D5C0; --navy: #050a26; --charcoal: #1a1a1a; --grey: #f9f9f9; }
         body { background: #ffffff; color: var(--charcoal); font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; text-align: center; scroll-behavior: smooth; }
 
-        /* --- STICKY NAVIGATION --- */
+        /* --- STICKY NAVIGATION BAR --- */
         .header { 
             position: fixed; top: 0; width: 100%; z-index: 1000; 
             padding: 15px 0; background: rgba(255, 255, 255, 0.98);
@@ -24,7 +24,7 @@
         }
         .nav-item:hover { color: var(--mint); text-shadow: 0 0 10px rgba(85, 213, 192, 0.8); }
 
-        /* --- HERO --- */
+        /* --- LOGO & HERO --- */
         .logo-container { padding: 160px 20px 10px 20px; }
         .logo { letter-spacing: 0.6em; font-weight: 900; font-size: 1rem; text-transform: uppercase; }
         .hero { padding: 40px 20px 80px 20px; }
@@ -37,22 +37,23 @@
             letter-spacing: 2px; cursor: pointer; transition: 0.3s;
         }
 
-        /* --- ROADMAP (NAVY) --- */
+        /* --- THE SOLID NAVY ROADMAP --- */
         .roadmap-container { background: var(--navy); color: white; padding: 100px 30px; text-align: left; }
         .section-tag { color: var(--mint); font-size: 0.6rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 25px; display: block; font-weight: 900; }
         .feature-block { margin-bottom: 80px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 40px; }
         .feature-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #fff; margin-bottom: 15px; line-height: 1.1; }
         .feature-desc { font-size: 0.9rem; line-height: 1.8; color: #b0b5cc; }
 
-        /* --- MOCKUP FRAMES --- */
+        /* --- MOCKUP DISPLAY --- */
         .mockup-frame {
             width: 100%; border: 2px solid var(--mint); border-radius: 25px;
             margin-top: 30px; overflow: hidden;
             box-shadow: 0 0 20px rgba(85, 213, 192, 0.5);
+            background: rgba(255, 255, 255, 0.02);
         }
         .mockup-frame img { width: 100%; height: auto; display: block; }
 
-        /* --- BOUTIQUE --- */
+        /* --- BOUTIQUE SECTION --- */
         .boutique-section { background: #ffffff; padding: 100px 30px; text-align: center; }
     </style>
 </head>
@@ -96,7 +97,7 @@
             <h2 class="feature-title">The Inner Circle</h2>
             <p class="feature-desc">Personalized profiles with daily soundtracks and your "My Inner Circle" (Top 6) list.</p>
             <div class="mockup-frame">
-                <img src="file_00000000517c71fb872c7d6cc73623fd.png" alt="Inner Circle Mockup">
+                <img src="file_00000000517c71fb872c7d6cc73623fd.png" alt="Community Mockup">
             </div>
         </div>
 
@@ -126,7 +127,7 @@
             <h2 class="feature-title">Podcast & Content</h2>
             <p class="feature-desc">Exclusive deep-dives and dark humor through our video and audio platform.</p>
             <div class="mockup-frame">
-                <img src="Screenshot_20260404_192220_Google.jpg" alt="Content Mockup">
+                <img src="Screenshot_20260404_192220_Google.jpg" alt="Podcast Mockup">
             </div>
         </div>
 
@@ -134,6 +135,9 @@
             <span class="section-tag">Knowledge</span>
             <h2 class="feature-title">Resources</h2>
             <p class="feature-desc">Expert-vetted 'Boundary Blueprints' and 'Exit Scripts'.</p>
+            <div class="mockup-frame">
+                <img src="Screenshot_20260404_203727_Google.jpg" alt="Resources Mockup">
+            </div>
         </div>
 
         <div class="feature-block" id="additional" style="border: none;">
