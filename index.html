@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>I N L A W L E S S</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,900;1,900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
     <style>
         :root { --mint: #55D5C0; --navy: #050a26; --charcoal: #1a1a1a; --grey: #f9f9f9; }
@@ -27,14 +27,17 @@
         /* --- HERO & LOGO --- */
         .logo-container { padding: 160px 20px 10px 20px; }
         .logo { letter-spacing: 0.6em; font-weight: 900; font-size: 1rem; text-transform: uppercase; }
-        .hero { padding: 40px 20px 80px 20px; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; line-height: 1.1; margin-bottom: 30px; text-transform: uppercase; }
+        .hero { padding: 40px 20px 80px 20px; max-width: 600px; margin: 0 auto; }
+        .hero span.welcome { font-size: 0.7rem; letter-spacing: 4px; color: #888; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 10px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; }
         .hero h1 span { color: var(--mint); text-shadow: 0 0 15px rgba(85, 213, 192, 0.4); }
+        
+        .hero-subtext { font-size: 0.75rem; line-height: 1.8; color: #666; margin-bottom: 35px; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; padding: 0 10px; }
 
         .btn-mint { 
             width: 100%; max-width: 300px; background: var(--mint); color: white; 
             padding: 22px; font-weight: 900; text-transform: uppercase; border: none; 
-            letter-spacing: 2px; cursor: pointer; transition: 0.3s;
+            letter-spacing: 2px; cursor: pointer; transition: 0.3s; font-size: 0.8rem;
         }
 
         /* --- ROADMAP CONTAINER --- */
@@ -44,7 +47,6 @@
         .feature-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #fff; margin-bottom: 15px; line-height: 1.1; }
         .feature-desc { font-size: 0.9rem; line-height: 1.8; color: #b0b5cc; white-space: normal; max-width: 100%; }
 
-        /* --- MOCKUP FRAMES --- */
         .mockup-frame {
             width: 100%; border: 2px solid var(--mint); border-radius: 25px;
             margin-top: 30px; overflow: hidden;
@@ -52,6 +54,19 @@
             background: rgba(255, 255, 255, 0.02);
         }
         .mockup-frame img { width: 100%; height: auto; display: block; }
+        
+        .carousel-container {
+            width: 100%; overflow-x: auto; display: flex;
+            gap: 15px; scroll-snap-type: x mandatory;
+            padding-bottom: 20px; scrollbar-width: none;
+        }
+        .carousel-container::-webkit-scrollbar { display: none; }
+        .carousel-item {
+            min-width: 80%; scroll-snap-align: center;
+            border-radius: 20px; overflow: hidden;
+            border: 1px solid #eee; background: var(--grey);
+        }
+        .carousel-item img { width: 100%; height: auto; display: block; }
     </style>
 </head>
 <body>
@@ -74,9 +89,14 @@
     </div>
 
     <section class="hero">
+        <span class="welcome">Welcome To</span>
         <h1>THE FAMILY YOU <br>ACTUALLY <span>WANT.</span></h1>
+        
+        <p class="hero-subtext">
+            JOIN OUR I N L A W L E S S INNER CIRCLE FOR UPDATES AND FIRST ACCESS TO OUR 'IN-LAW SURVIVAL KITS'—AND YES, WE HAVE THEM FOR BOTH MEN & WOMEN BECAUSE IN-LAW MADNESS DOES NOT DISCRIMINATE.
+        </p>
+
         <div id="signup-container">
-            <input type="email" id="user-email" style="width: 100%; max-width: 300px; padding: 22px; border: 1px solid #eee; margin-bottom: 15px; outline: none; font-size: 0.8rem; box-sizing: border-box;" placeholder="ENTER EMAIL ADDRESS">
             <button class="btn-mint" onclick="submitToWaitlist()">SIGN UP</button>
         </div>
     </section>
@@ -84,14 +104,15 @@
     <section class="roadmap-container">
         
         <div class="feature-block" id="about">
-            <span class="section-tag">THE MISSION</span>
+            <span class="section-tag">ABOUT US</span>
             <h2 class="feature-title">BECAUSE "FAMILY"<br>ISN'T AN EXCUSE.</h2>
             <p class="feature-desc">
                 <strong style="color: white; font-weight: 900;">We’ve all heard it: "But they're family."</strong><br>
-                We’re the community that says, "So what?" I N L A W L E S S is a premium sanctuary for couples who are tired of interference and overstepping. We provide the tools, the scripts, and the squad to help you reclaim your home, your holidays, and your head. No guilt. No filter. Just freedom.
+                We’re the community that says, "So what?" <br>
+                <span style="display: inline-block; white-space: nowrap; color: #fff; font-weight: 700; letter-spacing: 2px;">I N L A W L E S S</span> is a premium sanctuary for couples who are tired of interference and overstepping. We provide the tools, the scripts, and the squad to help you reclaim your home, your holidays, and your head. No guilt. No filter. Just freedom.
             </p>
             <div class="mockup-frame">
-                <img src="file_0000000084d8722f945f848a905c6475.png" alt="Mission">
+                <img src="file_000000007880722f9514fa4280956c5d.png" alt="About Us">
             </div>
         </div>
 
@@ -103,7 +124,7 @@
                 Share daily stories and find friends who actually get it. We aren't here for validation—we’re here to survive the drama together, celebrate our unique personalities through customizable profiles, and laugh at the misery together. Showcase your Inner Circle (Top 6) and join community challenges that turn in-law nightmares into shared jokes.
             </p>
             <div class="mockup-frame">
-                <img src="file_00000000517c71fb872c7d6cc73623fd.png" alt="The Daily Feed">
+                <img src="file_00000000517c71fb872c7d6cc73623fd.png" alt="Connect">
             </div>
         </div>
 
@@ -115,7 +136,7 @@
                 Everyone has family. Not everyone lets them run their life. Find partners who value boundaries as much as you do.
             </p>
             <div class="mockup-frame">
-                <img src="Screenshot_20260405_052707_Gallery.jpg" alt="Dating Mockup">
+                <img src="Screenshot_20260405_052707_Gallery.jpg" alt="Date">
             </div>
         </div>
 
@@ -127,16 +148,16 @@
                 Vent, laugh, and judge the most unbelievable in-law horror stories. Searchable by category.
             </p>
             <div class="mockup-frame">
-                <img src="Screenshot_20260404_091302_Google.jpg" alt="Shame">
+                <img src="Screenshot_20260404_091302_Google.jpg" alt="Wall of Shame">
             </div>
         </div>
 
         <div class="feature-block" id="content">
-            <span class="section-tag">MEDIA</span>
+            <span class="section-tag">CONTENT</span>
             <h2 class="feature-title">Podcasts<br>& Content</h2>
             <p class="feature-desc">Exclusive deep-dives, strategic advice, and dark humor through our video and audio platform.</p>
             <div class="mockup-frame">
-                <img src="Screenshot_20260405_053351_Google.jpg" alt="Content and Podcast Mockup">
+                <img src="Screenshot_20260405_053351_Google.jpg" alt="Content">
             </div>
         </div>
 
@@ -167,18 +188,24 @@
     </section>
 
     <section id="boutique" style="background: #ffffff; padding: 100px 30px; text-align: center;">
-        <span class="section-tag" style="color: #bbb; margin-bottom: 40px;">THE BOUTIQUE</span>
-        <div style="background: var(--grey); padding: 40px; border-radius: 25px; border: 1px solid #eee;">
-            <h2 class="feature-title" style="color: var(--charcoal); font-size: 1.4rem; margin-bottom: 10px;">High-End Apparel</h2>
+        <span class="section-tag" style="color: #bbb; margin-bottom: 40px; letter-spacing: 5px; font-weight: 900; font-size: 0.6rem;">BOUTIQUE</span>
+        
+        <div class="carousel-container">
+            <div class="carousel-item"><img src="BOUTIQUE_1.jpg" alt="Boutique Item 1"></div>
+            <div class="carousel-item"><img src="BOUTIQUE_2.jpg" alt="Boutique Item 2"></div>
+            <div class="carousel-item"><img src="BOUTIQUE_3.jpg" alt="Boutique Item 3"></div>
+            <div class="carousel-item"><img src="BOUTIQUE_4.jpg" alt="Boutique Item 4"></div>
+        </div>
+
+        <div style="background: var(--grey); padding: 40px; border-radius: 25px; border: 1px solid #eee; margin-top: 30px;">
+            <h2 class="feature-title" style="color: var(--charcoal); font-size: 1.4rem; margin-bottom: 10px; font-family: 'Playfair Display', serif;">High-End Apparel</h2>
             <button class="btn-mint" style="padding: 15px; font-size: 0.7rem;">SHOP THE BOUTIQUE</button>
         </div>
     </section>
 
     <script>
         function submitToWaitlist() {
-            const email = document.getElementById('user-email').value;
-            if(!email.includes('@')) return alert("Enter a valid email.");
-            document.getElementById('signup-container').innerHTML = "<div style='color: var(--mint); font-weight: 900; padding: 20px; border: 1px solid var(--mint);'>WELCOME TO THE FAMILY.</div>";
+            document.getElementById('signup-container').innerHTML = "<div style='color: var(--mint); font-weight: 900; padding: 20px; border: 1px solid var(--mint); text-align: center; width: 100%;'>WELCOME TO THE FAMILY.</div>";
         }
     </script>
 </body>
