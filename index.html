@@ -28,7 +28,6 @@
         .logo-container { padding: 160px 20px 10px 20px; }
         .logo { letter-spacing: 0.6em; font-weight: 900; font-size: 1.2rem; text-transform: uppercase; }
         .hero { padding: 40px 20px 80px 20px; max-width: 600px; margin: 0 auto; }
-        .hero span.welcome { font-size: 0.7rem; letter-spacing: 4px; color: #888; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 10px; }
         .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; }
         .hero h1 span { color: var(--mint); text-shadow: 0 0 15px rgba(85, 213, 192, 0.4); }
         
@@ -108,17 +107,16 @@
         <div class="logo">I N L A W L E S S</div>
     </div>
 
-    <section class="hero">
-        <span class="welcome">Living InLawless</span>
+    <section class="hero" id="hero">
         <h1>THE FAMILY YOU <br>ACTUALLY <span>WANT.</span></h1>
         
         <p class="hero-subtext">
-            OUR SANCTUARY IS BEING PERFECTED. JOIN THE FOUNDING CIRCLE TODAY FOR BETA ACCESS AND <strong>40% OFF</strong> YOUR FIRST ITEM FROM THE I N L A W L E S S BOUTIQUE AT LAUNCH.
+            SIGN UP FOR OUR I N L A W L E S S INNER CIRCLE NEWSLETTER FOR BETA ACCESS, LAUNCH UPDATES, AND 40% OFF YOUR FIRST ITEM FROM THE I N L A W L E S S BOUTIQUE AT LAUNCH.
         </p>
 
-        <form name="founding-circle" method="POST" data-netlify="true">
+        <form name="inner-circle-signup" method="POST" data-netlify="true">
             <input type="email" name="email" class="email-input" placeholder="ENTER EMAIL ADDRESS" required>
-            <button type="submit" class="btn-mint">JOIN THE FOUNDING CIRCLE</button>
+            <button type="submit" class="btn-mint">SIGN UP</button>
         </form>
         
         <p style="font-size: 0.6rem; color: #bbb; margin-top: 15px; letter-spacing: 1px; text-transform: uppercase;">*DISCOUNT CODE SENT VIA EMAIL UPON LAUNCH</p>
@@ -222,7 +220,7 @@
 
         <div style="background: var(--grey); padding: 40px; border-radius: 25px; border: 1px solid #eee; margin-top: 30px;">
             <h2 class="feature-title" style="color: var(--charcoal); font-size: 1.4rem; margin-bottom: 10px; font-family: 'Playfair Display', serif;">High-End Apparel</h2>
-            <a href="#hero" class="btn-mint" style="display:inline-block; text-decoration:none; padding: 15px; font-size: 0.7rem; width: auto;">GET 40% OFF AT LAUNCH</a>
+            <a href="#hero" class="btn-mint" style="display:inline-block; text-decoration:none; padding: 15px; font-size: 0.7rem; width: auto; letter-spacing: 2px;">GET 40% OFF AT LAUNCH</a>
         </div>
     </section>
 
