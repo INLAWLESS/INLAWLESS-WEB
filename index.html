@@ -49,4 +49,192 @@
 
         /* --- ROADMAP CONTAINER --- */
         .roadmap-container { background: var(--navy); color: white; padding: 100px 30px; text-align: left; }
-        .section-tag { color: var(--mint); font-size: 0.6rem; letter-spacing: 5px; text-transform:
+        .section-tag { color: var(--mint); font-size: 0.6rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 25px; display: block; font-weight: 900; }
+        .feature-block { margin-bottom: 80px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 40px; }
+        .feature-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #fff; margin-bottom: 15px; line-height: 1.1; }
+        .feature-desc { font-size: 0.9rem; line-height: 1.8; color: #b0b5cc; white-space: normal; max-width: 100%; }
+
+        .mockup-frame {
+            width: 100%; border: 2px solid var(--mint); border-radius: 25px;
+            margin-top: 30px; overflow: hidden;
+            box-shadow: 0 0 20px rgba(85, 213, 192, 0.5);
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .mockup-frame img { width: 100%; height: auto; display: block; }
+        
+        /* --- CAROUSEL SLIDER --- */
+        .carousel-container {
+            width: 100%; overflow-x: auto; display: flex;
+            gap: 15px; scroll-snap-type: x mandatory;
+            padding-bottom: 20px; scrollbar-width: none;
+        }
+        .carousel-container::-webkit-scrollbar { display: none; }
+        .carousel-item {
+            min-width: 80%; scroll-snap-align: center;
+            border-radius: 20px; overflow: hidden;
+            border: 1px solid #eee; background: var(--grey);
+        }
+        .carousel-item img { width: 100%; height: auto; display: block; }
+
+        /* --- FOOTER & SOCIALS --- */
+        .footer { padding: 80px 30px; background: #ffffff; border-top: 1px solid #eee; }
+        .social-links { display: flex; gap: 25px; justify-content: center; margin-bottom: 30px; flex-wrap: wrap; }
+        .social-icon { 
+            text-decoration: none; color: #bbb; font-size: 1.4rem; 
+            transition: all 0.3s ease; 
+        }
+        .social-icon:hover { color: var(--mint); transform: translateY(-3px); }
+        .copyright { font-size: 0.6rem; color: #bbb; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
+    </style>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="nav-links">
+            <a href="#about" class="nav-item">ABOUT US</a>
+            <a href="#connect" class="nav-item">CONNECT</a>
+            <a href="#date" class="nav-item">DATE</a>
+            <a href="#shame" class="nav-item">WALL OF SHAME</a>
+            <a href="#content" class="nav-item">CONTENT</a>
+            <a href="#resources" class="nav-item">RESOURCES</a>
+            <a href="#additional" class="nav-item">ADDITIONAL FEATURES</a>
+            <a href="#boutique" class="nav-item">BOUTIQUE</a>
+        </nav>
+    </header>
+
+    <div class="logo-container">
+        <div class="logo">I N L A W L E S S</div>
+    </div>
+
+    <section class="hero">
+        <span class="welcome">Living InLawless</span>
+        <h1>THE FAMILY YOU <br>ACTUALLY <span>WANT.</span></h1>
+        
+        <p class="hero-subtext">
+            OUR SANCTUARY IS BEING PERFECTED. JOIN THE FOUNDING CIRCLE TODAY FOR BETA ACCESS AND <strong>40% OFF</strong> YOUR FIRST ITEM FROM THE I N L A W L E S S BOUTIQUE AT LAUNCH.
+        </p>
+
+        <form name="founding-circle" method="POST" data-netlify="true">
+            <input type="email" name="email" class="email-input" placeholder="ENTER EMAIL ADDRESS" required>
+            <button type="submit" class="btn-mint">JOIN THE FOUNDING CIRCLE</button>
+        </form>
+        
+        <p style="font-size: 0.6rem; color: #bbb; margin-top: 15px; letter-spacing: 1px; text-transform: uppercase;">*DISCOUNT CODE SENT VIA EMAIL UPON LAUNCH</p>
+    </section>
+
+    <section class="roadmap-container">
+        
+        <div class="feature-block" id="about">
+            <span class="section-tag">ABOUT US</span>
+            <h2 class="feature-title">BECAUSE "FAMILY"<br>ISN'T AN EXCUSE.</h2>
+            <p class="feature-desc">
+                <strong style="color: white; font-weight: 900;">We’ve all heard it: "But they're family."</strong><br>
+                We’re the community that says, "So what?" <br>
+                <span style="display: inline-block; white-space: nowrap; color: #fff; font-weight: 700; letter-spacing: 2px;">I N L A W L E S S</span> is a premium sanctuary for couples who are tired of interference and overstepping. We provide the tools, the scripts, and the squad to help you reclaim your home, your holidays, and your head. No guilt. No filter. Just freedom.
+            </p>
+            <div class="mockup-frame">
+                <img src="file_000000007880722f9514fa4280956c5d.png" alt="About Us">
+            </div>
+        </div>
+
+        <div class="feature-block" id="connect">
+            <span class="section-tag">CONNECT</span>
+            <h2 class="feature-title">The Daily Feed</h2>
+            <p class="feature-desc">
+                <strong style="color: white; font-weight: 900;">Laughter is the only defense.</strong><br>
+                Share daily stories and find friends who actually get it. We aren't here for validation—we’re here to survive the drama together, celebrate our unique personalities through customizable profiles, and laugh at the misery together. Showcase your Inner Circle (Top 6) and join community challenges that turn in-law nightmares into shared jokes.
+            </p>
+            <div class="mockup-frame">
+                <img src="file_00000000517c71fb872c7d6cc73623fd.png" alt="Connect">
+            </div>
+        </div>
+
+        <div class="feature-block" id="date">
+            <span class="section-tag">DATE</span>
+            <h2 class="feature-title" style="white-space: nowrap;">FINALLY.<br>CHOOSE BETTER.</h2>
+            <p class="feature-desc">
+                <strong style="color: white; font-weight: 900; text-transform: uppercase;">NO PARENTS. NO IN-LAWS.</strong><br>
+                Everyone has family. Not everyone lets them run their life. Find partners who value boundaries as much as you do.
+            </p>
+            <div class="mockup-frame">
+                <img src="Screenshot_20260405_052707_Gallery.jpg" alt="Date">
+            </div>
+        </div>
+
+        <div class="feature-block" id="shame">
+            <span class="section-tag">WALL OF SHAME</span>
+            <h2 class="feature-title">Real people.<br>Real stories.</h2>
+            <p class="feature-desc">
+                <strong style="color: white; font-weight: 900;">Read it. Relate. Rethink everything.</strong><br>
+                Vent, laugh, and judge the most unbelievable in-law horror stories. Searchable by category.
+            </p>
+            <div class="mockup-frame">
+                <img src="Screenshot_20260404_091302_Google.jpg" alt="Wall of Shame">
+            </div>
+        </div>
+
+        <div class="feature-block" id="content">
+            <span class="section-tag">CONTENT</span>
+            <h2 class="feature-title">Podcasts<br>& Content</h2>
+            <p class="feature-desc">Exclusive deep-dives, strategic advice, and dark humor through our video and audio platform.</p>
+            <div class="mockup-frame">
+                <img src="Screenshot_20260405_053351_Google.jpg" alt="Content">
+            </div>
+        </div>
+
+        <div class="feature-block" id="resources">
+            <span class="section-tag">RESOURCES</span>
+            <h2 class="feature-title">BOUNDARY<br>BLUEPRINTS</h2>
+            <p class="feature-desc">
+                <strong style="color: white; font-weight: 900;">Meet Alexis: Your I N L A W L E S S AI Mentor.</strong><br>
+                Reclaim your peace of mind with curated guides and boundary-setting workshops. Alexis isn't just a mentor; she’s your filter against the noise. Use our "Hidden Library" to find the strategies that work for your specific dynamic and build a private sanctuary that belongs only to you.
+            </p>
+            <div class="mockup-frame">
+                <img src="Screenshot_20260404_203727_Google.jpg" alt="Resources">
+            </div>
+        </div>
+
+        <div class="feature-block" id="additional" style="border-bottom: none;">
+            <span class="section-tag">ADDITIONAL FEATURES</span>
+            <h2 class="feature-title">EXTRAS</h2>
+            <p class="feature-desc">
+                <strong style="color: white; font-weight: 900;">No judgment. No filter.</strong><br>
+                Our AI Mentor, Alexis, is your co-pilot for setting boundaries. Customize your profile with total freedom, conquer <strong>survival challenges</strong>, and play our <strong>Inner Circle gifting games</strong> ❤️ to support friends in the community when the interference gets loud.
+            </p>
+            <div class="mockup-frame">
+                <img src="Screenshot_20260405_042943_Google.jpg" alt="Additional Features">
+            </div>
+        </div>
+
+    </section>
+
+    <section id="boutique" style="background: #ffffff; padding: 100px 30px; text-align: center;">
+        <span class="section-tag" style="color: #bbb; margin-bottom: 40px; letter-spacing: 5px; font-weight: 900; font-size: 0.6rem;">BOUTIQUE</span>
+        
+        <div class="carousel-container">
+            <div class="carousel-item"><img src="BOUTIQUE_1.jpg" alt="Boutique Item 1"></div>
+            <div class="carousel-item"><img src="BOUTIQUE_2.jpg" alt="Boutique Item 2"></div>
+            <div class="carousel-item"><img src="BOUTIQUE_3.jpg" alt="Boutique Item 3"></div>
+            <div class="carousel-item"><img src="BOUTIQUE_4.jpg" alt="Boutique Item 4"></div>
+        </div>
+
+        <div style="background: var(--grey); padding: 40px; border-radius: 25px; border: 1px solid #eee; margin-top: 30px;">
+            <h2 class="feature-title" style="color: var(--charcoal); font-size: 1.4rem; margin-bottom: 10px; font-family: 'Playfair Display', serif;">High-End Apparel</h2>
+            <a href="#hero" class="btn-mint" style="display:inline-block; text-decoration:none; padding: 15px; font-size: 0.7rem; width: auto;">GET 40% OFF AT LAUNCH</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://www.instagram.com/inlawless?igsh=ZTdpd2VnNGpueGJw" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://tiktok.com/@inlawless" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.snapchat.com/add/inlawless?share_id=NbpiUzJBYGo&locale=en-US" target="_blank" class="social-icon"><i class="fab fa-snapchat"></i></a>
+            <a href="https://www.facebook.com/share/1EWUkRCPgh/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <div class="copyright">&copy; 2026 I N L A W L E S S. ALL RIGHTS RESERVED.</div>
+    </footer>
+
+</body>
+</html>
