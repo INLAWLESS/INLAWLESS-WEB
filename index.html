@@ -2,168 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I N L A W L E S S | Sanctuary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>I N L A W L E S S</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            margin: 0;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #ffffff;
-            color: #000;
-            line-height: 1.6;
+        :root { --mint: #55D5C0; --navy: #050a26; --charcoal: #1a1a1a; --grey: #f9f9f9; }
+        body { background: #ffffff; color: var(--charcoal); font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; text-align: center; scroll-behavior: smooth; }
+
+        /* --- STICKY NAVIGATION --- */
+        .header { 
+            position: fixed; top: 0; width: 100%; z-index: 1000; 
+            padding: 15px 0; background: rgba(255, 255, 255, 0.98);
+            display: flex; justify-content: center; align-items: center;
+            border-bottom: 0.5px solid rgba(0,0,0,0.05);
         }
-        header {
-            padding: 60px 20px;
-            text-align: center;
-            border-bottom: 1px solid #f0f0f0;
+        .nav-links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; padding: 0 10px; }
+        .nav-item {
+            text-decoration: none; color: #888; font-weight: 900; font-size: 0.52rem;
+            letter-spacing: 1.2px; text-transform: uppercase; transition: all 0.3s ease;
         }
-        .logo {
-            letter-spacing: 12px;
-            font-size: 2.5rem;
-            font-weight: 300;
-            margin: 0;
-            text-transform: uppercase;
-        }
-        .tagline {
-            letter-spacing: 4px;
-            font-size: 14px;
-            color: #888;
-            margin-top: 10px;
-            text-transform: uppercase;
-        }
-        section {
-            padding: 80px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .beta-badge {
-            background: #000;
-            color: #fff;
-            padding: 6px 15px;
-            font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border-radius: 50px;
-            display: inline-block;
-            margin-bottom: 25px;
-        }
-        h2 {
-            font-size: 2.2rem;
-            font-weight: 400;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-        }
-        .content-image {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-        .form-container {
-            background-color: #f9f9f9;
-            padding: 60px 20px;
-            margin-top: 40px;
-            border-top: 1px solid #eee;
-        }
-        input[type="email"] {
-            padding: 15px;
-            width: 90%;
-            max-width: 400px;
-            border: 1px solid #000;
-            margin-bottom: 20px;
-            text-align: center;
+        .nav-item:hover { color: var(--mint); text-shadow: 0 0 10px rgba(85, 213, 192, 0.8); }
+
+        /* --- HERO & LOGO --- */
+        .logo-container { padding: 160px 20px 10px 20px; }
+        .logo { letter-spacing: 0.6em; font-weight: 900; font-size: 1.2rem; text-transform: uppercase; }
+        .hero { padding: 40px 20px 80px 20px; max-width: 600px; margin: 0 auto; }
+        .hero span.welcome { font-size: 0.7rem; letter-spacing: 4px; color: #888; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 10px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; }
+        .hero h1 span { color: var(--mint); text-shadow: 0 0 15px rgba(85, 213, 192, 0.4); }
+        
+        .hero-subtext { font-size: 0.75rem; line-height: 1.8; color: #666; margin-bottom: 35px; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; padding: 0 10px; }
+
+        .email-input {
+            width: 100%; max-width: 300px; padding: 22px; 
+            border: 1px solid #eee; margin-bottom: 15px; outline: none; 
+            font-size: 0.8rem; box-sizing: border-box; text-align: center;
+            font-family: 'Inter', sans-serif; font-weight: 700;
             letter-spacing: 1px;
-            outline: none;
-            font-size: 16px;
         }
-        button {
-            padding: 18px 50px;
-            background: #000;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            letter-spacing: 3px;
-            font-weight: bold;
-            width: 90%;
-            max-width: 400px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
+        .btn-mint { 
+            width: 100%; max-width: 300px; background: var(--mint); color: white; 
+            padding: 22px; font-weight: 900; text-transform: uppercase; border: none; 
+            letter-spacing: 2px; cursor: pointer; transition: 0.3s; font-size: 0.8rem;
         }
-        button:hover {
-            background: #333;
-            letter-spacing: 4px;
-        }
-        .boutique-preview {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-        .item-card {
-            width: 250px;
-            text-align: center;
-        }
-        .item-card img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            background-color: #f4f4f4;
-        }
-    </style>
-</head>
-<body>
 
-    <header>
-        <h1 class="logo">I N L A W L E S S</h1>
-        <div class="tagline">Living InLawless</div>
-    </header>
-
-    <section>
-        <div class="beta-badge">Coming Soon</div>
-        <h2>The Sanctuary for the Parentless</h2>
-        <p>INLAWLESS is more than an app—it is a social sanctuary. We are building a space for those navigating adulthood without the traditional safety net of parents or in-laws. Connection, community, and support, redefined.</p>
-        <img src="app-preview.jpg" alt="I N L A W L E S S App Interface" class="content-image">
-    </section>
-
-    <section style="background-color: #fafafa;">
-        <h2>I N L A W L E S S BOUTIQUE</h2>
-        <p>Curated essentials for the independent lifestyle. Quality, minimalism, and purpose.</p>
-        <div class="boutique-preview">
-            <div class="item-card">
-                <div style="height:300px; background:#eee; display:flex; align-items:center; justify-content:center;">Preview</div>
-                <p style="letter-spacing:1px; margin-top:10px;">SIGNATURE TEE</p>
-            </div>
-            <div class="item-card">
-                <div style="height:300px; background:#eee; display:flex; align-items:center; justify-content:center;">Preview</div>
-                <p style="letter-spacing:1px; margin-top:10px;">FOUNDERS CAP</p>
-            </div>
-        </div>
-    </section>
-
-    <div class="form-container" id="signup">
-        <section style="padding: 0;">
-            <h2 style="margin-bottom: 10px;">JOIN THE FOUNDING CIRCLE</h2>
-            <p style="margin-bottom: 40px;">Sign up today to be the first to access the beta app and receive <strong>40% OFF</strong> your first item from the Boutique at launch.</p>
-            
-            <form name="founding-circle" method="POST" data-netlify="true">
-                <input type="email" name="email" placeholder="ENTER YOUR EMAIL" required>
-                <br>
-                <button type="submit">Get Early Access</button>
-            </form>
-            
-            <p style="font-size: 11px; color: #999; margin-top: 30px; text-transform: uppercase; letter-spacing: 2px;">
-                *Your exclusive 40% discount will be sent via email upon boutique launch.
-            </p>
-        </section>
-    </div>
-
-    <footer style="padding: 40px; text-align: center; font-size: 12px; color: #ccc; letter-spacing: 2px;">
-        &copy; 2026 I N L A W L E S S. ALL RIGHTS RESERVED.
-    </footer>
-
-</body>
-</html>
+        /* --- ROADMAP CONTAINER --- */
+        .roadmap-container { background: var(--navy); color: white; padding: 100px 30px; text-align: left; }
+        .section-tag { color: var(--mint); font-size: 0.6rem; letter-spacing: 5px; text-transform:
