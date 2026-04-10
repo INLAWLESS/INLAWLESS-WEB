@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
     <style>
-        :root { --mint: #55D5C0; --navy: #050a26; --charcoal: #1a1a1a; --grey: #f9f9f9; }
+        :root { --mint: #55D5C0; --navy: #050a26; --charcoal: #1a1a1a; --grey: #f9f9f9; --terracotta: #8b4513; }
         body { background: #ffffff; color: var(--charcoal); font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; text-align: center; scroll-behavior: smooth; }
 
         /* --- STICKY NAVIGATION --- */
@@ -84,6 +84,15 @@
         }
         .social-icon:hover { color: var(--mint); transform: translateY(-3px); }
         .copyright { font-size: 0.6rem; color: #bbb; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
+
+        /* --- BINGO MODAL STYLES --- */
+        #bingoModal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(5, 10, 38, 0.95); z-index:9999; overflow-y: auto; }
+        .bingo-content { max-width:400px; margin: 60px auto; background:#fff; padding:30px; border-radius:25px; text-align:center; position:relative; box-shadow: 0 0 30px rgba(85, 213, 192, 0.3); border: 2px solid var(--mint); }
+        .bingo-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; margin: 25px 0; }
+        .bingo-square { background:#f9f9f9; padding:10px; font-size:10px; height:80px; display:flex; align-items:center; justify-content:center; cursor:pointer; border-radius:12px; transition:0.3s; border:1px solid #eee; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; }
+        .bingo-square.active { background: var(--mint) !important; color: white !important; border-color: var(--mint); }
+        #winMessage { display:none; background: var(--grey); border: 2px dashed var(--mint); padding:20px; border-radius:15px; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -114,7 +123,7 @@
             SIGN UP FOR OUR I N L A W L E S S INNER CIRCLE NEWSLETTER FOR BETA ACCESS, LAUNCH UPDATES, AND 40% OFF YOUR FIRST ITEM FROM THE I N L A W L E S S BOUTIQUE AT LAUNCH.
         </p>
 
-        <form name="inner-circle-signup" method="POST" data-netlify="true">
+        <form id="inner-circle-signup" name="inner-circle-signup" method="POST" data-netlify="true" onsubmit="handleFormSubmit(event)">
             <input type="email" name="email" class="email-input" placeholder="ENTER EMAIL ADDRESS" required>
             <button type="submit" class="btn-mint">SIGN UP</button>
         </form>
@@ -123,7 +132,6 @@
     </section>
 
     <section class="roadmap-container">
-        
         <div class="feature-block" id="about">
             <span class="section-tag">ABOUT US</span>
             <h2 class="feature-title">BECAUSE "FAMILY"<br>ISN'T AN EXCUSE.</h2>
@@ -205,7 +213,6 @@
                 <img src="Screenshot_20260405_042943_Google.jpg" alt="Additional Features">
             </div>
         </div>
-
     </section>
 
     <section id="boutique" style="background: #ffffff; padding: 100px 30px; text-align: center;">
@@ -220,9 +227,27 @@
 
         <div style="background: var(--grey); padding: 40px; border-radius: 25px; border: 1px solid #eee; margin-top: 30px;">
             <h2 class="feature-title" style="color: var(--charcoal); font-size: 1.4rem; margin-bottom: 10px; font-family: 'Playfair Display', serif;">High-End Apparel</h2>
-            <a href="#hero" class="btn-mint" style="display:inline-block; text-decoration:none; padding: 15px; font-size: 0.7rem; width: auto; letter-spacing: 2px;">GET 40% OFF AT LAUNCH</a>
+            <a href="#hero" class="btn-mint" style="display:inline-block; text-decoration:none; padding: 15px; font-size: 0.7rem; width: auto; letter-spacing: 2px;">GET 25% OFF AT LAUNCH</a>
         </div>
     </section>
+
+    <div id="bingoModal">
+        <div class="bingo-content">
+            <div class="logo" style="font-size: 0.8rem; margin-bottom: 10px;">I N L A W L E S S</div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0;">YOU'RE IN.</h3>
+            <p style="font-size: 0.65rem; letter-spacing: 1px; color: #666; margin-top: 5px;">TAP 3 NIGHTMARES TO CLAIM YOUR SANCTUARY DISCOUNT.</p>
+            
+            <div id="bingoGrid" class="bingo-grid"></div>
+
+            <div id="winMessage">
+                <p style="margin:0; font-weight:900; color:var(--mint); letter-spacing: 2px;">BINGO!</p>
+                <p style="margin:5px 0; font-size:1.2rem; font-family: 'Playfair Display';">Code: <strong>NOINLAWS25</strong></p>
+                <p style="font-size:0.6rem; color: #888;">USE AT THE I N L A W L E S S BOUTIQUE</p>
+            </div>
+
+            <button onclick="document.getElementById('bingoModal').style.display='none'" style="margin-top:20px; background:none; border:none; color:#bbb; text-decoration:underline; cursor:pointer; font-size: 0.6rem; font-weight: 900; letter-spacing: 1px;">CLOSE</button>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="social-links">
@@ -233,6 +258,68 @@
         </div>
         <div class="copyright">&copy; 2026 I N L A W L E S S. ALL RIGHTS RESERVED.</div>
     </footer>
+
+    <script>
+        // Bingo Squares Content
+        const bingoSquares = [
+            "White 'Eggshell' Dress", "Food Competition", "Surprise Visit", 
+            "Unsolicited Advice", "Weaponized Guilt", "Comparing to Ex", 
+            "Grandbaby Talk", "Passive-Aggressive Card", "Fake Crying",
+            "DIY Critique", "Aggressive Handshake", "The Staring Contest",
+            "Background Check", "Secret 3-Hour Nap", "Political Rant"
+        ];
+
+        let clicks = 0;
+
+        // Function to handle the Form Submission without redirecting
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+            const myForm = event.target;
+            const formData = new FormData(myForm);
+            
+            try {
+                // Send to Netlify
+                await fetch("/", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams(formData).toString(),
+                });
+                
+                // Show Bingo Game on Success
+                setupBingo();
+                document.getElementById('bingoModal').style.display = 'block';
+                myForm.reset();
+            } catch (error) {
+                alert("Error joining the Circle. Please try again.");
+            }
+        }
+
+        // Setup the Bingo Grid
+        function setupBingo() {
+            const grid = document.getElementById('bingoGrid');
+            grid.innerHTML = '';
+            clicks = 0;
+            document.getElementById('winMessage').style.display = 'none';
+
+            // Shuffle and pick 9 squares
+            const shuffled = bingoSquares.sort(() => 0.5 - Math.random()).slice(0, 9);
+
+            shuffled.forEach(text => {
+                const square = document.createElement('div');
+                square.className = 'bingo-square';
+                square.innerText = text;
+                square.onclick = function() {
+                    if(this.classList.contains('active')) return;
+                    this.classList.add('active');
+                    clicks++;
+                    if(clicks === 3) {
+                        document.getElementById('winMessage').style.display = 'block';
+                    }
+                };
+                grid.appendChild(square);
+            });
+        }
+    </script>
 
 </body>
 </html>
