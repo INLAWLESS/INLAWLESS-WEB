@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
     <style>
-        :root { --mint: #55D5C0; --navy: #050a26; --charcoal: #1a1a1a; --grey: #f9f9f9; }
+        :root { --mint: #55D5C0; --navy: #050a26; --charcoal: #1a1a1a; --grey: #f9f9f9; --gold: rgba(212, 175, 55, 0.4); }
         body { background: #ffffff; color: var(--charcoal); font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; text-align: center; scroll-behavior: smooth; }
 
         /* --- STICKY NAVIGATION --- */
@@ -74,7 +74,10 @@
         .carousel-item {
             min-width: 80%; scroll-snap-align: center;
             border-radius: 20px; overflow: hidden;
-            border: 1px solid #eee; background: var(--grey);
+            border: 1px solid var(--gold);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+            background: var(--grey);
+            transition: transform 0.3s ease;
         }
         .carousel-item img { width: 100%; height: auto; display: block; }
 
@@ -237,10 +240,10 @@
         
         <div class="carousel-container">
             <div class="carousel-item"><img src="Boutique rack.png" alt="Boutique Rack"></div>
-            <div class="carousel-item"><img src="Inlawless candles .png" alt="Inlawless Candles"></div>
-            <div class="carousel-item"><img src="Inlawless bundles.png" alt="Inlawless Bundles"></div>
-            <div class="carousel-item"><img src="Inlawless rugs.png" alt="Inlawless Rugs"></div>
-            <div class="carousel-item"><img src="No parents allowed .png" alt="No Parents Allowed"></div>
+            <div class="carousel-item"><img src="Candles 1.png" alt="Inlawless Candles"></div>
+            <div class="carousel-item"><img src="Vengeance bundle.png" alt="Inlawless Vengeance Bundle"></div>
+            <div class="carousel-item"><img src="my dog your mom final mockup.png" alt="My Dog Your Mom Mockup"></div>
+            <div class="carousel-item"><img src="Stickers & magnets.png" alt="Stickers and Magnets"></div>
         </div>
 
         <div style="background: var(--grey); padding: 40px; border-radius: 25px; border: 1px solid #eee; margin-top: 30px;">
@@ -305,9 +308,7 @@
             const grid = document.getElementById('bingoGrid');
             grid.innerHTML = '';
             document.getElementById('winMessage').style.display = 'none';
-
             const shuffled = [...bingoSquares].sort(() => 0.5 - Math.random());
-
             shuffled.forEach((text) => {
                 const square = document.createElement('div');
                 square.className = 'bingo-square';
