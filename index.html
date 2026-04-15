@@ -24,10 +24,10 @@
         }
         .nav-item:hover { color: var(--mint); text-shadow: 0 0 10px rgba(85, 213, 192, 0.8); }
 
-        /* --- HERO & LOGO: PREMIUM SPACING --- */
+        /* --- HERO & LOGO: RESTORED 0.6em SPACING --- */
         .logo-container { padding: 160px 20px 10px 20px; display: flex; justify-content: center; }
         .logo { 
-            letter-spacing: 0.8em; 
+            letter-spacing: 0.6em; 
             font-weight: 900; font-size: 1.2rem; 
             text-transform: uppercase; white-space: nowrap; display: inline-block;
         }
@@ -65,7 +65,7 @@
         }
         .mockup-frame img { width: 100%; height: auto; display: block; }
         
-        /* --- CAROUSEL SLIDER: FIXING THE WHITE GAP --- */
+        /* --- CAROUSEL SLIDER --- */
         .carousel-container {
             width: 100%; overflow-x: auto; display: flex;
             gap: 15px; scroll-snap-type: x mandatory;
@@ -152,7 +152,7 @@
     <section class="hero" id="hero">
         <h1>THE FAMILY YOU <br>ACTUALLY <span>WANT.</span></h1>
         <p class="hero-subtext">
-            SIGN UP FOR OUR I N L A W L E S S INNER CIRCLE NEWSLETTER FOR BETA ACCESS, LAUNCH UPDATES, AND 25% OFF YOUR FIRST ITEM FROM THE I N L A W L E S S BOUTIQUE AT LAUNCH.
+            SIGN UP FOR OUR I N L A W L E S S INNER CIRCLE NEWSLETTER FOR BETA ACCESS, LAUNCH UPDATES, AND 25% OFF YOUR FIRST ORDER FROM THE I N L A W L E S S BOUTIQUE AT LAUNCH.
         </p>
 
         <form id="inner-circle-signup" name="inner-circle-signup" method="POST" data-netlify="true" onsubmit="handleFormSubmit(event)">
@@ -265,21 +265,6 @@
         </div>
     </section>
 
-    <div id="bingoModal">
-        <div class="bingo-content">
-            <div class="logo" style="font-size: 0.7rem; margin-bottom: 10px;">I N L A W L E S S</div>
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; margin: 0; letter-spacing: 1px; text-transform: uppercase;">The Nightmare In-Law<br>Bingo Game</h3>
-            <p style="font-size: 0.55rem; letter-spacing: 1px; color: #666; margin: 10px 0 15px 0;">GET 5 IN A ROW (ANY DIRECTION) TO UNLOCK YOUR DISCOUNT.</p>
-            <div id="bingoGrid" class="bingo-grid"></div>
-            <div id="winMessage">
-                <p style="margin:0; font-weight:900; color:var(--mint); letter-spacing: 2px; font-size: 0.8rem;">BINGO!</p>
-                <p style="margin:5px 0; font-size:1rem; font-family: 'Playfair Display';">CODE: <strong>NOINLAWS25</strong></p>
-                <p style="font-size:0.5rem; color: #888;">25% OFF APPLIED TO YOUR FIRST BOUTIQUE ORDER</p>
-            </div>
-            <button onclick="document.getElementById('bingoModal').style.display='none'" style="margin-top:15px; background:none; border:none; color:#bbb; text-decoration:underline; cursor:pointer; font-size: 0.6rem; font-weight: 900; letter-spacing: 1px; text-transform: uppercase;">CLOSE GAME</button>
-        </div>
-    </div>
-
     <footer class="footer">
         <div class="social-links">
             <a href="https://www.instagram.com/inlawless" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
@@ -303,21 +288,16 @@
             event.preventDefault();
             const myForm = event.target;
             const formData = new FormData(myForm);
-            
-            // Send to Netlify in background
             try {
                 await fetch("/", {
                     method: "POST",
                     headers: { "Content-Type": "application/x-www-form-urlencoded" },
                     body: new URLSearchParams(formData).toString(),
                 });
-                
-                // Success! Trigger Bingo
                 setupBingo();
                 document.getElementById('bingoModal').style.display = 'block';
                 myForm.reset();
             } catch (error) {
-                // If Netlify fails, still trigger Bingo so user isn't frustrated
                 setupBingo();
                 document.getElementById('bingoModal').style.display = 'block';
             }
@@ -354,5 +334,20 @@
             if (isWin) winBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
     </script>
+
+    <div id="bingoModal">
+        <div class="bingo-content">
+            <div class="logo" style="font-size: 0.7rem; margin-bottom: 10px;">I N L A W L E S S</div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; margin: 0; letter-spacing: 1px; text-transform: uppercase;">The Nightmare In-Law<br>Bingo Game</h3>
+            <p style="font-size: 0.55rem; letter-spacing: 1px; color: #666; margin: 10px 0 15px 0;">GET 5 IN A ROW (ANY DIRECTION) TO UNLOCK YOUR DISCOUNT.</p>
+            <div id="bingoGrid" class="bingo-grid"></div>
+            <div id="winMessage">
+                <p style="margin:0; font-weight:900; color:var(--mint); letter-spacing: 2px; font-size: 0.8rem;">BINGO!</p>
+                <p style="margin:5px 0; font-size:1rem; font-family: 'Playfair Display';">CODE: <strong>NOINLAWS25</strong></p>
+                <p style="font-size:0.5rem; color: #888;">25% OFF APPLIED TO YOUR FIRST BOUTIQUE ORDER</p>
+            </div>
+            <button onclick="document.getElementById('bingoModal').style.display='none'" style="margin-top:15px; background:none; border:none; color:#bbb; text-decoration:underline; cursor:pointer; font-size: 0.6rem; font-weight: 900; letter-spacing: 1px; text-transform: uppercase;">CLOSE GAME</button>
+        </div>
+    </div>
 </body>
 </html>
