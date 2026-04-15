@@ -152,13 +152,17 @@
     <section class="hero" id="hero">
         <h1>THE FAMILY YOU <br>ACTUALLY <span>WANT.</span></h1>
         <p class="hero-subtext">
-            SIGN UP FOR OUR I N L A W L E S S INNER CIRCLE NEWSLETTER FOR BETA ACCESS, LAUNCH UPDATES, AND 25% OFF YOUR FIRST ITEM FROM THE I N L A W L E S S BOUTIQUE AT LAUNCH.
+            SIGN UP FOR OUR I N L A W L E S S INNER CIRCLE NEWSLETTER FOR BETA ACCESS, LAUNCH UPDATES, AND 25% OFF YOUR FIRST ORDER
+
+ FROM THE I N L A W L E S S BOUTIQUE AT LAUNCH.
         </p>
 
-        <form id="inner-circle-signup" name="inner-circle-signup" method="POST" data-netlify="true" onsubmit="handleFormSubmit(event)">
+                <form id="inner-circle-signup" name="inner-circle-signup" method="POST" data-netlify="true" action="/?success=true">
+            <input type="hidden" name="form-name" value="inner-circle-signup" />
             <input type="email" name="email" class="email-input" placeholder="ENTER EMAIL ADDRESS" required>
             <button type="submit" class="btn-mint">SIGN UP</button>
         </form>
+
         <p style="font-size: 0.6rem; color: #bbb; margin-top: 15px; letter-spacing: 1px; text-transform: uppercase;">*DISCOUNT CODE REVEALED AFTER BINGO WIN</p>
     </section>
 
