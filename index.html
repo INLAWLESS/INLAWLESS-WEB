@@ -26,7 +26,7 @@
         .nav-item:hover { color: var(--mint); text-shadow: 0 0 10px rgba(85, 213, 192, 0.8); }
 
         @media (min-width: 1024px) {
-            .nav-item { font-size: 0.9rem; letter-spacing: 2px; }
+            .nav-item { font-size: 0.85rem; letter-spacing: 2px; }
             .header { gap: 15px; padding: 20px 0; }
         }
 
@@ -51,16 +51,33 @@
             border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #eee;
         }
         @media (max-width: 768px) {
-            .floating-socials { top: auto; bottom: 30px; right: 20px; flex-direction: row; transform: none; }
+            .floating-socials { top: auto; bottom: 30px; right: 20px; flex-direction: row; transform: none; width: 100%; justify-content: center; right: 0; }
             .floating-icon { width: 40px; height: 40px; font-size: 1rem; }
         }
 
         /* --- HERO --- */
         .logo-container { padding: 220px 20px 10px 20px; }
         @media (min-width: 1024px) { .logo-container { padding-top: 260px; } }
-        .logo { letter-spacing: 0.6em; font-weight: 900; font-size: 1.2rem; text-transform: uppercase; }
-        .hero { padding: 40px 20px 80px 20px; max-width: 600px; margin: 0 auto; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; line-height: 1.1; text-transform: uppercase; }
+        
+        /* ALIGNMENT FIX: Prevents logo text wrapping on small screens */
+        .logo { 
+            letter-spacing: 0.6em; 
+            font-weight: 900; 
+            font-size: clamp(0.9rem, 4vw, 1.5rem); 
+            text-transform: uppercase; 
+            white-space: nowrap; 
+            display: inline-block; 
+        }
+
+        .hero { padding: 40px 20px 80px 20px; max-width: 800px; margin: 0 auto; }
+        
+        /* ALIGNMENT FIX: Scale headers for Desktop vs Mobile */
+        .hero h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: clamp(2.2rem, 8vw, 4.5rem); 
+            line-height: 1.1; 
+            text-transform: uppercase; 
+        }
         .hero h1 span { color: var(--mint); }
         .hero-subtext { font-size: 0.75rem; line-height: 1.8; color: #666; margin-bottom: 35px; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; }
 
@@ -77,13 +94,28 @@
         .roadmap-container { background: var(--navy); color: white; padding: 100px 0; text-align: left; }
         .section-tag { color: var(--mint); font-size: 0.6rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 25px; display: block; font-weight: 900; }
         .feature-block { margin-bottom: 80px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 40px; }
-        .feature-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 15px; }
-        .feature-desc { font-size: 0.9rem; line-height: 1.8; color: #b0b5cc; }
+        
+        /* ALIGNMENT FIX: Better Desktop scaling for feature titles */
+        .feature-title { 
+            font-family: 'Playfair Display', serif; 
+            font-size: clamp(1.8rem, 5vw, 3rem); 
+            margin-bottom: 15px; 
+            line-height: 1.2;
+        }
+        
+        /* ALIGNMENT FIX: Prevent text run-off and control width on Desktop */
+        .feature-desc { 
+            font-size: 1rem; 
+            line-height: 1.8; 
+            color: #b0b5cc; 
+            max-width: 800px; 
+        }
+
         .mockup-frame { width: 100%; border: 2px solid var(--mint); border-radius: 25px; margin-top: 30px; overflow: hidden; background: rgba(255, 255, 255, 0.02); }
         .mockup-frame img { width: 100%; height: auto; display: block; }
         @media (min-width: 1024px) { .mockup-frame { height: 600px; } .mockup-frame img { height: 100%; object-fit: cover; } }
 
-        /* --- CONTACT & FOUNDRY (THE NOTEBOOK) --- */
+        /* --- CONTACT & FOUNDRY --- */
         .contact-section { background: var(--navy); color: white; padding: 100px 0; }
         
         .notebook-paper {
@@ -91,14 +123,17 @@
             background-image: linear-gradient(#91def0 1px, transparent 1px), linear-gradient(90deg, #fff 40px, #abe2f8 40px, #abe2f8 42px, #fff 42px);
             background-size: 100% 30px;
             position: relative;
-            padding: 60px 50px 40px 60px;
+            padding: 60px 20px 40px 60px; /* Reduced side padding for small phones */
             border-radius: 5px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             max-width: 800px;
             margin: 40px auto;
             color: #2c3e50;
             text-align: left;
+            overflow-wrap: break-word;
         }
+        @media (min-width: 768px) { .notebook-paper { padding: 60px 50px 40px 60px; } }
+
         .notebook-paper::before {
             content: '';
             position: absolute;
@@ -108,19 +143,19 @@
         }
         .handwritten {
             font-family: 'Homemade Apple', cursive;
-            font-size: 1.1rem;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
             line-height: 30px;
             padding-top: 6px;
         }
 
         .investor-section { margin-top: 80px; text-align: center; }
-        .investor-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #fff; text-transform: uppercase; margin-bottom: 20px; }
+        .investor-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 5vw, 2.8rem); color: #fff; text-transform: uppercase; margin-bottom: 20px; }
         .investor-email { color: var(--mint); font-weight: 900; letter-spacing: 2px; text-decoration: none; font-size: 1.1rem; }
 
         /* --- BOUTIQUE --- */
         #boutique { padding: 100px 0; background: #fff; }
         .carousel-container { width: 100%; overflow-x: auto; display: flex; gap: 15px; scroll-snap-type: x mandatory; padding-bottom: 20px; scrollbar-width: none; }
-        .carousel-item { min-width: 80%; height: 480px; scroll-snap-align: center; border-radius: 20px; overflow: hidden; border: 1px solid var(--gold); background: var(--grey); }
+        .carousel-item { min-width: 85%; height: 480px; scroll-snap-align: center; border-radius: 20px; overflow: hidden; border: 1px solid var(--gold); background: var(--grey); }
         .carousel-item img { width: 100%; height: 100%; object-fit: cover; }
         @media (min-width: 1024px) {
             .carousel-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; overflow-x: visible; }
