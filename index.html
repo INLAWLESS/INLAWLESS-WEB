@@ -59,7 +59,6 @@
         .logo-container { padding: 220px 20px 10px 20px; }
         @media (min-width: 1024px) { .logo-container { padding-top: 260px; } }
         
-        /* ALIGNMENT FIX: Prevents logo text wrapping on small screens */
         .logo { 
             letter-spacing: 0.6em; 
             font-weight: 900; 
@@ -70,8 +69,6 @@
         }
 
         .hero { padding: 40px 20px 80px 20px; max-width: 800px; margin: 0 auto; }
-        
-        /* ALIGNMENT FIX: Scale headers for Desktop vs Mobile */
         .hero h1 { 
             font-family: 'Playfair Display', serif; 
             font-size: clamp(2.2rem, 8vw, 4.5rem); 
@@ -79,75 +76,38 @@
             text-transform: uppercase; 
         }
         .hero h1 span { color: var(--mint); }
-        .hero-subtext { font-size: 0.75rem; line-height: 1.8; color: #666; margin-bottom: 35px; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; }
+        .hero-subtext { font-size: 0.75rem; line-height: 1.8; color: #666; margin-bottom: 25px; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; }
 
-        .email-input {
-            width: 100%; max-width: 300px; padding: 22px; border: 1px solid #eee; margin-bottom: 15px; outline: none; 
+        /* USERNAME FORM STYLING */
+        .claim-label { font-size: 0.65rem; font-weight: 900; color: var(--mint); letter-spacing: 2px; margin-bottom: 10px; display: block; text-transform: uppercase; }
+        .form-group { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+        .email-input, .username-input {
+            width: 100%; max-width: 320px; padding: 22px; border: 1px solid #eee; outline: none; 
             font-size: 0.8rem; box-sizing: border-box; text-align: center; font-family: 'Inter', sans-serif; font-weight: 700; letter-spacing: 1px;
         }
+        .username-input { border: 1px solid var(--mint); background: rgba(85, 213, 192, 0.05); }
         .btn-mint { 
-            width: 100%; max-width: 300px; background: var(--mint); color: white; padding: 22px; font-weight: 900; 
+            width: 100%; max-width: 320px; background: var(--mint); color: white; padding: 22px; font-weight: 900; 
             text-transform: uppercase; border: none; letter-spacing: 2px; cursor: pointer; transition: 0.3s; font-size: 0.8rem;
         }
+        .btn-mint:hover { background: var(--navy); }
 
         /* --- ROADMAP --- */
         .roadmap-container { background: var(--navy); color: white; padding: 100px 0; text-align: left; }
         .section-tag { color: var(--mint); font-size: 0.6rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 25px; display: block; font-weight: 900; }
         .feature-block { margin-bottom: 80px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 40px; }
-        
-        /* ALIGNMENT FIX: Better Desktop scaling for feature titles */
-        .feature-title { 
-            font-family: 'Playfair Display', serif; 
-            font-size: clamp(1.8rem, 5vw, 3rem); 
-            margin-bottom: 15px; 
-            line-height: 1.2;
-        }
-        
-        /* ALIGNMENT FIX: Prevent text run-off and control width on Desktop */
-        .feature-desc { 
-            font-size: 1rem; 
-            line-height: 1.8; 
-            color: #b0b5cc; 
-            max-width: 800px; 
-        }
-
+        .feature-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 5vw, 3rem); margin-bottom: 15px; line-height: 1.2; }
+        .feature-desc { font-size: 1rem; line-height: 1.8; color: #b0b5cc; max-width: 800px; }
         .mockup-frame { width: 100%; border: 2px solid var(--mint); border-radius: 25px; margin-top: 30px; overflow: hidden; background: rgba(255, 255, 255, 0.02); }
         .mockup-frame img { width: 100%; height: auto; display: block; }
         @media (min-width: 1024px) { .mockup-frame { height: 600px; } .mockup-frame img { height: 100%; object-fit: cover; } }
 
         /* --- CONTACT & FOUNDRY --- */
         .contact-section { background: var(--navy); color: white; padding: 100px 0; }
-        
-        .notebook-paper {
-            background: #fff;
-            background-image: linear-gradient(#91def0 1px, transparent 1px), linear-gradient(90deg, #fff 40px, #abe2f8 40px, #abe2f8 42px, #fff 42px);
-            background-size: 100% 30px;
-            position: relative;
-            padding: 60px 20px 40px 60px; /* Reduced side padding for small phones */
-            border-radius: 5px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            max-width: 800px;
-            margin: 40px auto;
-            color: #2c3e50;
-            text-align: left;
-            overflow-wrap: break-word;
-        }
+        .notebook-paper { background: #fff; background-image: linear-gradient(#91def0 1px, transparent 1px), linear-gradient(90deg, #fff 40px, #abe2f8 40px, #abe2f8 42px, #fff 42px); background-size: 100% 30px; position: relative; padding: 60px 20px 40px 60px; border-radius: 5px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); max-width: 800px; margin: 40px auto; color: #2c3e50; text-align: left; overflow-wrap: break-word; }
         @media (min-width: 768px) { .notebook-paper { padding: 60px 50px 40px 60px; } }
-
-        .notebook-paper::before {
-            content: '';
-            position: absolute;
-            left: 45px; height: 100%; width: 1px;
-            background: rgba(255,0,0,0.2);
-            top: 0;
-        }
-        .handwritten {
-            font-family: 'Homemade Apple', cursive;
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-            line-height: 30px;
-            padding-top: 6px;
-        }
-
+        .notebook-paper::before { content: ''; position: absolute; left: 45px; height: 100%; width: 1px; background: rgba(255,0,0,0.2); top: 0; }
+        .handwritten { font-family: 'Homemade Apple', cursive; font-size: clamp(0.9rem, 2.5vw, 1.1rem); line-height: 30px; padding-top: 6px; }
         .investor-section { margin-top: 80px; text-align: center; }
         .investor-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 5vw, 2.8rem); color: #fff; text-transform: uppercase; margin-bottom: 20px; }
         .investor-email { color: var(--mint); font-weight: 900; letter-spacing: 2px; text-decoration: none; font-size: 1.1rem; }
@@ -157,10 +117,7 @@
         .carousel-container { width: 100%; overflow-x: auto; display: flex; gap: 15px; scroll-snap-type: x mandatory; padding-bottom: 20px; scrollbar-width: none; }
         .carousel-item { min-width: 85%; height: 480px; scroll-snap-align: center; border-radius: 20px; overflow: hidden; border: 1px solid var(--gold); background: var(--grey); }
         .carousel-item img { width: 100%; height: 100%; object-fit: cover; }
-        @media (min-width: 1024px) {
-            .carousel-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; overflow-x: visible; }
-            .carousel-item { min-width: 100%; height: 600px; }
-        }
+        @media (min-width: 1024px) { .carousel-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; overflow-x: visible; } .carousel-item { min-width: 100%; height: 600px; } }
 
         /* --- FOOTER --- */
         .footer { padding: 60px 0; border-top: 1px solid #eee; }
@@ -206,12 +163,22 @@
     <section class="hero" id="hero">
         <div class="content-width">
             <h1>THE FAMILY YOU <br>ACTUALLY <span>WANT.</span></h1>
-            <p class="hero-subtext">SIGN UP FOR THE INNER CIRCLE NEWSLETTER FOR BETA ACCESS, LAUNCH UPDATES, AND 25% OFF YOUR FIRST ORDER.</p>
+            <p class="hero-subtext">SNAG YOUR UNIQUE USERNAME BEFORE THE APP LAUNCHES. FIRST COME, FIRST SERVED.</p>
+            
             <form id="inner-circle-signup" name="inner-circle-signup" method="POST" data-netlify="true" onsubmit="handleFormSubmit(event)">
                 <input type="hidden" name="form-name" value="inner-circle-signup" />
-                <input type="email" name="email" class="email-input" placeholder="ENTER EMAIL ADDRESS" required>
-                <button type="submit" class="btn-mint">SIGN UP</button>
+                <div class="form-group">
+                    <span class="claim-label">1. CHOOSE YOUR IDENTITY</span>
+                    <input type="text" id="usernameInput" name="username" class="username-input" placeholder="@USERNAME" required oninput="checkUsernameAvailability()">
+                    <div id="availability-status" style="font-size: 0.6rem; font-weight: 900; margin-top: -5px; margin-bottom: 10px; letter-spacing: 1px; display: none;"></div>
+                    
+                    <span class="claim-label">2. SECURE WITH EMAIL</span>
+                    <input type="email" name="email" class="email-input" placeholder="ENTER EMAIL ADDRESS" required>
+                    
+                    <button type="submit" id="submitBtn" class="btn-mint">CLAIM MY USERNAME</button>
+                </div>
             </form>
+            
             <p style="font-size: 0.6rem; color: #bbb; margin-top: 15px; letter-spacing: 1px; text-transform: uppercase;">*DISCOUNT CODE REVEALED AFTER BINGO WIN</p>
         </div>
     </section>
@@ -266,7 +233,6 @@
         <div class="content-width">
             <span class="section-tag">CONTACT</span>
             <h2 class="feature-title" style="color:#fff; text-align:center;">LETTER FROM THE FOUNDER</h2>
-            
             <div class="notebook-paper">
                 <div class="handwritten">
                     I N L A W L E S S started as a survival mechanism.<br><br>
@@ -297,7 +263,7 @@
             </div>
             <div style="background: var(--grey); padding: 40px; border-radius: 25px; border: 1px solid #eee; margin-top: 30px;">
                 <h2 class="feature-title" style="color: var(--charcoal); font-size: 1.4rem; font-family: 'Playfair Display', serif;">Premium Apparel & Goods</h2>
-                <a href="#hero" class="btn-mint" style="display:inline-block; text-decoration:none; padding: 15px; font-size: 0.7rem; width: auto; letter-spacing: 2px;">JOIN THE INNER CIRCLE</a>
+                <a href="#hero" class="btn-mint" style="display:inline-block; text-decoration:none; padding: 15px; font-size: 0.7rem; width: auto; letter-spacing: 2px;">CLAIM YOUR SPOT</a>
             </div>
         </div>
     </section>
@@ -315,13 +281,63 @@
             <div id="bingoGrid" class="bingo-grid"></div>
             <div id="winMessage">
                 <p style="font-weight:900; color:var(--mint);">CODE: NOINLAWS25</p>
-                <p style="font-size:0.7rem;">25% OFF YOUR FIRST ORDER</p>
+                <p style="font-size:0.7rem;">USERNAME SECURED + 25% OFF FIRST ORDER</p>
             </div>
             <button onclick="document.getElementById('bingoModal').style.display='none'" style="margin-top:15px; background:none; border:none; color:#bbb; text-decoration:underline; font-size: 0.6rem;">CLOSE</button>
         </div>
     </div>
 
     <script>
+        // --- USERNAME AVAILABILITY ENGINE ---
+        const takenUsernames = [
+            "admin", "inlawless", "alexis", "founder", "chief", "oracle", "vanguard", "enforcer", "outlaw", "guardian",
+            "its_tanya_g", "itstanyag", "itstanya", "its_tanya", "itstanyagarza", "its_tanya_garza", "tanyagarza",
+            "itsgemma", "its_gemma", "itsgemmagarza", "its_gemma_garza", "gemmagarza", "its_gemma_marin", 
+            "itslaura", "its_laura", "laurallamas", "laura_llamas", "its_laura_llamas", "itslaurallamas", 
+            "itsmadeline", "madelinesanchez", "its_madeline_sanchez", "its_madeline", 
+            "inlawsarefromhell", "inlawssuck", "in_laws_suck", "saynotoinlaws", "say_no_to_inlaws", 
+            "boundary_boss", "boundary_boss_babe", "icon", "architect", "original"
+        ];
+
+        function checkUsernameAvailability() {
+            const input = document.getElementById('usernameInput');
+            const status = document.getElementById('availability-status');
+            const btn = document.getElementById('submitBtn');
+            let val = input.value.toLowerCase().replace('@', '').trim();
+            const validChars = /^[a-z0-9_]+$/i;
+
+            if (val.length < 3) {
+                status.style.display = 'none';
+                btn.disabled = true;
+                return;
+            }
+
+            status.style.display = 'block';
+
+            if (!validChars.test(val)) {
+                status.innerText = "✖ ONLY LETTERS, NUMBERS, & UNDERSCORES";
+                status.style.color = "#ff4d4d";
+                input.style.border = "1px solid #ff4d4d";
+                btn.disabled = true;
+                btn.style.opacity = "0.5";
+            } else if (takenUsernames.includes(val)) {
+                status.innerText = "✖ STATUS: RESERVED / TAKEN";
+                status.style.color = "#ff4d4d";
+                input.style.border = "1px solid #ff4d4d";
+                btn.disabled = true;
+                btn.style.opacity = "0.5";
+                btn.innerText = "CHOOSE ANOTHER NAME";
+            } else {
+                status.innerText = "✔ STATUS: AVAILABLE";
+                status.style.color = "#55D5C0";
+                input.style.border = "1px solid #55D5C0";
+                btn.disabled = false;
+                btn.style.opacity = "1";
+                btn.innerText = "CLAIM MY USERNAME";
+            }
+        }
+
+        // --- FORM & BINGO HANDLERS ---
         async function handleFormSubmit(event) {
             event.preventDefault();
             const myForm = event.target;
@@ -335,6 +351,7 @@
                 setupBingo();
                 document.getElementById('bingoModal').style.display = 'block';
                 myForm.reset();
+                document.getElementById('availability-status').style.display = 'none';
             } catch (error) {
                 setupBingo();
                 document.getElementById('bingoModal').style.display = 'block';
